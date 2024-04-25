@@ -1,0 +1,1 @@
+		printf("%lf\n",vec[i]);
