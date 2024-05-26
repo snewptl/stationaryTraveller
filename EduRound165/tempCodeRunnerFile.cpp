@@ -24,14 +24,13 @@ namespace Tree {
         t[rt] = t[rt << 1 | 1];
         if (t[rt]) return;
 
-        std::multiset<int> s;
+        std::set<int> s;
         for (int i = mid + 1; i <= r; ++i) {
             if (pre[i] <= mid) {
                 s.insert(pre[i]);
             } else {
                 if (s.count(pre[pre[i]])) {
-                    auto it = s.find(pre[pre[i]]);
-                    s.erase(it);
+                    s.erase(pre[pre[i]]);
                 }
             }
             minLeft[i] = *s.begin();
@@ -40,14 +39,13 @@ namespace Tree {
             minLeft[i] = std::max(minLeft[i], minLeft[i + 1]);
         }
     
-        std::multiset<int, std::greater<int>> greaterS;
+        std::set<int, std::greater<int>> greaterS;
         for (int i = mid; i >= l; --i) {
             if (nxt[i] > mid) {
                 greaterS.insert(nxt[i]);
             } else {
                 if (greaterS.count(nxt[nxt[i]])) {
-                    auto it = greaterS.find(nxt[nxt[i]]);
-                    greaterS.erase(it);
+                    greaterS.erase(nxt[nxt[i]]);
                 }
             }
             if (!greaterS.empty()) {

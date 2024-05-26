@@ -35,11 +35,11 @@ int main() {
 
     int T = 1;
     while (T--) {
-        for (int i = 1; i <= 7; ++i) {
+        for (int i = 1; i <= 10; ++i) {
             dfs(1, i, std::vector<int>());
         }
-        std::cout << 124 << '\n';
-        for (int i = 0; i < 124; ++i) {
+        std::cout << 1180 << '\n';
+        for (int i = 0; i < 1180; ++i) {
             std::cout << vec[i].size() << '\n';
             for (int j = 0; j < vec[i].size(); ++j) {
                 std::cout << vec[i][j] << ' ';
