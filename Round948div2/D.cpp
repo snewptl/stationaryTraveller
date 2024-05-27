@@ -19,6 +19,20 @@ std::map<int, std::vector<int>> dp;
 int n, m;
 std::vector<int> a[maxn];
 int facP1[maxn];
+int final[maxn];
+void print() {
+    int finalAns = 0;
+    for (int col = 0; col < m; ++col) {
+        int tot = 0;
+        for (int row = 0; row < n; ++row) {
+            tot += final[row] ^ a[row][col];
+        }
+        finalAns += (tot == 1);
+    }
+    std::cout << finalAns << '\n';
+    for (int i = 0; i < n; ++i) std::cout << (final[i] ? '1' : '0');
+    std::cout << '\n';
+}
 void solve() {
     for (int i = 0; i < m; ++i) {
         ll num = 0;
@@ -33,18 +47,52 @@ void solve() {
             }
         }
     }
-    int ans = 0;
+    int ans = 0, originalNum = 0;
     std::vector<int> vec;
     for (auto it : dp) {
         if (ans < it.second.size()) {
             ans = std::max(ans, (int)it.second.size());
+            originalNum = it.first;
             vec = it.second;
         }
     }
-    for (int i = 0; i < n; ++i) {
-        
+    // std::cout << ans << '\n';
+    int i = vec[0];
+    ll num = 0;
+    for (int j = 0; j < n; ++j) {
+        if (a[j][i] == 1) num += facP1[j]; 
     }
-    std::cout << ans << '\n';
+    for (int j = 0; j < n; ++j) {
+        if (a[j][i]) {
+            if ((num - facP1[j] + mod) % mod == originalNum) {
+                for (int k = 0; k < n; ++k) {
+                    if (a[k][i]) {
+                        if (k == j) final[k] = 0;
+                        else final[k] = 1;
+                    } else {
+                        final[k] = 0;
+                    }
+                }
+                // std::cout << '\n';
+                print();
+                return;
+            }
+        } else {
+            if ((num + facP1[j]) % mod == originalNum) {
+                for (int k = 0; k < n; ++k) {
+                    if (!a[k][i]) {
+                        if (k == j) final[k] = 1;
+                        else final[k] = 0;
+                    } else {
+                        final[k] = 1;
+                    }
+                }
+                // std::cout << '\n';
+                print();
+                return;
+            }
+        }
+    }
 }
 int main() {
     #ifndef ONLINE_JUDGE
