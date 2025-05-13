@@ -36,8 +36,8 @@ void dfs(int u) {
     else {
         int final = 0;
         for (auto v : e[u]) {
-            final = std::max(final, dis[v]);
             if (!vis[v]) dfs(v);
+            final = std::max(final, dis[v]);
         } 
         default_dis = std::max(default_dis, final);
         dis[u] = final;
