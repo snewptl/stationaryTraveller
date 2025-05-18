@@ -9,8 +9,8 @@ https://codeforces.com/problemset/problem/2005/E1 - 没做出来
 https://codeforces.com/problemset/problem/2003/D2 - AC, 解题超过一个小时且借助了官方数据来debug
 https://codeforces.com/problemset/problem/1998/D - AC, 但是借助了官方数据来debug
 https://codeforces.com/problemset/problem/2107/D - TLE on 7，该题利用了树中直径的一些性质，特别是还有nlogn做法，值得注意
-https://codeforces.com/problemset/problem/2092/E - 
-https://codeforces.com/problemset/problem/2061/F1
-https://codeforces.com/problemset/problem/1975/E
-https://codeforces.com/problemset/problem/1948/E
+https://codeforces.com/problemset/problem/2092/E - 未做出
+https://codeforces.com/problemset/problem/2061/F1 - AC，但未在一个小时内完成
+https://codeforces.com/problemset/problem/1975/E - AC，但未在一个小时内完成
+https://codeforces.com/problemset/problem/1948/E - 
 https://codeforces.com/problemset/problem/1934/D1
