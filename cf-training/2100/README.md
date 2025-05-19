@@ -12,5 +12,8 @@ https://codeforces.com/problemset/problem/2107/D - TLE on 7，该题利用了树
 https://codeforces.com/problemset/problem/2092/E - 未做出
 https://codeforces.com/problemset/problem/2061/F1 - AC，但未在一个小时内完成
 https://codeforces.com/problemset/problem/1975/E - AC，但未在一个小时内完成
-https://codeforces.com/problemset/problem/1948/E - 
-https://codeforces.com/problemset/problem/1934/D1
+https://codeforces.com/problemset/problem/1948/E - 口胡
+https://codeforces.com/problemset/problem/1934/D1 - 口胡
+https://codeforces.com/problemset/problem/1919/D - 未做出，好题，值得收藏
+https://codeforces.com/problemset/problem/1920/E - AC
+https://codeforces.com/problemset/problem/1930/D2
