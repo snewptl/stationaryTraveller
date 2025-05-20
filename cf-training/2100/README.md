@@ -17,3 +17,22 @@ https://codeforces.com/problemset/problem/1934/D1 - 口胡
 https://codeforces.com/problemset/problem/1919/D - 未做出，好题，值得收藏
 https://codeforces.com/problemset/problem/1920/E - AC
 https://codeforces.com/problemset/problem/1930/D2
+https://codeforces.com/problemset/problem/1913/D
+https://codeforces.com/problemset/problem/1900/E
+https://codeforces.com/problemset/problem/1900/E
+https://codeforces.com/problemset/problem/1896/E
+https://codeforces.com/problemset/problem/1886/D
+https://codeforces.com/problemset/problem/1884/D
+https://codeforces.com/problemset/problem/1876/C
+https://codeforces.com/problemset/problem/1868/B2
+https://codeforces.com/problemset/problem/1864/E
+https://codeforces.com/problemset/problem/1863/E
+https://codeforces.com/problemset/problem/1856/D
+https://codeforces.com/problemset/problem/1856/D
+https://codeforces.com/problemset/problem/1839/D
+https://codeforces.com/problemset/problem/1838/D
+https://codeforces.com/problemset/problem/1832/D1
+
+
+
+
