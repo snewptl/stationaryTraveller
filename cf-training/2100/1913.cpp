@@ -29,19 +29,19 @@ void solve() {
                 q.pop_back();
                 if (flag) {
                     flag = 0;
-                    val += it.second;
+                    val += it.second * 2;
                 }
-                val += it.second ;
-                val %= mod;
                 sum -= it.second;
                 sum %= mod;
             } else {
                 break;
             }
         }
-        if (!q.empty() && !flag)val -= q.back().second * 2;
-        val += sum;
-        val %= mod;
+        if (flag) {
+            val += sum;
+            val %= mod;
+
+        }  
         sum += val;
         sum %= mod;
         q.push_back({a[i], val});

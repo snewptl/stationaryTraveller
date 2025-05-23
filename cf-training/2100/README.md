@@ -16,13 +16,12 @@ https://codeforces.com/problemset/problem/1948/E - 口胡
 https://codeforces.com/problemset/problem/1934/D1 - 口胡
 https://codeforces.com/problemset/problem/1919/D - 未做出，好题，值得收藏
 https://codeforces.com/problemset/problem/1920/E - AC
-https://codeforces.com/problemset/problem/1930/D2
-https://codeforces.com/problemset/problem/1913/D - WA on 2
-https://codeforces.com/problemset/problem/1900/E
-https://codeforces.com/problemset/problem/1900/E
-https://codeforces.com/problemset/problem/1896/E
-https://codeforces.com/problemset/problem/1886/D
-https://codeforces.com/problemset/problem/1884/D
+https://codeforces.com/problemset/problem/1930/D2 - WA on 1
+https://codeforces.com/problemset/problem/1913/D - WA on 2，好题
+https://codeforces.com/problemset/problem/1896/E - 未做出, 好题
+https://codeforces.com/problemset/problem/1900/E - 
+https://codeforces.com/problemset/problem/1886/D - AC
+https://codeforces.com/problemset/problem/1884/D 
 https://codeforces.com/problemset/problem/1876/C
 https://codeforces.com/problemset/problem/1868/B2
 https://codeforces.com/problemset/problem/1864/E
