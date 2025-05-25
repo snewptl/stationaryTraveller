@@ -24,7 +24,7 @@ https://codeforces.com/problemset/problem/1884/D - AC
 https://codeforces.com/problemset/problem/1876/C - 未做出，好题，值得收藏
 https://codeforces.com/problemset/problem/1868/B2 - AC，但是借助了官方数据debug
 https://codeforces.com/problemset/problem/1900/E - AC
-https://codeforces.com/problemset/problem/1864/E
+https://codeforces.com/problemset/problem/1864/E - AC
 https://codeforces.com/problemset/problem/1863/E
 https://codeforces.com/problemset/problem/1856/D
 https://codeforces.com/problemset/problem/1856/D
