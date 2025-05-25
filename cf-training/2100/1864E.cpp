@@ -29,24 +29,23 @@ ll quick_pow(ll x, ll y) {
 ll inv(ll x) {
     return quick_pow(x, mod - 2);
 }
-ll dfs(int l, int r, int power, int flag) {
+ll dfs(int l, int r, int power) {
     if (l > r) return 0;
-    if (power == 0) return 0;
+    if (power == 0) {
+        ll pairs = 1ll * (r - l + 1) * (r - l + 1) % mod;
+        return pairs;
+    }
     auto it = std::lower_bound(a + l, a + r + 1, power);
     int idx = it - a;
     for (int i = idx; i <= r; ++i) {
         a[i] ^= power;
     }
     
-    ll temp = (dfs(l, idx - 1, power / 2, flag) + dfs(idx, r, power / 2, 1)) % mod;
+    ll temp = (dfs(l, idx - 1, power / 2) + dfs(idx, r, power / 2)) % mod;
     
-    ll prem = 3;
-    if (flag) prem = 1;
-    temp += 1ll * (idx - l) * (r - idx + 1) * prem % mod;
+    temp += 1ll * (idx - l) * (r - idx + 1) * 3 % mod;
 
-    prem = 2;
-    if (flag) prem = 1;
-    temp = (temp + 1ll * (r - idx + 1) * (r - idx + 1) * prem % mod) % mod;
+    temp = (temp + 1ll * (r - idx + 1) * (r - idx + 1) % mod) % mod;
     return temp % mod;
 }
 int main() {
@@ -65,7 +64,7 @@ int main() {
             std::cin >> a[i];
         }
         std::sort(a + 1, a + n + 1);
-        std::cout << dfs(1, n, 1 << 30, 0) * inv(1ll * n * n % mod) % mod << '\n';
+        std::cout << dfs(1, n, 1 << 30) * inv(1ll * n * n % mod) % mod << '\n';
         // std::cout << dfs(1, n, 1 << 30, 0) << '\n';
     }
 
