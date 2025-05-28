@@ -50,7 +50,9 @@ namespace T {
     }
 
     int query(int rt, int l, int r, int xl, int xr) {
-        if (l == r) return t[rt].min;
+        if (xl == l && xr == r) {
+            return t[rt].min;
+        }
         if (t[rt].lazy) push_down(rt);
         int mid = l + r >> 1;
         int res = 1e9;
