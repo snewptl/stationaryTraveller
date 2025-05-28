@@ -17,17 +17,14 @@ const int maxn = 2e5 + 5;
 const ll mod = 998244353;
 int n, m, k;
 int h[maxn];
-std::vector<std::vector<int>> e, inve;
-int in[maxn], invin[maxn];
-pii dis[maxn], invdis[maxn];
+std::vector<std::vector<int>> e;
+int in[maxn];
+pii dis[maxn];
 void clear() {
     for (int i = 1;i <= n; ++i) {
         in[i] = 0;
-        invin[i] = 0;
         dis[i] = {0, 0};
-        invdis[i] = {n, k};
     }
-    inve.clear();
     e.clear();
 }
 void bfs() {
@@ -53,35 +50,10 @@ void bfs() {
             }
         }
     }
-
-    for (int i = 1; i <= n; ++i) {
-        if (!invin[i]) {
-            q.push(i);
-            invdis[i] = dis[i];
-        } else {
-            invdis[i] = {n, k};
-        }
-        invdis[i] = dis[i];
-    }
-    // while (!q.empty()) {
-    //     auto u = q.front();
-    //     q.pop();
-    //     for (auto v : inve[u]) {
-    //         invdis[v] = std::min(invdis[u], invdis[v]);
-    //         invin[v]--;
-    //         if (invin[v] == 0) {
-    //             q.push(v);
-    //             if (invdis[v].second != h[v]) {
-    //                 invdis[v].first -= (invdis[v].second < h[v]);
-    //                 invdis[v].second = h[v];
-    //             }
-    //         }
-    //     }
-    // }
     
     std::set<std::pair<pii, int>> s;
     for (int i = 1; i <= n; ++i) {
-        s.insert({invdis[i], i});
+        s.insert({dis[i], i});
     }
     ll ans = 1e18;
     while (true) {
@@ -94,11 +66,11 @@ void bfs() {
         while (!q.empty()) {
             auto u = q.front();
             q.pop();
-            s.erase({invdis[u], u});
-            invdis[u].first += 1;
-            s.insert({invdis[u], u});
+            s.erase({dis[u], u});
+            dis[u].first += 1;
+            s.insert({dis[u], u});
             for (auto v : e[u]) {
-                if (invdis[v] < invdis[u]) {
+                if (dis[v] < dis[u]) {
                     q.push(v);
                 }
             }
@@ -122,14 +94,11 @@ int main() {
             std::cin >> h[i];
         }
         e.resize(n + 1);
-        inve.resize(n + 1);
         for (int i = 1; i <= m; ++i) {
             int u, v;
             std::cin >> u >> v;
-            inve[v].push_back(u);
             e[u].push_back(v);
             in[v]++;
-            invin[u]++;
         }
         bfs();
         clear();

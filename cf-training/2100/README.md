@@ -1,4 +1,4 @@
-# 记录
+ # 2025 年 5 月
 
 https://codeforces.com/problemset/problem/2046/C - 没做出来
 https://codeforces.com/problemset/problem/2040/E - AC，但一小时内未完成
@@ -25,11 +25,10 @@ https://codeforces.com/problemset/problem/1876/C - 未做出，好题，值得�
 https://codeforces.com/problemset/problem/1868/B2 - AC，但是借助了官方数据debug
 https://codeforces.com/problemset/problem/1900/E - AC
 https://codeforces.com/problemset/problem/1864/E - AC
-https://codeforces.com/problemset/problem/1863/E
-https://codeforces.com/problemset/problem/1856/D
-https://codeforces.com/problemset/problem/1856/D
-https://codeforces.com/problemset/problem/1839/D
-https://codeforces.com/problemset/problem/1838/D
+https://codeforces.com/problemset/problem/1863/E - WA on 3, 很离谱, 对比了一下其他人的AC代码,感觉思路完全没问题, 但是一直没法找出bug在哪, 遂放弃
+https://codeforces.com/problemset/problem/1856/D - AC
+https://codeforces.com/problemset/problem/1839/D - 未做出, 一开始思路就偏了,然后越想越复杂.其实题解的方法很巧妙且简单,好题.
+https://codeforces.com/problemset/problem/1838/D 
 https://codeforces.com/problemset/problem/1832/D1
 
 
