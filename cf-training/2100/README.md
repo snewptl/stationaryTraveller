@@ -28,8 +28,25 @@ https://codeforces.com/problemset/problem/1864/E - AC
 https://codeforces.com/problemset/problem/1863/E - WA on 3, 很离谱, 对比了一下其他人的AC代码,感觉思路完全没问题, 但是一直没法找出bug在哪, 遂放弃
 https://codeforces.com/problemset/problem/1856/D - AC
 https://codeforces.com/problemset/problem/1839/D - 未做出, 一开始思路就偏了,然后越想越复杂.其实题解的方法很巧妙且简单,好题.
-https://codeforces.com/problemset/problem/1838/D 
+https://codeforces.com/problemset/problem/1838/D - AC, 但花了两个半小时，写了个很暴力的线段树。看了题解后才发现其实再多想一步就可以不用写线段树了。。。
 https://codeforces.com/problemset/problem/1832/D1
+https://codeforces.com/problemset/problem/1808/D
+https://codeforces.com/problemset/problem/1801/D
+https://codeforces.com/problemset/problem/1799/D2
+https://codeforces.com/problemset/problem/1787/E
+https://codeforces.com/problemset/problem/1778/D
+https://codeforces.com/problemset/problem/1771/D
+https://codeforces.com/problemset/problem/1767/C
+https://codeforces.com/problemset/problem/1762/D
+https://codeforces.com/problemset/problem/1761/D
+https://codeforces.com/problemset/problem/1748/D
+https://codeforces.com/problemset/problem/1734/E
+https://codeforces.com/problemset/problem/1732/C2
+https://codeforces.com/problemset/problem/1710/B
+
+
+
+
 
 
 
