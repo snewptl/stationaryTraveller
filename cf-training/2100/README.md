@@ -29,7 +29,7 @@ https://codeforces.com/problemset/problem/1863/E - WA on 3, 很离谱, 对比了
 https://codeforces.com/problemset/problem/1856/D - AC
 https://codeforces.com/problemset/problem/1839/D - 未做出, 一开始思路就偏了,然后越想越复杂.其实题解的方法很巧妙且简单,好题.
 https://codeforces.com/problemset/problem/1838/D - AC, 但花了两个半小时，写了个很暴力的线段树。看了题解后才发现其实再多想一步就可以不用写线段树了。。。
-https://codeforces.com/problemset/problem/1832/D1
+https://codeforces.com/problemset/problem/1832/D1 - AC, 但是借助了官方数据debug
 https://codeforces.com/problemset/problem/1808/D
 https://codeforces.com/problemset/problem/1801/D
 https://codeforces.com/problemset/problem/1799/D2
