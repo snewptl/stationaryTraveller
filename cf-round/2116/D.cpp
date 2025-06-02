@@ -101,7 +101,6 @@ void solve() {
     for (int i = 1; i <= N; ++i) {
         if (tarjan::in[i] == 0) {
             q.push(i);
-            if (!val[i]) val[i] = 1;
         }
     }
     while(!q.empty()) {
@@ -115,6 +114,7 @@ void solve() {
                         std::cout << "-1\n";
                         return;
                     }
+                    temp[v] = val[v];
                 } else {
                     val[v] = temp[v];
                 }
@@ -129,7 +129,7 @@ void solve() {
         for (auto v : g[i]) {
             mn = std::min(mn, val[v]);
         }
-        if (mn != 1e9 + 1 && mn != val[i]) {
+        if (mn != 1e9 + 1 && val[i] && mn != val[i]) {
             std::cout << "-1\n";
             return;
         }
