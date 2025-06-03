@@ -1,0 +1,1 @@
+a[start.first][ans[i - 1]]
