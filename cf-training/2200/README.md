@@ -4,8 +4,8 @@ https://codeforces.com/problemset/problem/1998/E1 - AC, 超过一小时，好题
 <!-- bonus https://codeforces.com/problemset/problem/1998/E2 - AC -->
 https://codeforces.com/problemset/problem/1997/E - AC，超过一小时
 https://codeforces.com/problemset/problem/1993/D - AC
-https://codeforces.com/problemset/problem/1991/F
-https://codeforces.com/problemset/problem/1967/B2
+https://codeforces.com/problemset/problem/1991/F - 未做出, 想了个假结论写了200行结果样例都过不了...
+https://codeforces.com/problemset/problem/1967/B2 - 
 https://codeforces.com/problemset/problem/1954/E
 https://codeforces.com/problemset/problem/1938/E
 https://codeforces.com/problemset/problem/1926/F

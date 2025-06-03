@@ -106,6 +106,7 @@
         "locale": "cpp",
         "queue": "cpp",
         "stack": "cpp",
-        "execution": "cpp"
+        "execution": "cpp",
+        "mo_dui": "c"
     }
 }

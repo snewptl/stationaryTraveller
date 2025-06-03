@@ -7,6 +7,7 @@
 #include <vector>
 #include <memory.h>
 #include <assert.h>
+#include <cmath>
 #define all(x) x.begin(), x.end()
 typedef long long ll;
 typedef std::pair<int, int> pii;
@@ -21,13 +22,14 @@ int a[maxn];
 std::set<pii> s;
 int count;
 int ans[maxn];
+int len;
 struct query {
     int l, r, id;
 
     bool operator<(const query& x) const {  // 重载<运算符
-        if (l / maxn != x.l / maxn)
+        if (l / len != x.l / len)
             return l < x.l;
-        return (l / maxn) & 1 ? r < x.r : r > x.r;
+        return (l / len) & 1 ? r < x.r : r > x.r;
     }
 };
 query questions[maxn];
@@ -192,11 +194,10 @@ int main() {
             std::cin >> l >> r;
             questions[i] = {l, r, i};
         }
+        len = std::sqrt(q);
         std::sort(questions + 1, questions + q + 1);
         solve();
     }
 
     return 0;
 }
-
-// 20 min
