@@ -10,23 +10,11 @@ https://codeforces.com/problemset/problem/1954/E - AC
 https://codeforces.com/problemset/problem/1909/F1 - 未做出, 花了一小时想了个结论发现过不了样例,最后放弃. 题解的做法很有启发性, 好题, 值得收藏
 <!-- bonus https://codeforces.com/contest/1909/problem/F2 - AC -->
 https://codeforces.com/problemset/problem/1901/E - AC，犯了个很愚蠢的小错误，调了很久，总共耗时两小时
-https://codeforces.com/problemset/problem/1898/E - 
-https://codeforces.com/problemset/problem/1867/E2
-https://codeforces.com/problemset/problem/1860/D
+https://codeforces.com/problemset/problem/1898/E - 未做出，其实是简单题
+https://codeforces.com/problemset/problem/1867/E2 - AC，用时两小时
+https://codeforces.com/problemset/problem/1860/D - 
 https://codeforces.com/problemset/problem/1858/D
 https://codeforces.com/problemset/problem/1854/B
 https://codeforces.com/problemset/problem/1848/D
-
-
-
-
-
-
-
-
-
-
-
-
 
 
