@@ -12,9 +12,9 @@ https://codeforces.com/problemset/problem/1909/F1 - 未做出, 花了一小时�
 https://codeforces.com/problemset/problem/1901/E - AC，犯了个很愚蠢的小错误，调了很久，总共耗时两小时
 https://codeforces.com/problemset/problem/1898/E - 未做出，其实是简单题
 https://codeforces.com/problemset/problem/1867/E2 - AC，用时两小时
-https://codeforces.com/problemset/problem/1860/D - 
-https://codeforces.com/problemset/problem/1858/D
-https://codeforces.com/problemset/problem/1854/B
+https://codeforces.com/problemset/problem/1860/D - AC
+https://codeforces.com/problemset/problem/1858/D - AC, 用时1h10min
+https://codeforces.com/problemset/problem/1854/B - 
 https://codeforces.com/problemset/problem/1848/D
 
 
