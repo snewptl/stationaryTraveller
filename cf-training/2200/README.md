@@ -16,7 +16,6 @@ https://codeforces.com/problemset/problem/1860/D - AC
 https://codeforces.com/problemset/problem/1858/D - AC, 用时1h10min
 https://codeforces.com/problemset/problem/1854/B - 未做出，思路完全正确，尝试实现了很久但是没写出来，最后看答案才意识到用 bitset即可。。。退役久了连这些东西都忘记了。。。
 https://codeforces.com/problemset/problem/1848/D - AC
-https://codeforces.com/problemset/problem/1840/F
 https://codeforces.com/problemset/problem/1837/E
 https://codeforces.com/problemset/problem/1832/E
 https://codeforces.com/problemset/problem/1822/G2
