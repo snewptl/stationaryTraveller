@@ -14,7 +14,7 @@ https://codeforces.com/problemset/problem/1898/E - 未做出，其实是简单�
 https://codeforces.com/problemset/problem/1867/E2 - AC，用时两小时
 https://codeforces.com/problemset/problem/1860/D - AC
 https://codeforces.com/problemset/problem/1858/D - AC, 用时1h10min
-https://codeforces.com/problemset/problem/1854/B - 未做出，思路完全正确，但是尝试实现了很久但是无果，最后看答案才意识到用 bitset即可。。。退役久了连这些东西都忘记了。。。
+https://codeforces.com/problemset/problem/1854/B - 未做出，思路完全正确，尝试实现了很久但是没写出来，最后看答案才意识到用 bitset即可。。。退役久了连这些东西都忘记了。。。
 https://codeforces.com/problemset/problem/1848/D - 
 
 
