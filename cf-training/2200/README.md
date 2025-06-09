@@ -16,14 +16,12 @@ https://codeforces.com/problemset/problem/1860/D - AC
 https://codeforces.com/problemset/problem/1858/D - AC, 用时1h10min
 https://codeforces.com/problemset/problem/1854/B - 未做出，思路完全正确，尝试实现了很久但是没写出来，最后看答案才意识到用 bitset即可。。。退役久了连这些东西都忘记了。。。
 https://codeforces.com/problemset/problem/1848/D - AC
-https://codeforces.com/problemset/problem/1837/E
-https://codeforces.com/problemset/problem/1832/E
-https://codeforces.com/problemset/problem/1822/G2
-https://codeforces.com/problemset/problem/1815/C
-https://codeforces.com/problemset/problem/1811/G2
-https://codeforces.com/problemset/problem/1808/E1
-https://codeforces.com/problemset/problem/1806/E
-https://codeforces.com/problemset/problem/1800/G
+<!-- https://codeforces.com/contest/2101/problem/C - 【virtual contest】未做出 -->
+https://codeforces.com/problemset/problem/1837/E - AC 
+https://codeforces.com/problemset/problem/1832/E - 未做出，其实是简单题，不要看到组合数就害怕。。。
+https://codeforces.com/problemset/problem/1815/C - WA on 2. 因为读错题导致加成了双向边
+https://codeforces.com/problemset/problem/1808/E1 - AC
+https://codeforces.com/problemset/problem/1806/E - TLE on 10, 好题
 https://codeforces.com/problemset/problem/1795/E
 https://codeforces.com/problemset/problem/1788/E
 https://codeforces.com/problemset/problem/1784/C
