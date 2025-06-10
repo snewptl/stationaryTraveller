@@ -24,12 +24,7 @@ https://codeforces.com/problemset/problem/1808/E1 - AC
 https://codeforces.com/problemset/problem/1806/E - TLE on 10, 好题
 https://codeforces.com/problemset/problem/1795/E - AC
 https://codeforces.com/problemset/problem/1788/E - AC, 做了2h30min，前两个小时读错题了写了很久，其实是简单题
-https://codeforces.com/problemset/problem/1784/C
-https://codeforces.com/problemset/problem/1777/E
-https://codeforces.com/problemset/problem/1776/B
-https://codeforces.com/problemset/problem/1773/B
-https://codeforces.com/problemset/problem/1772/G
-https://codeforces.com/problemset/problem/1765/F
+https://codeforces.com/problemset/problem/1777/E - AC
 https://codeforces.com/problemset/problem/1763/E
 https://codeforces.com/problemset/problem/1763/D
 https://codeforces.com/problemset/problem/1737/D
