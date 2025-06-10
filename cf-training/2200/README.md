@@ -25,7 +25,7 @@ https://codeforces.com/problemset/problem/1806/E - TLE on 10, 好题
 https://codeforces.com/problemset/problem/1795/E - AC
 https://codeforces.com/problemset/problem/1788/E - AC, 做了2h30min，前两个小时读错题了写了很久，其实是简单题
 https://codeforces.com/problemset/problem/1777/E - AC
-https://codeforces.com/problemset/problem/1763/E
+https://codeforces.com/problemset/problem/1763/E - AC
 https://codeforces.com/problemset/problem/1763/D
 https://codeforces.com/problemset/problem/1737/D
 https://codeforces.com/problemset/problem/1736/D
