@@ -22,7 +22,7 @@ https://codeforces.com/problemset/problem/1832/E - 未做出，其实是简单�
 https://codeforces.com/problemset/problem/1815/C - WA on 2. 因为读错题导致加成了双向边
 https://codeforces.com/problemset/problem/1808/E1 - AC
 https://codeforces.com/problemset/problem/1806/E - TLE on 10, 好题
-https://codeforces.com/problemset/problem/1795/E
+https://codeforces.com/problemset/problem/1795/E - AC
 https://codeforces.com/problemset/problem/1788/E
 https://codeforces.com/problemset/problem/1784/C
 https://codeforces.com/problemset/problem/1777/E
