@@ -23,7 +23,7 @@ https://codeforces.com/problemset/problem/1815/C - WA on 2. 因为读错题导�
 https://codeforces.com/problemset/problem/1808/E1 - AC
 https://codeforces.com/problemset/problem/1806/E - TLE on 10, 好题
 https://codeforces.com/problemset/problem/1795/E - AC
-https://codeforces.com/problemset/problem/1788/E
+https://codeforces.com/problemset/problem/1788/E - AC, 做了2h30min，前两个小时读错题了写了很久，其实是简单题
 https://codeforces.com/problemset/problem/1784/C
 https://codeforces.com/problemset/problem/1777/E
 https://codeforces.com/problemset/problem/1776/B
