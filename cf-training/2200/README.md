@@ -31,7 +31,7 @@ https://codeforces.com/problemset/problem/1737/D - 未做出，思路正确，�
 https://codeforces.com/problemset/problem/1736/D - 未做出，智力题，可惜没有智力。。。好题
 https://codeforces.com/problemset/problem/1717/E - AC, 用时1h30min
 https://codeforces.com/problemset/problem/1704/E - AC
-https://codeforces.com/problemset/problem/1695/D1
+https://codeforces.com/problemset/problem/1695/D1 - 
 https://codeforces.com/problemset/problem/1672/E
 https://codeforces.com/problemset/problem/1657/E
 https://codeforces.com/problemset/problem/1656/E
