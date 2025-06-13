@@ -14,7 +14,7 @@ typedef std::pair<ll, int> pli;
 typedef std::pair<ll, ll> pll;
 typedef double db;
 typedef long double ldb;
-const int maxn = 505;
+const int maxn = 2e5 + 5;
 const ll mod = 998244353;
 int n;
 ll k;
@@ -22,37 +22,50 @@ ll p[maxn];
 ll d[maxn];
 int q;
 ll a[maxn];
-bool dp[2][maxn][maxn];
-bool vis[2][maxn][maxn];
-bool in_stack[2][maxn][maxn];
-void dfs(int dir, int i, int j) {
-    if (vis[dir][i][j]) return;
-    vis[dir][i][j] = 1;
-    in_stack[dir][i][j] = 1;
-    int new_dir = dir;
-    if (j == d[i]) new_dir ^= 1;
-    if (new_dir == 0) {
-        if (i == 1) dp[dir][i][j] = 1; 
-        else {
-            int new_j = (p[i] - p[i - 1] + j) % k;
-            if (in_stack[new_dir][i - 1][new_j]) dp[dir][i][j] = 0;
-            else {
-                dfs(new_dir, i - 1, new_j); 
-                dp[dir][i][j] = dp[new_dir][i - 1][new_j];
-            }
-        }
-    } else {
-        if (i == n) dp[dir][i][j] = 1;
-        else {
-            int new_j = (p[i + 1] - p[i] + j) % k;
-            if (in_stack[new_dir][i + 1][new_j]) dp[dir][i][j] = 0;
-            else {
-                dfs(new_dir, i + 1, new_j);
-                dp[dir][i][j] = dp[new_dir][i + 1][new_j];
-            }
-        }
+ll to[maxn << 1];
+bool in_stack[maxn << 1], is_circle[maxn << 1], vis[maxn << 1];
+std::map<ll, int> mp;
+int count;
+std::vector<std::vector<pli>> pos[2]; 
+int hash(ll x) {
+    x = (x % k + k) % k;
+    if (mp.count(x)) return mp[x];
+    else return mp[x] = ++count;
+}
+int try_hash(ll x) {
+    x = (x % k + k) % k;
+    if (mp.count(x)) return mp[x];
+    else return 0;
+}
+void clear() {
+    count = 0;
+    mp.clear();
+    for (int i = 0; i < 2 * n; ++i) {
+        is_circle[i] = 0;
+        in_stack[i] = 0;
+        vis[i] = 0;
+        to[i] = -1;
     }
-    in_stack[dir][i][j] = 0;
+    for (int i = 0; i < 2; ++i) {
+        pos[i].clear();
+        pos[i].resize(n * 2 + 1);
+    }
+
+}
+void dfs(int i) {
+    in_stack[i] = 1;
+    vis[i] = 1;
+    if (to[i] != -1) {
+        int v = to[i];
+        if (in_stack[v]) is_circle[i] = 1;
+        else {
+            if (!vis[v]) dfs(v);
+            is_circle[i] = is_circle[v];
+        }  
+    } else {
+        is_circle[i] = 0;
+    }
+    in_stack[i] = 0;
 }
 int main() {
     #ifndef ONLINE_JUDGE
@@ -66,35 +79,58 @@ int main() {
     std::cin >> T;
     while (T--) {
         std::cin >> n >> k;
-        for (int i = 1; i <= n; ++i) std::cin >> p[i];
-        for (int i = 1; i <= n; ++i) std::cin >> d[i];
-        for (int dir = 0; dir < 2; ++dir) {
-            for (int i = 1; i <= n; ++i) {
-                for (int j = 0; j < k; ++j) {
-                    dp[dir][i][j] = 0;
-                    vis[dir][i][j] = in_stack[dir][i][j] = 0;
-                }
-            }            
+        for (int i = 0; i < n; ++i) std::cin >> p[i];
+        for (int i = 0; i < n; ++i) std::cin >> d[i];
+        clear();
+
+        for (int i = 0; i < n; ++i) {
+            pos[1][hash(d[i] - p[i])].push_back({p[i], i});
+            pos[0][hash(d[i] + p[i])].push_back({p[i], i});
         }
-        for (int dir = 0; dir < 2; ++dir) {
-            for (int i = 1; i <= n; ++i) {
-                for (int j = 0; j < k; ++j) {
-                    dfs(dir, i, j);
+
+        for (int i = 0; i < n; ++i) {
+            int cur = try_hash(-p[i] + d[i]);
+            if (cur && !pos[1][cur].empty()) {
+                int u = i * 2;
+                auto it = std::upper_bound(all(pos[1][cur]), std::make_pair(p[i], i));
+                if (it != pos[1][cur].end()) {
+                    to[u] =  it->second * 2 + 1;
                 }
-            }            
+            }
+            cur = try_hash(p[i] + d[i]);
+            if (cur && !pos[0][cur].empty()) {
+                int u = i * 2 + 1;
+                auto it = std::lower_bound(all(pos[0][cur]), std::make_pair(p[i], i));
+                if (it != pos[0][cur].begin()) {
+                    --it;
+                    to[u] = it->second * 2;
+                }
+            }
+        } 
+
+        for (int i = 0; i < n * 2; ++i) {
+            if (vis[i]) continue;
+            dfs(i);
         }
 
         std::cin >> q;
         for (int i = 1; i <= q; ++i) {
             std::cin >> a[i];
-            auto it = std::lower_bound(p + 1, p + n + 1, a[i]) - p;
-            if (it == n + 1) std::cout << "YES\n";
-            else {
-                int j = (p[it] - a[i]) % k;
-                std::cout << (dp[1][it][j] ? "YES\n" : "NO\n");
+            int cur = try_hash(-a[i]);
+            int flag;
+            if (!cur || pos[1][cur].empty()) {
+                flag = 1;
+            } else {
+                auto it = std::lower_bound(all(pos[1][cur]), std::make_pair(a[i], 0));
+                if (it != pos[1][cur].end()) {
+                    int u = it->second * 2 + 1;
+                    flag = !is_circle[u];
+                } else {
+                    flag = 1;
+                }
             }
+            std::cout << (flag ? "YES\n" : "NO\n");
         }
     }
-
     return 0;
 }
