@@ -25,15 +25,15 @@ https://codeforces.com/problemset/problem/1806/E - TLE on 10, 好题
 https://codeforces.com/problemset/problem/1795/E - AC
 https://codeforces.com/problemset/problem/1788/E - AC, 做了2h30min，前两个小时读错题了写了很久，其实是简单题
 https://codeforces.com/problemset/problem/1777/E - AC
-https://codeforces.com/problemset/problem/1763/E - AC, 水题
+https://codeforces.com/problemset/problem/1763/E - AC
 https://codeforces.com/problemset/problem/1763/D - AC, 但是借助了官方数据debug，且花费两小时。做法其实很好想，但是实现的时候需要清晰的思路
 https://codeforces.com/problemset/problem/1737/D - 未做出，思路正确，但是想多了导致搞错时间复杂度， 好题
 https://codeforces.com/problemset/problem/1736/D - 未做出，智力题，可惜没有智力。。。好题
 https://codeforces.com/problemset/problem/1717/E - AC, 用时1h30min
 https://codeforces.com/problemset/problem/1704/E - AC
-https://codeforces.com/problemset/problem/1695/D1 - 
-https://codeforces.com/problemset/problem/1672/E
-https://codeforces.com/problemset/problem/1657/E
+https://codeforces.com/problemset/problem/1695/D1 - WA on 5，好题
+https://codeforces.com/problemset/problem/1672/E - 未做出，好题
+https://codeforces.com/problemset/problem/1657/E - TLE on 6
 https://codeforces.com/problemset/problem/1656/E
 https://codeforces.com/problemset/problem/1650/F
 https://codeforces.com/problemset/problem/1646/E

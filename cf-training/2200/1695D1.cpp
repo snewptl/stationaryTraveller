@@ -18,7 +18,26 @@ const int maxn = 2e5 + 5;
 const ll mod = 998244353;
 int n;
 std::vector<std::vector<int>> e;
-int vis[maxn];
+int dp[maxn], need[maxn];
+void dfs(int u, int p) {
+    int sz = 0, colored = 0, son;
+    for (auto v : e[u]) {
+        if (v == p) continue;
+        ++sz;
+        dfs(v, u);
+        dp[u] += dp[v];
+        if (dp[v]) ++colored, son = v;
+    }
+    if (colored < sz) {
+        dp[u] += sz - colored - 1;
+        if (u != 1) need[u] = 1;
+        else {
+            if (sz - 1 < 2) need[u] = 1; 
+        }
+    } else {
+        if (colored == 1 && need[son]) need[u] = 1;
+    }
+}
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
@@ -33,47 +52,16 @@ int main() {
         std::cin >> n;
         e.clear();
         e.resize(n + 1);
-        for (int i = 1; i <= n; ++i) vis[i] = 0;
+        for (int i = 1; i <= n; ++i) need[i] = 0, dp[i] = 0;
         for (int i = 1; i < n; ++i) {
             int u, v;
             std::cin >> u >> v;
             e[u].push_back(v);
             e[v].push_back(u);
         }
-        int ans = 0;
-        for (int t = 1; t <= n; ++t) {
-            for (int i = 1; i <= n; ++i) {
-                if (e[i].size() != 1) continue;
-                std::vector<int> vec;
-                int count = 0, tot = 0;
-                int rt = e[i][0];
-                for (auto v : e[rt]) {
-                    if (e[v].size() == 1) {
-                        tot += 1;
-                        if (!vis[v]) count += 1;
-                        vis[v] = 1;
-                    } else {
-                        vec.push_back(v);
-                    }
-                }
-                if (count >= 2) {
-                    ans += count - 1;
-                    vis[rt] = 1;
-                } else if (count == 1) {
-                    if (tot > 1) {
-                        ans += 1;
-                        vis[rt] = 1;
-                    }
-                }
-                e[rt].clear();
-                for (auto it : vec) e[rt].push_back(it);
-            }
-        }
-
-        std::cout << (n == 1 ? 0 : std::max(ans, 1)) << '\n';
+        dfs(1, 0);
+        std::cout << dp[1] + need[1] << '\n';
     }
 
     return 0;
 }
-
-// 2 : 20
