@@ -33,10 +33,27 @@ https://codeforces.com/problemset/problem/1717/E - AC, 用时1h30min
 https://codeforces.com/problemset/problem/1704/E - AC
 https://codeforces.com/problemset/problem/1695/D1 - WA on 5，好题
 https://codeforces.com/problemset/problem/1672/E - 未做出，好题
-https://codeforces.com/problemset/problem/1657/E - TLE on 6
-https://codeforces.com/problemset/problem/1656/E
-https://codeforces.com/problemset/problem/1650/F
+https://codeforces.com/problemset/problem/1657/E - TLE on 6, 下次遇到这种计数题最好意识到可以前缀和优化
+https://codeforces.com/problemset/problem/1656/E - AC
 https://codeforces.com/problemset/problem/1646/E
 https://codeforces.com/problemset/problem/1641/C
 https://codeforces.com/problemset/problem/1635/E
-
+https://codeforces.com/problemset/problem/1627/E
+https://codeforces.com/problemset/problem/1622/E
+https://codeforces.com/problemset/problem/1618/G
+https://codeforces.com/problemset/problem/1616/E
+https://codeforces.com/problemset/problem/1615/D
+https://codeforces.com/problemset/problem/1583/E
+https://codeforces.com/problemset/problem/1580/C
+https://codeforces.com/problemset/problem/1567/E
+https://codeforces.com/problemset/problem/1559/E
+https://codeforces.com/problemset/problem/1557/D
+https://codeforces.com/problemset/problem/1556/E
+https://codeforces.com/problemset/problem/1552/F
+https://codeforces.com/problemset/problem/1551/F
+https://codeforces.com/problemset/problem/1543/D2
+https://codeforces.com/problemset/problem/1542/D
+https://codeforces.com/problemset/problem/1537/F
+https://codeforces.com/problemset/problem/1537/E2
+https://codeforces.com/problemset/problem/1535/E
+https://codeforces.com/problemset/problem/1520/F2

@@ -59,27 +59,21 @@ int main() {
         }
     }
     std::cin >> n >> k;
-    // for (int i = 1; i <= n; ++i) dp[2][i] = 1;
-    for (int j = 1; j <= k; ++j) {
-        for (int len = 1; len < n; ++len) {
-            dp[len + 1][j] = Cal[n - 1][len] * power[k - j + 1][len * (len - 1) / 2 + len * 1 - len] % mod;
-            dp[len + 1][j] %= mod;
-        }
-    }
-    for (int i = 2; i < n; ++i) {
-        for (int j = 1; j <= k; ++j) {
+
+    dp[1][0] = 1;
+    for (int j = 0; j < k; ++j) {
+        for (int i = 1; i < n; ++i) {
             for (int len = 1; len + i <= n; ++len) {
-                for (int new_j = j + 1; new_j <= k; ++new_j) {
-                    dp[i + len][new_j] += dp[i][j] * Cal[n - i][len] % mod * power[k - new_j + 1][len * (len - 1) / 2 + len * i - len] % mod;
-                    dp[i + len][new_j] %= mod;
-                }
-                
+                dp[i + len][j + 1] += dp[i][j] * Cal[n - i][len] % mod * power[k - j][len * (len - 1) / 2 + len * i - len] % mod;
+                dp[i + len][j + 1] %= mod;
             }
         }
+        for (int i = 1; i <= n; ++i) {
+            dp[i][j + 1] += dp[i][j];
+            dp[i][j + 1] %= mod;
+        }
     }
-    ll ans = 0;
-    for (int j = 1; j <= k; ++j) ans += dp[n][j], ans %= mod;
-    std::cout << ans << '\n';
+    std::cout << dp[n][k] << '\n';
 
     return 0;
 }
