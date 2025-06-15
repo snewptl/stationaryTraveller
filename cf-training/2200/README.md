@@ -35,7 +35,7 @@ https://codeforces.com/problemset/problem/1695/D1 - WA on 5，好题
 https://codeforces.com/problemset/problem/1672/E - 未做出，好题
 https://codeforces.com/problemset/problem/1657/E - TLE on 6, 下次遇到这种计数题最好意识到可以前缀和优化
 https://codeforces.com/problemset/problem/1656/E - AC
-https://codeforces.com/problemset/problem/1646/E
+https://codeforces.com/problemset/problem/1646/E - AC
 https://codeforces.com/problemset/problem/1641/C
 https://codeforces.com/problemset/problem/1635/E
 https://codeforces.com/problemset/problem/1627/E
