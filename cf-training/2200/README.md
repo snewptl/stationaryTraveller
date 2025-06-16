@@ -38,7 +38,7 @@ https://codeforces.com/problemset/problem/1656/E - AC
 https://codeforces.com/problemset/problem/1646/E - AC
 https://codeforces.com/problemset/problem/1641/C - 未做出, 好题
 https://codeforces.com/problemset/problem/1635/E - AC
-https://codeforces.com/problemset/problem/1627/E
+https://codeforces.com/problemset/problem/1627/E - AC, 用时1h20min
 https://codeforces.com/problemset/problem/1622/E
 https://codeforces.com/problemset/problem/1618/G
 https://codeforces.com/problemset/problem/1616/E
