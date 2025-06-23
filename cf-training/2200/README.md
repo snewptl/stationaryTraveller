@@ -43,7 +43,7 @@ https://codeforces.com/problemset/problem/1622/E - AC, 用时1h30min
 https://codeforces.com/problemset/problem/1616/E - AC, 用时1h20min，且使用了官方数据debug
 https://codeforces.com/problemset/problem/1615/D - 未做出，好题
 https://codeforces.com/problemset/problem/1583/E - AC，用时1h20min
-https://codeforces.com/problemset/problem/1580/C - 
+https://codeforces.com/problemset/problem/1580/C - AC, 用时1h20min
 https://codeforces.com/problemset/problem/1567/E
 https://codeforces.com/problemset/problem/1559/E
 https://codeforces.com/problemset/problem/1557/D
