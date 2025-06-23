@@ -45,8 +45,8 @@ https://codeforces.com/problemset/problem/1615/D - 未做出，好题
 https://codeforces.com/problemset/problem/1583/E - AC，用时1h20min
 https://codeforces.com/problemset/problem/1580/C - AC, 用时1h20min
 https://codeforces.com/problemset/problem/1567/E - AC
-https://codeforces.com/problemset/problem/1559/E - TLE on 9
-https://codeforces.com/problemset/problem/1557/D
+https://codeforces.com/problemset/problem/1559/E - TLE on 9, 理论复杂度是对的，但是因为常数大T了，卡常是坏文明。。。
+https://codeforces.com/problemset/problem/1557/D - 
 https://codeforces.com/problemset/problem/1556/E
 https://codeforces.com/problemset/problem/1552/F
 https://codeforces.com/problemset/problem/1551/F
