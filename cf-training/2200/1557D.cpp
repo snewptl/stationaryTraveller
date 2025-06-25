@@ -17,71 +17,79 @@ typedef long double ldb;
 const int maxn = 3e5 + 5;
 const ll mod = 998244353;
 struct node {
-    int head, tail;
     int max;
     int idx;
-    node *left, *right; 
-} *root;
+    int lazy;
+    int left, right; 
+};
 int n, m;
 std::vector<std::vector<pii>> vec;
 int fa[maxn], vis[maxn];
-pii query(node *rt, int l, int r, int xl, int xr) {
+std::vector<node> t;
+int count;
+void push_down(int rt) {
+    if (t[rt].lazy) {
+        t[t[rt].left].max = t[rt].max;
+        t[t[rt].left].idx = t[rt].idx;
+        t[t[rt].left].lazy = t[rt].lazy;
+        t[t[rt].right].max = t[rt].max;
+        t[t[rt].right].idx = t[rt].idx;
+        t[t[rt].right].lazy = t[rt].lazy;
+        t[rt].lazy = 0;
+    }
+}
+pii query(int rt, int l, int r, int xl, int xr) {
     int mid = (l + r) >> 1;
     if (xl == l && xr == r) {
-        return {rt->max, rt->idx};
+        return {t[rt].max, t[rt].idx};
     }
-    if (!rt->left) {
-        rt->left = new node;
-        rt->left->max = rt->max;
-        rt->left->head = l;
-        rt->left->tail = mid;
-        rt->left->idx = rt->idx;
-    } 
+    if (!t[rt].left) {
+        node left_son;
+        left_son.lazy = t[rt].lazy;
+        left_son.max = t[rt].max;
+        left_son.idx = t[rt].idx;
+        left_son.left = 0;
+        left_son.right = 0;
+        t[rt].left = ++count;
+        t.push_back(left_son);
+    }
+    if (!t[rt].right) {
+        node right_son;
+        right_son.lazy = t[rt].lazy;
+        right_son.max = t[rt].max;
+        right_son.idx = t[rt].idx;
+        right_son.left = 0;
+        right_son.right = 0;
+        t[rt].right = ++count;
+        t.push_back(right_son);
+    }
+    push_down(rt);
     pii res = {0, 0};
-    if (xl <= mid) res = query(rt->left, l, mid, xl, std::min(xr, mid));
-    if (!rt->right) {
-        rt->right = new node;
-        rt->right->max = rt->max;
-        rt->right->head = mid + 1;
-        rt->right->tail = r; 
-        rt->right->idx = rt->idx;       
-    }
+    if (xl <= mid) res = query(t[rt].left, l, mid, xl, std::min(xr, mid));
     if (xr > mid) {
-        pii temp = query(rt->right, mid + 1, r, std::max(xl, mid + 1), xr);
+        pii temp = query(t[rt].right, mid + 1, r, std::max(xl, mid + 1), xr);
         if (temp.first > res.first) res = temp;
     } 
     return res;
 }
-void update(node *rt, int l, int r, int xl, int xr, int val, int idx) {
+void update(int rt, int l, int r, int xl, int xr, int val, int idx) {
     int mid = (l + r) >> 1;
     if (xl == l && xr == r) {
-        rt->max = val;
-        rt->idx = idx;
+        t[rt].lazy = 1;
+        t[rt].max = val;
+        t[rt].idx = idx;
         return;
     }
-    if (!rt->left) {
-        rt->left = new node;
-        rt->left->max = rt->max;
-        rt->left->head = l;
-        rt->left->tail = mid;
-        rt->left->idx = rt->idx;
+    push_down(rt);
+    if (xl <= mid) update(t[rt].left, l, mid, xl, std::min(xr, mid), val, idx);
+    if (xr > mid) update(t[rt].right, mid + 1, r, std::max(xl, mid + 1), xr, val, idx);
+    if (t[t[rt].left].max > t[rt].max) {
+        t[rt].max = t[t[rt].left].max;
+        t[rt].idx = t[t[rt].left].idx;
     }
-    if (!rt->right) {
-        rt->right = new node;
-        rt->right->max = rt->max;
-        rt->right->head = mid + 1;
-        rt->right->tail = r; 
-        rt->right->idx = rt->idx;       
-    }
-    if (xl <= mid) update(rt->left, l, mid, xl, std::min(xr, mid), val, idx);
-    if (xr > mid) update(rt->right, mid + 1, r, std::max(xl, mid + 1), xr, val, idx);
-    if (rt->left->max > rt->max) {
-        rt->max = rt->left->max;
-        rt->idx = rt->left->idx;
-    }
-    if (rt->right->max > rt->max) {
-        rt->max = rt->right->max;
-        rt->idx = rt->right->idx;
+    if (t[t[rt].right].max > t[rt].max) {
+        t[rt].max = t[t[rt].right].max;
+        t[rt].idx = t[t[rt].right].idx;
     }
 }
 int main() {
@@ -99,8 +107,9 @@ int main() {
         std::cin >> id >> l >> r;
         vec[id].push_back({l, r});
     }
-    root = new node;
-    root->head = 1, root->tail = 1e9, root->max = 0, root->idx = 0;
+    t.resize(2);
+    int root = ++count;
+    t[root].max = 0, t[root].idx = 0;
     pii ans = {0, 0};
     for (int i = 1; i <= n; ++i) {
         pii res = {0, 0};
@@ -130,5 +139,3 @@ int main() {
 
     return 0;
 }
-
-// 20 : 29 - 

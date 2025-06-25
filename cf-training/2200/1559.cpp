@@ -19,7 +19,7 @@ const int maxn = 1e5 + 5;
 const ll mod = 998244353;
 int n, m;
 int count[maxn];
-int dp[51][maxn];
+ll f[maxn], sum[maxn];
 pii a[51];
 int main() {
     #ifndef ONLINE_JUDGE
@@ -39,28 +39,29 @@ int main() {
     for (int gcd = 1; gcd <= m; ++gcd) {
         int delta = (gcd == 1 ? 1 : -count[gcd]);
         if (gcd != 1 && !delta) continue;
-        int flag = 1;
-        for (int i = 0; i <= m; ++i) dp[0][i] = delta;
+        int flag = 1, last = m / gcd;
+        for (int i = 0; i <= last; ++i) sum[i] = 1;
+        for (int i = 0; i <= last; ++i) f[i] = 0;
         for (int i = 1; i <= n; ++i) {
             int start = (a[i].first + gcd - 1) / gcd;
             int end = a[i].second / gcd;
-            if (start > end) flag = 0;
-            int last = m / gcd;
-            for (int j = start; j <= last; ++j) {
-                if (j) dp[i][j] = dp[i][j - 1];
-                dp[i][j] += dp[i - 1][j - start];
-                if (j > end) dp[i][j] -= dp[i - 1][j - end - 1];
-                if (dp[i][j] >= mod) dp[i][j] -= mod;
-                else if (dp[i][j] < 0) dp[i][j] += mod;
+            for (int j = 0; j <= last; ++j) {
+                f[j] = 0;
+                if (j >= start) f[j] = sum[j - start];
+                if (j > end) f[j] -= sum[j - end - 1];
+                f[j] = (f[j] + mod) % mod;
+            }
+            for (int j = 0; j <= last; ++j) {
+                sum[j] = f[j];
+                if (j) sum[j] += sum[j - 1];
+                sum[j] %= mod;
             }
         }
-        if (flag) {
-            for (int i = gcd; i <= m; i += gcd) {
-                count[i] += delta;
-            }
-            ans += dp[n][m / gcd];
-            ans %= mod;
+        for (int i = gcd; i <= m; i += gcd) {
+            count[i] += delta;
         }
+        ans += sum[last] * delta % mod;
+        ans %= mod;
     }
     std::cout << (ans + mod) % mod << '\n';
 
