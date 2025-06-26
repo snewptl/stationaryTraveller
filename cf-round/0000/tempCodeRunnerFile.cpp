@@ -1,2 +1,0 @@
-
-typedef long double ldb;

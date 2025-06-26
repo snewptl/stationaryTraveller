@@ -49,7 +49,7 @@ https://codeforces.com/problemset/problem/1559/E - TLE on 9, 理论复杂度是�
 https://codeforces.com/problemset/problem/1557/D - 交到测评机上报RE了，可是本地跑没报错, 输出了正确答案, 一直没找到问题出在哪, 改了一下写法, 规避了用到指针的地方, 但是又在 24 个点MLE...
 https://codeforces.com/problemset/problem/1556/E - AC
 https://codeforces.com/problemset/problem/1552/F - AC
-https://codeforces.com/problemset/problem/1543/D2
+https://codeforces.com/problemset/problem/1543/D2 - AC
 https://codeforces.com/problemset/problem/1542/D
 https://codeforces.com/problemset/problem/1537/F
 https://codeforces.com/problemset/problem/1537/E2
