@@ -5,8 +5,9 @@
 #include <set>
 #include <queue>
 #include <vector>
+#include <bitset>
+#include <memory.h>
 #include <assert.h>
-#include <cmath>
 #define all(x) x.begin(), x.end()
 typedef long long ll;
 typedef std::pair<int, int> pii;
