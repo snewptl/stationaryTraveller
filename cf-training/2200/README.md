@@ -50,7 +50,7 @@ https://codeforces.com/problemset/problem/1557/D - 交到测评机上报RE了，
 https://codeforces.com/problemset/problem/1556/E - AC
 https://codeforces.com/problemset/problem/1552/F - AC
 https://codeforces.com/problemset/problem/1543/D2 - AC
-https://codeforces.com/problemset/problem/1542/D
+https://codeforces.com/problemset/problem/1542/D - AC, 用时1h20min
 https://codeforces.com/problemset/problem/1537/F
 https://codeforces.com/problemset/problem/1537/E2
 https://codeforces.com/problemset/problem/1535/E

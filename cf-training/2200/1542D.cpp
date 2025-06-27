@@ -60,8 +60,14 @@ int main() {
                     dp[j + 1][k] = dp[j][k] + dp[j][k + 1];
                     dp[j + 1][k] %= mod;
                 }
-                dp[j + 1][0] = dp[j][1] + dp[j][0] * 2;
-                dp[j + 1][0] %= mod;
+                if (j + 1 < i) {
+                    dp[j + 1][0] = dp[j][1] + dp[j][0] * 2;
+                    dp[j + 1][0] %= mod;
+                } else {
+                    dp[j + 1][0] = dp[j][1] + dp[j][0];
+                    dp[j + 1][0] %= mod;
+                }
+
             } else {
                 for (int k = 0; k <= n; ++k) {
                     if (a[j + 1].second < a[i].second || (a[j + 1].second == a[i].second && j + 1 > i)) {
@@ -74,7 +80,7 @@ int main() {
                 }
             }
         }
-        for (int j = 0; j <= n; ++j) ans += dp[n][j], ans %= mod;
+        for (int j = 0; j <= n; ++j) ans += dp[n][j] * a[i].second % mod, ans %= mod;
     }
     std::cout << ans << '\n';
 
