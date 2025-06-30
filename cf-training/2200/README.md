@@ -53,9 +53,7 @@ https://codeforces.com/problemset/problem/1543/D2 - AC
 https://codeforces.com/problemset/problem/1542/D - AC, 用时1h20min
 https://codeforces.com/problemset/problem/1537/F - AC
 https://codeforces.com/problemset/problem/1537/E2 - WA on 16
-https://codeforces.com/problemset/problem/1535/E
-https://codeforces.com/problemset/problem/1520/F2
-https://codeforces.com/problemset/problem/1505/F
+https://codeforces.com/problemset/problem/1535/E - AC
 https://codeforces.com/problemset/problem/1503/C
 https://codeforces.com/problemset/problem/1500/B
 https://codeforces.com/problemset/problem/1498/E
