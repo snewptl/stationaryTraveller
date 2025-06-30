@@ -107,7 +107,6 @@ int find_pos(int rt, int l, int r, int xl, int xr, ll val) {
         if (res) return res;
     }
     return find_pos(rt << 1 | 1, mid + 1, r, std::max(xl, mid + 1), xr, val);
-     
 }
 
 int main() {
