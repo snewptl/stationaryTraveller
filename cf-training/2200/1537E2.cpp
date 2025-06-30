@@ -28,38 +28,35 @@ int main() {
     std::cin.tie(NULL);
 
     std::cin >> n >> K >> s;
-    int flag = 1, head = 1, end = 1;
     int i = 1;
-    while (i < n && s[i] < s[0]) ++i, ++head, ++end;
     while (i < n) {
-        if (s[i] > s[0]) break; 
-        if (s[i] < s[0]) {
-            assert(false);
-        }  else { // =
-            assert(s[i] == s[0]);
-            int j = i + 1;
-            while (j < n && s[j] < s[0]) ++j;
-            int smaller = 0, bigger = 0;
-            for (int k = i + 1, t = 1; k < j, t < head; ++k, ++ t) {
-                if (s[k] < s[t]) {
-                    smaller = 1;
-                    break;
-                } else if (s[k] > s[t]) {
-                    bigger = 1;
-                    break;
-                }
-            }
-            if (!bigger && (smaller || j - i >= head)) {
-                end = j;
-            } else {
+        int j = i;
+        int smaller = 0, bigger = 0;
+        int t = 0;
+        while (j < n && t < i) {
+            if (s[t] != s[j]) {
+                if (s[t] < s[j]) bigger = 1;
+                else smaller = 1;
+                ++j;
                 break;
+            } else {
+                ++j;
+                ++t;
             }
+
+        }
+        if (smaller) {
             i = j;
+        } else if (bigger) {
+            break;
+        } else {
+            if (j - i >= i) i = j;
+            else break; 
         }
     }
 
-    for (int i = 0; i < K; ++i) {
-        std::cout << s[i % end];
+    for (int j = 0; j < K; ++j) {
+        std::cout << s[j % i];
     }
     std::cout << '\n';
 
