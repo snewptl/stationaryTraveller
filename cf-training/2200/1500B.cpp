@@ -56,15 +56,11 @@ int main() {
         if (std::abs(pos[a[i]] - i) % d != 0) continue;
         ll t1, t2;
         Exgcd(n, m, t1, t2);
-        ll times = (pos[a[i]] - i) / d;
-        t1 *= times;
-        t2 *= times;
-        t2 = -t2;
-        while (std::min(t1, t2) < 0) {
-            t1 += m / d;
-            t2 += n / d;
-        }
-        first_equal[i] = 1ll * n * t1 + i; 
+        ll times = (pos[a[i]] - i) / d; 
+        ll res = n * t1 * times + i;
+        res = (res % lcm + lcm) % lcm;
+        if (res == 0) res = lcm;
+        first_equal[i] = res; 
     }
     ll l = 1, r = 1e18, ans = 1e18;
     while (l <= r) {
@@ -80,8 +76,3 @@ int main() {
     std::cout << ans << '\n';
     return 0;
 }
-/*
-a1
-*/
-
-// 16 : 10 - 17 : 04
