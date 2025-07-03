@@ -56,8 +56,7 @@ https://codeforces.com/problemset/problem/1537/E2 - WA on 16
 https://codeforces.com/problemset/problem/1535/E - AC
 https://codeforces.com/problemset/problem/1503/C - 一个小时内没写完, 大致搞了一个单调栈 + 线段树, 看了正解之后才发现解法十分简洁, 好题
 https://codeforces.com/problemset/problem/1500/B - AC, 用时1h50min
-https://codeforces.com/problemset/problem/1498/E
-https://codeforces.com/problemset/problem/1488/E
+https://codeforces.com/problemset/problem/1498/E - AC, 用时2h. 其实是简单题, 但是在最开始的一个半小时读错了题面, 尝试看题解时才发现
 https://codeforces.com/problemset/problem/1477/C
 https://codeforces.com/problemset/problem/1474/D
 https://codeforces.com/problemset/problem/1470/D
