@@ -1,14 +1,23 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "myCodeLLDB",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
-            "cwd": "${fileDirname}",
-            "preLaunchTask": "C/C++: clang++ build active file"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "myCodeLLDB",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "cwd": "${fileDirname}",
+      "preLaunchTask": "C/C++: clang++ build active file"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/home/pinkyhead/stationaryTraveller/cf-training/2200",
+      "program": "/home/pinkyhead/stationaryTraveller/cf-training/2200/build/Debug/outDebug"
+    }
+  ]
 }
