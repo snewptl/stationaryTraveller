@@ -1,2 +1,2 @@
-i) {
-        auto [pos, num] = a[i]
+
+            last = a[i] - last;
