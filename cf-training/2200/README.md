@@ -64,7 +64,7 @@ https://codeforces.com/problemset/problem/1467/D - AC
 https://codeforces.com/problemset/problem/1461/E - WA on 83. 写了很久, 一直没找到很简洁的写法, 但是如果仔细思考, 发现分类讨论即可.
 https://codeforces.com/problemset/problem/1438/D - AC, 用时 1h10min
 https://codeforces.com/problemset/problem/1428/E - AC
-https://codeforces.com/problemset/problem/1407/D
+https://codeforces.com/problemset/problem/1407/D - AC
 https://codeforces.com/problemset/problem/1406/D
 https://codeforces.com/problemset/problem/1400/E
 https://codeforces.com/problemset/problem/1399/E2
