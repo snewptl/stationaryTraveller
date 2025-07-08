@@ -60,7 +60,7 @@ https://codeforces.com/problemset/problem/1498/E - AC, 用时2h. 其实是简单
 https://codeforces.com/problemset/problem/1477/C - AC
 https://codeforces.com/problemset/problem/1474/D - WA on 2. 好题, 看似简单但是很难写对, 出题人在题解中给出的写法很优雅
 https://codeforces.com/problemset/problem/1470/D - AC
-https://codeforces.com/problemset/problem/1467/D
+https://codeforces.com/problemset/problem/1467/D - AC 
 https://codeforces.com/problemset/problem/1461/E
 https://codeforces.com/problemset/problem/1438/D
 https://codeforces.com/problemset/problem/1428/E
