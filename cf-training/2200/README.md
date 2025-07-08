@@ -62,10 +62,22 @@ https://codeforces.com/problemset/problem/1474/D - WA on 2. 好题, 看似简单
 https://codeforces.com/problemset/problem/1470/D - AC
 https://codeforces.com/problemset/problem/1467/D - AC 
 https://codeforces.com/problemset/problem/1461/E - WA on 83. 写了很久, 一直没找到很简洁的写法, 但是如果仔细思考, 发现分类讨论即可.
-https://codeforces.com/problemset/problem/1438/D
-https://codeforces.com/problemset/problem/1428/E
-https://codeforces.com/problemset/problem/1425/E
-https://codeforces.com/problemset/problem/1415/E
+https://codeforces.com/problemset/problem/1438/D - AC, 用时 1h10min
+https://codeforces.com/problemset/problem/1428/E - AC
 https://codeforces.com/problemset/problem/1407/D
-
-
+https://codeforces.com/problemset/problem/1406/D
+https://codeforces.com/problemset/problem/1400/E
+https://codeforces.com/problemset/problem/1399/E2
+https://codeforces.com/problemset/problem/1398/E
+https://codeforces.com/problemset/problem/1389/E
+https://codeforces.com/problemset/problem/1384/B2
+https://codeforces.com/problemset/problem/1373/E
+https://codeforces.com/problemset/problem/1353/F
+https://codeforces.com/problemset/problem/1338/C
+https://codeforces.com/problemset/problem/1336/C
+https://codeforces.com/problemset/problem/1335/F
+https://codeforces.com/problemset/problem/1334/E
+https://codeforces.com/problemset/problem/1333/F
+https://codeforces.com/problemset/problem/1328/F
+https://codeforces.com/problemset/problem/1327/D
+https://codeforces.com/problemset/problem/1311/E
