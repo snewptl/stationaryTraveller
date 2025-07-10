@@ -128,7 +128,7 @@ https://codeforces.com/problemset/problem/1428/E - AC
 
 https://codeforces.com/problemset/problem/1407/D - AC
 
-https://codeforces.com/problemset/problem/1406/D
+https://codeforces.com/problemset/problem/1406/D - AC
 
 https://codeforces.com/problemset/problem/1400/E
 
