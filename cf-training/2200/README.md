@@ -130,11 +130,9 @@ https://codeforces.com/problemset/problem/1407/D - AC
 
 https://codeforces.com/problemset/problem/1406/D - AC
 
-https://codeforces.com/problemset/problem/1400/E
+https://codeforces.com/problemset/problem/1400/E - WA on 4, dp 状态很好想, 但是转移的时候写错了, 漏掉了一个情况
 
-https://codeforces.com/problemset/problem/1399/E2
-
-https://codeforces.com/problemset/problem/1398/E
+https://codeforces.com/problemset/problem/1398/E - RE on 2, 检查发现是对一个倒序排序的set进行lowerbound查询, 但是却忘记它是倒序的了, 访问了不符预期的值... 改正之后遂通过
 
 https://codeforces.com/problemset/problem/1389/E
 

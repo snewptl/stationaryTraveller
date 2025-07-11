@@ -45,27 +45,38 @@ int main() {
             dp[i][j] = 1e18;
         }
     }
-    for (int i = 0; i <= n; ++i) {
-        dp[0][i] = 0; 
-    }
+    dp[0][0] = 0;
     for (int i = 1; i <= n; ++i) {
         if (a[i] == 0) {
+            ll min = 1e18;
             for (int j = 0; j <= vec.size(); ++j) {
-                dp[i][j] = std::min(dp[i - 1][j] + inv[j], dp[i][j]);
+                min = std::min(min, dp[i - 1][j]);
             }
+            dp[i][0] = min;
             continue;
         }
         int cur = mp[a[i]];
         int pre = a[i - 1] ? mp[a[i - 1]] : 0;
-        for (int j = 0; j <= cur; ++j) {
-            dp[i][j] = dp[i - 1][j] + (j < cur);
-        }
-        for (int j = cur + 1; j <= vec.size(); ++j) {
-            dp[i][j] = 
+        ll min = 1e18;
+        if (pre >= cur) {
+            for (int j = pre; j >= cur; --j) {
+                min = std::min(dp[i - 1][j], min);
+            }
+            dp[i][cur] = min;
+            for (int j = cur - 1; j >= 0; --j) {
+                dp[i][j] = dp[i -  1][j] + 1;
+            }
+        } else {
+            for (int j = 0; j <= pre; ++j) {
+                dp[i][j] = dp[i - 1][j] + 1;
+            }
+            for (int j = pre + 1; j <= cur; ++j) {
+                dp[i][j] = dp[i - 1][pre] + inv[j] - inv[pre] + (j < cur);
+            }
         }
     }
     ll ans = 1e18;
-    for (int i = 0; i <= vec.size(); ++i) ans = std::min(ans, dp[n][i] + inv[i] + (i < mp[a[n]]));
+    for (int i = 0; i <= vec.size(); ++i) ans = std::min(ans, dp[n][i]);
     std::cout << ans << '\n';
 
     return 0;
