@@ -134,19 +134,13 @@ https://codeforces.com/problemset/problem/1400/E - WA on 4, dp 状态很好想, 
 
 https://codeforces.com/problemset/problem/1398/E - RE on 2, 检查发现是对一个倒序排序的set进行lowerbound查询, 但是却忘记它是倒序的了, 访问了不符预期的值... 改正之后遂通过
 
-https://codeforces.com/problemset/problem/1389/E
-
-https://codeforces.com/problemset/problem/1384/B2
+https://codeforces.com/problemset/problem/1389/E - AC
 
 https://codeforces.com/problemset/problem/1373/E
-
-https://codeforces.com/problemset/problem/1353/F
 
 https://codeforces.com/problemset/problem/1338/C
 
 https://codeforces.com/problemset/problem/1336/C
-
-https://codeforces.com/problemset/problem/1335/F
 
 https://codeforces.com/problemset/problem/1334/E
 
