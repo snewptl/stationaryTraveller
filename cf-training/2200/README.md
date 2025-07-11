@@ -13,8 +13,7 @@ https://codeforces.com/problemset/problem/1967/B2 - AC, 用时一个半小时
 
 https://codeforces.com/problemset/problem/1954/E - AC
 
-https://codeforces.com/problemset/problem/1909/F1 - 未做出, 花了一小时想了个结论发现过不了样
-例,最后放弃. 题解的做法很有启发性, 好题, 值得收藏
+https://codeforces.com/problemset/problem/1909/F1 - 未做出, 花了一小时想了个结论发现过不了样例,最后放弃. 题解的做法很有启发性, 好题, 值得收藏
 
 <!-- bonus https://codeforces.com/contest/1909/problem/F2 - AC -->
 https://codeforces.com/problemset/problem/1901/E - AC,犯了个很愚蠢的小错误,调了很久,总共耗时两小时
@@ -128,27 +127,19 @@ https://codeforces.com/problemset/problem/1428/E - AC
 
 https://codeforces.com/problemset/problem/1407/D - AC
 
-https://codeforces.com/problemset/problem/1406/D
+https://codeforces.com/problemset/problem/1406/D - AC
 
-https://codeforces.com/problemset/problem/1400/E
+https://codeforces.com/problemset/problem/1400/E - WA on 4, dp 状态很好想, 但是转移的时候写错了, 漏掉了一个情况
 
-https://codeforces.com/problemset/problem/1399/E2
+https://codeforces.com/problemset/problem/1398/E - RE on 2, 检查发现是对一个倒序排序的set进行lowerbound查询, 但是却忘记它是倒序的了, 访问了不符预期的值... 改正之后遂通过
 
-https://codeforces.com/problemset/problem/1398/E
+https://codeforces.com/problemset/problem/1389/E - AC
 
-https://codeforces.com/problemset/problem/1389/E
-
-https://codeforces.com/problemset/problem/1384/B2
-
-https://codeforces.com/problemset/problem/1373/E
-
-https://codeforces.com/problemset/problem/1353/F
+https://codeforces.com/problemset/problem/1373/E - AC
 
 https://codeforces.com/problemset/problem/1338/C
 
 https://codeforces.com/problemset/problem/1336/C
-
-https://codeforces.com/problemset/problem/1335/F
 
 https://codeforces.com/problemset/problem/1334/E
 
