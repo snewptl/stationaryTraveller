@@ -137,7 +137,7 @@ https://codeforces.com/problemset/problem/1389/E - AC
 
 https://codeforces.com/problemset/problem/1373/E - AC
 
-https://codeforces.com/problemset/problem/1338/C
+https://codeforces.com/problemset/problem/1338/C - AC, 用时1h20min, 好题
 
 https://codeforces.com/problemset/problem/1336/C
 
