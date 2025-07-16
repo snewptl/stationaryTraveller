@@ -141,12 +141,9 @@ https://codeforces.com/problemset/problem/1338/C - AC, 用时1h20min, 好题
 
 https://codeforces.com/problemset/problem/1336/C - 未做出, 十分有趣的dp, 好题. 
 
-https://codeforces.com/problemset/problem/1334/E
+https://codeforces.com/problemset/problem/1334/E - 未做出, 做法其实很简单, 但是没有意识到 x, y 都是 D 的因子, 算错复杂度了
 
-https://codeforces.com/problemset/problem/1333/F
-
-https://codeforces.com/problemset/problem/1328/F
+https://codeforces.com/problemset/problem/1333/F - 
 
 https://codeforces.com/problemset/problem/1327/D
 
-https://codeforces.com/problemset/problem/1311/E
