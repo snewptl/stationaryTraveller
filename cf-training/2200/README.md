@@ -139,7 +139,7 @@ https://codeforces.com/problemset/problem/1373/E - AC
 
 https://codeforces.com/problemset/problem/1338/C - AC, 用时1h20min, 好题
 
-https://codeforces.com/problemset/problem/1336/C
+https://codeforces.com/problemset/problem/1336/C - 未做出, 十分有趣的dp, 好题. 
 
 https://codeforces.com/problemset/problem/1334/E
 

@@ -6,6 +6,7 @@
 #include <queue>
 #include <vector>
 #include <assert.h>
+#include <memory.h>
 #include <cmath>
 #define all(x) x.begin(), x.end()
 typedef long long ll;
@@ -18,20 +19,38 @@ const int maxn = 3e3 + 5;
 const ll mod = 998244353;
 int n, m;
 std::string s, t;
-int trans[maxn][26];
-ll dp[maxn][maxn];
-std::vector<int> prefix_function(std::string s) {
-    int n = (int)s.length();
-    std::vector<int> pi(n);
-    for (int i = 1; i < n; i++) {
-        int j = pi[i - 1];
-        while (j > 0 && s[i] != s[j])
-            j = pi[j - 1];
-        if (s[i] == s[j])
-            j++;
-        pi[i] = j;
+ll dp[2][maxn][maxn];
+void dfs(int idx, int l, int flag) {
+    if (dp[flag][idx][l] != -1) return;
+    dp[flag][idx][l] = 0;
+    if (idx == 0) {
+        dp[flag][idx][l] = 1;
+        return;
     }
-    return pi;
+    if (l == m) {
+        dfs(idx - 1, l, flag);
+        dp[flag][idx][l] = dp[flag][idx - 1][l] * 2;
+        dp[flag][idx][l] %= mod;
+        return;
+    }
+    if (s[idx - 1] == t[l]) {
+        dfs(idx - 1, l + 1, flag);
+        dp[flag][idx][l] += dp[flag][idx - 1][l + 1];
+        dp[flag][idx][l] %= mod;
+    }
+    if (!flag && s[idx - 1] == t[l + idx - 1]) {
+        assert(l + idx - 1 < m);
+        dfs(idx - 1, l, 0);
+        dp[flag][idx][l] += dp[0][idx - 1][l];
+        dp[flag][idx][l] %= mod;
+    } 
+    if (flag) {
+        int new_flag = (idx - 1) > (m - l);
+        dfs(idx - 1, l, new_flag);
+        dp[flag][idx][l] += dp[new_flag][idx - 1][l];
+        dp[flag][idx][l] %= mod;
+    }
+
 }
 int main() {
     #ifndef ONLINE_JUDGE
@@ -44,36 +63,13 @@ int main() {
     std::cin >> s >> t;
     n = s.size();
     m = t.size();
-    std::reverse(all(t));
-    std::vector<int> vec = prefix_function(t);
-    for (int i = 0; i <= m; ++i) {
-        for (int j = 0; j < 26; ++j) {
-            if (i == 0) {
-                if (t[0] != j + 'a') trans[i][j] = 0;
-                else trans[i][j] = 1;
-                continue;
-            }
-            int cur = i;
-            if (cur == m) cur = vec[m - 1];
-            while (cur && j + 'a' != t[cur]) {
-                cur = vec[cur];
-            }
-            if (j + 'a' != t[cur]) trans[i][j] = cur;
-            else trans[i][j] = cur + 1;
-        }
-    }
-    dp[0][0] = 1;
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j <= m; ++j) {
-            dp[i + 1][trans[j][s[i] - 'a']] += dp[i][j];
-            dp[i + 1][j] = dp[i][j];
-            dp[i + 1][trans[j][s[i] - 'a']] %= mod;
-            dp[i + 1][j] %= mod;
-        }
-    }
+    memset(dp, -1, sizeof(dp));
     ll ans = 0;
-    for (int i = 1; i <= n; ++i) ans += dp[i][m], ans %= mod;
+    for (int i = m; i <= n; ++i) {
+        dfs(i, 0, m != i);
+        ans += dp[m != i][i][0];
+        ans %= mod;
+    }
     std::cout << ans << '\n';
     return 0;
 }
-// 15 : 00 - 15 : 45
