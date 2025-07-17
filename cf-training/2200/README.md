@@ -143,7 +143,32 @@ https://codeforces.com/problemset/problem/1336/C - 未做出, 十分有趣的dp,
 
 https://codeforces.com/problemset/problem/1334/E - 未做出, 做法其实很简单, 但是没有意识到 x, y 都是 D 的因子, 算错复杂度了
 
-https://codeforces.com/problemset/problem/1333/F - 
+https://codeforces.com/problemset/problem/1333/F - AC
 
-https://codeforces.com/problemset/problem/1327/D
+https://codeforces.com/problemset/problem/1327/D - AC, 好题
 
+https://codeforces.com/problemset/problem/1305/E - AC
+
+https://codeforces.com/problemset/problem/1303/E
+
+https://codeforces.com/problemset/problem/1295/E
+
+https://codeforces.com/problemset/problem/1283/F
+
+https://codeforces.com/problemset/problem/1278/E
+
+https://codeforces.com/problemset/problem/1272/F
+
+https://codeforces.com/problemset/problem/1253/E
+
+https://codeforces.com/problemset/problem/1252/E
+
+https://codeforces.com/problemset/problem/1249/F
+
+https://codeforces.com/problemset/problem/1238/F
+
+https://codeforces.com/problemset/problem/1238/E
+
+https://codeforces.com/problemset/problem/1234/F
+
+https://codeforces.com/problemset/problem/1231/E
