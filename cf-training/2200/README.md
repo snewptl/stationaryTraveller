@@ -149,26 +149,4 @@ https://codeforces.com/problemset/problem/1327/D - AC, 好题
 
 https://codeforces.com/problemset/problem/1305/E - AC
 
-https://codeforces.com/problemset/problem/1303/E
-
-https://codeforces.com/problemset/problem/1295/E
-
-https://codeforces.com/problemset/problem/1283/F
-
-https://codeforces.com/problemset/problem/1278/E
-
-https://codeforces.com/problemset/problem/1272/F
-
-https://codeforces.com/problemset/problem/1253/E
-
-https://codeforces.com/problemset/problem/1252/E
-
-https://codeforces.com/problemset/problem/1249/F
-
-https://codeforces.com/problemset/problem/1238/F
-
-https://codeforces.com/problemset/problem/1238/E
-
-https://codeforces.com/problemset/problem/1234/F
-
-https://codeforces.com/problemset/problem/1231/E
+https://codeforces.com/problemset/problem/1303/E - AC
