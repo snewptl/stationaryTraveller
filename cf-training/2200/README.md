@@ -105,6 +105,8 @@ https://codeforces.com/problemset/problem/1537/E2 - WA on 16
 
 https://codeforces.com/problemset/problem/1535/E - AC
 
+# 2025 年 7 月
+
 https://codeforces.com/problemset/problem/1503/C - 一个小时内没写完, 大致搞了一个单调栈 + 线段树, 看了正解之后才发现解法十分简洁, 好题
 
 https://codeforces.com/problemset/problem/1500/B - AC, 用时1h50min
