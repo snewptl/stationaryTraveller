@@ -1,8 +1,8 @@
 # 2025 年 7 月 17 日起
 
-https://codeforces.com/problemset/problem/2120/E
+https://codeforces.com/problemset/problem/2120/E - 未做出, 实现了半天发现想假了...
 
-https://codeforces.com/problemset/problem/2107/F1
+https://codeforces.com/problemset/problem/2107/F1 - AC
 
 https://codeforces.com/problemset/problem/2097/B
 
