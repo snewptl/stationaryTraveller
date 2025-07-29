@@ -8,7 +8,7 @@ https://codeforces.com/problemset/problem/2097/B - AC, 但是用了三个半小�
 
 https://codeforces.com/problemset/problem/2089/B2 - 未做出, 画蛇添足地想转化问题的形态, 但是其实直接分析问题本身就好
 
-https://codeforces.com/problemset/problem/2077/C
+https://codeforces.com/problemset/problem/2077/C - 未做出，好题
 
 https://codeforces.com/problemset/problem/2069/E
 
