@@ -10,11 +10,11 @@ https://codeforces.com/problemset/problem/2089/B2 - 未做出, 画蛇添足地�
 
 https://codeforces.com/problemset/problem/2077/C - 未做出，好题
 
-https://codeforces.com/problemset/problem/2069/E
+https://codeforces.com/problemset/problem/2069/E - AC, 用时 1h5min
 
-https://codeforces.com/problemset/problem/2066/C
+https://codeforces.com/problemset/problem/2066/C - AC
 
-https://codeforces.com/problemset/problem/2063/E
+https://codeforces.com/problemset/problem/2063/E - WA on 2, 且用时 1h15min. debug时发现是因为当一个节点有大于等于三个孩子时转移会出错，改正后通过
 
 https://codeforces.com/problemset/problem/2057/E1
 
