@@ -16,9 +16,9 @@ https://codeforces.com/problemset/problem/2066/C - AC
 
 https://codeforces.com/problemset/problem/2063/E - WA on 2, 且用时 1h15min. debug时发现是因为当一个节点有大于等于三个孩子时转移会出错，改正后通过
 
-https://codeforces.com/problemset/problem/2057/E1
+https://codeforces.com/problemset/problem/2057/E1 - TLE on 5, 且用时 1h30min，不过算出来复杂度应该没问题。。。也许是常数太大了
 
-https://codeforces.com/problemset/problem/2043/E
+https://codeforces.com/problemset/problem/2043/E - AC
 
 https://codeforces.com/problemset/problem/2035/E
 
