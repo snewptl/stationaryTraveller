@@ -20,9 +20,9 @@ https://codeforces.com/problemset/problem/2057/E1 - TLE on 5, 且用时 1h30min�
 
 https://codeforces.com/problemset/problem/2043/E - AC
 
-https://codeforces.com/problemset/problem/2035/E
+https://codeforces.com/problemset/problem/2035/E - WA on 7, 看正解之后发现是想假了, 好题
 
-https://codeforces.com/problemset/problem/2028/E
+https://codeforces.com/problemset/problem/2028/E - AC
 
 https://codeforces.com/problemset/problem/2021/E1
 
