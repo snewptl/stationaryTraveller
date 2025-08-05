@@ -26,9 +26,9 @@ https://codeforces.com/problemset/problem/2035/E - WA on 7, 看正解之后发�
 
 https://codeforces.com/problemset/problem/2028/E - AC
 
-https://codeforces.com/problemset/problem/2021/E1
+https://codeforces.com/problemset/problem/2021/E1 - AC, 用时 1h20min
 
-https://codeforces.com/problemset/problem/2006/C
+https://codeforces.com/problemset/problem/2006/C - 未做出，好题
 
 https://codeforces.com/problemset/problem/2002/E
 
