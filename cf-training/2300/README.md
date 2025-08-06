@@ -30,11 +30,11 @@ https://codeforces.com/problemset/problem/2021/E1 - AC, 用时 1h20min
 
 https://codeforces.com/problemset/problem/2006/C - 未做出，好题
 
-https://codeforces.com/problemset/problem/2002/E
+https://codeforces.com/problemset/problem/2002/E - 未做出, 好题
 
-https://codeforces.com/problemset/problem/2002/D2
+https://codeforces.com/problemset/problem/2002/D2 - WA on 2, 且用时 1h15min，思路正确, 实现出错
 
-https://codeforces.com/problemset/problem/1995/D
+https://codeforces.com/problemset/problem/1995/D - 未做出，好题 
 
 https://codeforces.com/problemset/problem/1988/E
 
