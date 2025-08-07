@@ -36,8 +36,8 @@ https://codeforces.com/problemset/problem/2002/D2 - WA on 2, 且用时 1h15min�
 
 https://codeforces.com/problemset/problem/1995/D - 未做出，好题 
 
-https://codeforces.com/problemset/problem/1988/E - 未做出，笛卡尔树可以做到O（N），评论区中发现另一种 nlogn 的方法，很巧妙。 代码在https://codeforces.com/contest/1988/submission/270718477， 出处为 https://codeforces.com/blog/entry/131567?#comment-1171054
+https://codeforces.com/problemset/problem/1988/E - 未做出，题解通过笛卡尔树可以做到O（N），题解的评论区中发现另一种 nlogn 的方法，很巧妙。 代码在https://codeforces.com/contest/1988/submission/270718477， 出处为 https://codeforces.com/blog/entry/131567?#comment-1171054
 
-https://codeforces.com/problemset/problem/1983/E
+https://codeforces.com/problemset/problem/1983/E - AC
 
 https://codeforces.com/problemset/problem/1967/C
