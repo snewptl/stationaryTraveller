@@ -54,7 +54,7 @@ https://codeforces.com/problemset/problem/1929/E - AC, 用时1h05min，有趣的
 
 https://codeforces.com/problemset/problem/1919/F1 - 未做出
 
-https://codeforces.com/problemset/problem/1917/D - AC, 用时4h。很夸张的一个div2D，光想做法就想了一小时，前前后后写了几版代码，最后总共实现了3h才通过。
+https://codeforces.com/problemset/problem/1917/D - AC, 用时4h。很夸张的一个div2D，光想做法就想了两小时 ~~前一个小时看错题了~~，前前后后写了几版代码，最后总共实现了2h才通过
 
 https://codeforces.com/problemset/problem/1916/E
 
@@ -62,3 +62,60 @@ https://codeforces.com/problemset/problem/1895/E
 
 https://codeforces.com/problemset/problem/1874/C
 
+https://codeforces.com/problemset/problem/1870/E
+
+https://codeforces.com/problemset/problem/1866/D
+
+https://codeforces.com/problemset/problem/1864/F
+
+https://codeforces.com/problemset/problem/1861/E
+
+https://codeforces.com/problemset/problem/1849/E
+
+https://codeforces.com/problemset/problem/1842/E
+
+https://codeforces.com/problemset/problem/1824/B2
+
+https://codeforces.com/problemset/problem/1814/E
+
+https://codeforces.com/problemset/problem/1805/E
+
+https://codeforces.com/problemset/problem/1799/E
+
+https://codeforces.com/problemset/problem/1783/E
+
+https://codeforces.com/problemset/problem/1781/E
+
+https://codeforces.com/problemset/problem/1780/F
+
+https://codeforces.com/problemset/problem/1769/D3
+
+https://codeforces.com/problemset/problem/1768/E
+
+https://codeforces.com/problemset/problem/1748/E
+
+https://codeforces.com/problemset/problem/1743/F
+
+https://codeforces.com/problemset/problem/1738/E
+
+https://codeforces.com/problemset/problem/1712/E1
+
+https://codeforces.com/problemset/problem/1706/E
+
+https://codeforces.com/problemset/problem/1705/E
+
+https://codeforces.com/problemset/problem/1698/E
+
+https://codeforces.com/problemset/problem/1695/D2
+
+https://codeforces.com/problemset/problem/1658/D2
+
+https://codeforces.com/problemset/problem/1654/E
+
+https://codeforces.com/problemset/problem/1628/C
+
+https://codeforces.com/problemset/problem/1625/D
+
+https://codeforces.com/problemset/problem/1623/D
+
+https://codeforces.com/problemset/problem/1621/E
