@@ -54,7 +54,7 @@ https://codeforces.com/problemset/problem/1929/E - AC, 用时1h05min，有趣的
 
 https://codeforces.com/problemset/problem/1919/F1 - 未做出
 
-https://codeforces.com/problemset/problem/1917/D
+https://codeforces.com/problemset/problem/1917/D - AC, 用时4h。很夸张的一个div2D，光想做法就想了一小时，前前后后写了几版代码，最后总共实现了3h才通过。
 
 https://codeforces.com/problemset/problem/1916/E
 

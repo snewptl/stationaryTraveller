@@ -31,7 +31,7 @@ ll merge_sort(std::vector<ll>& vec, int l, int r) {
     int i, j, cur = l;
     for (i = l, j = mid + 1; i <= mid && j <= r;) {
         if (vec[i] < vec[j]) temp[cur++] = vec[i], ++i;
-        else temp[cur++] = vec[j], res += mid - l + 1, ++j;
+        else temp[cur++] = vec[j], res += mid - i + 1, ++j;
     }
     while (i <= mid) temp[cur++] = vec[i], ++i;
     while (j <= r) temp[cur++] = vec[j], ++j;
@@ -85,7 +85,7 @@ int main() {
             for (int j = times + 1; j < 20; ++j) {
                 ans += count[j] * K % mod * K % mod;
                 ans %= mod; 
-                ll len = K - 1 - (j - times + 1) + 1;
+                ll len = K - 1 - (j - times) + 1;
                 if (len <= 0) continue;
                 ans -= count[j] * ((len + 1) * len / 2 % mod) % mod;
                 ans %= mod;
@@ -123,6 +123,7 @@ int main() {
             for (int j = 0; j < n; ++j) {
                 int delta = i - ind[j];
                 if (delta >= 0 && K - 1 >= delta) {
+                    delta = 30 - ind[j];
                     even.push_back(p[j] * (1 << delta));
                 }
             }
