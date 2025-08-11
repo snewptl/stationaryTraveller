@@ -58,7 +58,7 @@ https://codeforces.com/problemset/problem/1917/D - AC, 用时4h。很夸张的�
 
 https://codeforces.com/problemset/problem/1916/E - AC, 用时2h30min。写了162行，还以为做复杂了，因为我觉得这种做法再怎么样也不可能一小时写完。但是查看题解发现它其实也是用的类似的方法，看来代码能力还有待加强。
 
-https://codeforces.com/problemset/problem/1895/E
+https://codeforces.com/problemset/problem/1895/E - AC
 
 https://codeforces.com/problemset/problem/1874/C
 
