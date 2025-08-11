@@ -1,2 +1,2 @@
-os_x], node_y = a[pos_y];
-            if (fa[node_x]) 
+
+        T::add(1, 1, count, it->first, it->se
