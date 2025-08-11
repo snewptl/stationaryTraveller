@@ -40,4 +40,25 @@ https://codeforces.com/problemset/problem/1988/E - 未做出，题解通过笛�
 
 https://codeforces.com/problemset/problem/1983/E - AC
 
-https://codeforces.com/problemset/problem/1967/C
+https://codeforces.com/problemset/problem/1967/C - 未做出，好题
+
+https://codeforces.com/problemset/problem/1965/C - WA on 2, 想假了, 好题. 题解使用简单的方法就模拟出了折纸的过程, 非常巧妙
+
+https://codeforces.com/problemset/problem/1943/C - WA on 2, 想假了， 好题
+
+https://codeforces.com/problemset/problem/1942/E - AC
+
+https://codeforces.com/problemset/problem/1929/F - AC, 水题
+
+https://codeforces.com/problemset/problem/1929/E - AC, 用时1h05min，有趣的是我的做法基于贪心和lca，和正解（基于状压dp）大相径庭，且实现起来麻烦很多，后面做题需要注意找到简便方法
+
+https://codeforces.com/problemset/problem/1919/F1 - 未做出
+
+https://codeforces.com/problemset/problem/1917/D
+
+https://codeforces.com/problemset/problem/1916/E
+
+https://codeforces.com/problemset/problem/1895/E
+
+https://codeforces.com/problemset/problem/1874/C
+
