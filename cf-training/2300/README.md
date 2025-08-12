@@ -60,7 +60,7 @@ https://codeforces.com/problemset/problem/1916/E - AC, 用时2h30min。写了162
 
 https://codeforces.com/problemset/problem/1895/E - AC
 
-https://codeforces.com/problemset/problem/1874/C
+https://codeforces.com/problemset/problem/1874/C - WA on 3, 对于每个节点的系数序列本以为需要 n^2 计算，总的复杂度就爆了，于是猜了个结论wa掉了。看题解才意识到可以提前预处理
 
 https://codeforces.com/problemset/problem/1870/E
 
