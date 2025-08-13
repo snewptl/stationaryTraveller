@@ -56,15 +56,13 @@ https://codeforces.com/problemset/problem/1919/F1 - 未做出
 
 https://codeforces.com/problemset/problem/1917/D - AC, 用时4h。很夸张的一个div2D，光想做法就想了两小时 ~~前一个小时看错题了~~，前前后后写了几版代码，最后总共实现了2h才通过
 
-https://codeforces.com/problemset/problem/1916/E - AC, 用时2h30min。写了162行，还以为做复杂了，因为我觉得这种做法再怎么样也不可能一小时写完。但是查看题解发现它其实也是用的类似的方法，看来代码能力还有待加强。
+https://codeforces.com/problemset/problem/1916/E - AC, 用时2h30min。写了162行，还以为做复杂了，因为我觉得这种做法再怎么样也不可能一小时写完。但是查看题解发现它其实也是用的类似的方法，而且甚至tourist十几分钟就通过了这道题。。。看来代码能力还有待加强。
 
 https://codeforces.com/problemset/problem/1895/E - AC
 
 https://codeforces.com/problemset/problem/1874/C - WA on 3, 对于每个节点的系数序列本以为需要 n^2 计算，总的复杂度就爆了，于是猜了个结论wa掉了。看题解才意识到可以提前预处理
 
-https://codeforces.com/problemset/problem/1870/E
-
-https://codeforces.com/problemset/problem/1866/D
+https://codeforces.com/problemset/problem/1870/E - 未做出，好题
 
 https://codeforces.com/problemset/problem/1864/F
 

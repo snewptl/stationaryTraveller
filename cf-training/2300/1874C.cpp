@@ -15,13 +15,13 @@ typedef std::pair<ll, int> pli;
 typedef std::pair<ll, ll> pll;
 typedef double db;
 typedef long double ldb;
-const int maxn = 2e5 + 5;
+const int maxn = 5e3 + 5;
 const ll mod = 998244353;
 int n, m;
 std::vector<std::vector<int>> e;
 std::vector<std::vector<double>> vec;
 int deg[maxn];
-double dp[maxn];
+double dp[maxn], g[maxn][maxn];
 void bfs() {
     std::queue<int> q;
     for (int i = 1; i <= n; ++i) {
@@ -34,20 +34,9 @@ void bfs() {
         if (p != n) {
             std::sort(all(vec[p]));
             std::reverse(all(vec[p]));
-            double len = vec[p].size();
             double res = 0;
-            if (vec[p].size() == 2) {
-                res += 1.0 / len * vec[p][0];
-            }
-            else if (vec[p].size() % 2 == 1) {
-                for (int i = 0; i < len; ++i) {
-                    res += 1.0 / len * vec[p][i];
-                }
-            } else {
-                for (int i = 0; i < len - 2; ++i) {
-                    res += 1.0 / len * vec[p][i];
-                }
-                if (len >= 2) res += 1.0 / len / 2 * vec[p][len - 2];
+            for (int i = 0; i < vec[p].size(); ++i) {
+                res += vec[p][i] * g[vec[p].size()][i + 1];
             }
             dp[p] = res;
         }
@@ -68,6 +57,13 @@ int main() {
     // std::ios::sync_with_stdio(false);
     // std::cin.tie(NULL);
 
+    g[1][1] = 1;
+    for (int i = 2; i <= 5e3; ++i) {
+        g[i][1] = 1.0 / i;
+        for (int j = 2; j <= i; ++j) {
+            g[i][j] = g[i - 2][j - 2] * (j - 2) / i + g[i - 2][j - 1] * (i - j) / i;
+        }
+    }
     int T = 1;
     std::cin >> T;
     while (T--) {
