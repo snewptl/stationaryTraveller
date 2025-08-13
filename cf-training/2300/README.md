@@ -66,7 +66,7 @@ https://codeforces.com/problemset/problem/1870/E
 
 https://codeforces.com/problemset/problem/1866/D
 
-https://codeforces.com/problemset/problem/1864/F
+https://codeforces.com/problemset/problem/1864/F - 未做出，好题（？）。也许是很常见的套路，不过之前没见过，补题的时候写了很久。。。
 
 https://codeforces.com/problemset/problem/1861/E
 

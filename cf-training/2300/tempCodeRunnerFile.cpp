@@ -1,2 +1,2 @@
-i) {
-                    res += 1.0 / len * vec[p][
+
+        for (int i = 1; i <= q; ++i) {
