@@ -68,7 +68,7 @@ https://codeforces.com/problemset/problem/1864/F - 未做出，好题（？）�
 
 https://codeforces.com/problemset/problem/1861/E - AC
 
-https://codeforces.com/problemset/problem/1849/E
+https://codeforces.com/problemset/problem/1849/E - AC，用时 2h
 
 https://codeforces.com/problemset/problem/1842/E
 
