@@ -1,2 +1,2 @@
 
-        for (int i = 1; i <= q; ++i) {
+    std::cin >> n >> k;
