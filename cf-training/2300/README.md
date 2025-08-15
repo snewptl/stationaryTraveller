@@ -70,11 +70,11 @@ https://codeforces.com/problemset/problem/1861/E - AC
 
 https://codeforces.com/problemset/problem/1849/E - AC，用时 2h
 
-https://codeforces.com/problemset/problem/1842/E
+https://codeforces.com/problemset/problem/1842/E - 未做出，好题
 
-https://codeforces.com/problemset/problem/1824/B2
+https://codeforces.com/problemset/problem/1824/B2 - AC, 用时 1h30min，好题。猜了一个方法，没想到AC了，在AC之后几分钟才反应过来为什么是对的，乐:)
 
-https://codeforces.com/problemset/problem/1814/E
+https://codeforces.com/problemset/problem/1814/E - AC, 用时1h30min
 
 https://codeforces.com/problemset/problem/1805/E
 
