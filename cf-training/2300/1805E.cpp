@@ -116,8 +116,8 @@ int main() {
                 } else {
                     temp.push_back({vec[1], vec[0]});
                 }
-                int lower_top = dep[temp[0].first] > dep[path[0].first] ? temp[0].first : path[0].first;
-                int higher_top = dep[temp[0].first] < dep[path[0].first] ? temp[0].first : path[0].first;
+                int lower_top = dep[temp[0].first], higher_top = path[0].first;
+                if (dep[lower_top] < dep[higher_top]) std::swap(lower_top, higher_top);
                 if (lca(temp[0].first, path[0].first) != higher_top) {
                     for (int i = 1; i < n; ++i) {
                         if (!ans[i]) ans[i] = val;
@@ -126,9 +126,9 @@ int main() {
                 }
                 for (auto [top_x, x] : path) {
                     for (auto [top_y, y] : temp) {
-                        if (lca(x, y) == x && dep[lower_top] <= dep[x]) {
+                        if (lca(x, y) == x && dep[lower_top] < dep[x]) {
                             res.push_back({lower_top, x});
-                        } else if (lca(x, y) == y && dep[lower_top] <= dep[y]) {
+                        } else if (lca(x, y) == y && dep[lower_top] < dep[y]) {
                             res.push_back({lower_top, y});
                         }
                     }
@@ -150,16 +150,10 @@ int main() {
                             ans[ind[cur]] = val;
                             cur = fa[cur][0];
                         } else {
-                            break;
+                            cur = lower_top;
                         }
                     }
                 } 
-                int cur = lower_top;
-                while (cur != higher_top) {
-                    if (!ans[ind[cur]]) ans[ind[cur]] = val;
-                    cur = fa[cur][0];
-                }
-
                 path = res;
             }
             last = val;
