@@ -116,7 +116,7 @@ int main() {
                 } else {
                     temp.push_back({vec[1], vec[0]});
                 }
-                int lower_top = dep[temp[0].first], higher_top = path[0].first;
+                int lower_top = temp[0].first, higher_top = path[0].first;
                 if (dep[lower_top] < dep[higher_top]) std::swap(lower_top, higher_top);
                 if (lca(temp[0].first, path[0].first) != higher_top) {
                     for (int i = 1; i < n; ++i) {
@@ -126,13 +126,29 @@ int main() {
                 }
                 for (auto [top_x, x] : path) {
                     for (auto [top_y, y] : temp) {
-                        if (lca(x, y) == x && dep[lower_top] < dep[x]) {
-                            res.push_back({lower_top, x});
-                        } else if (lca(x, y) == y && dep[lower_top] < dep[y]) {
-                            res.push_back({lower_top, y});
+                        if (dep[lca(x, y)] > dep[lower_top]) {
+                            res.push_back({lower_top, lca(x, y)});
                         }
                     }
                 }
+                // if (val == 271550471) {
+                //     for (auto [top_x, x] : path) {
+                //         std::cout << top_x << ' ' << x << "# ";
+                //     }
+                //     std::cout << "* ";                    
+                //     for (auto [top_x, x] : temp) {
+                //         std::cout << top_x << ' ' << x << "# ";
+                //     }
+                //     std::cout << "** ";  
+                //     for (auto [top_x, x] : res) {
+                //         std::cout << top_x << ' ' << x << "# ";
+                //     }
+                // }
+                // assert(res.size() <= 2);
+                // sort(all(res));
+                // int pre = res.size();
+                // res.resize(std::unique(all(res)) - res.begin());
+                // assert(pre == res.size());
                 if (res.empty()) {
                     for (int i = 1; i < n; ++i) {
                         if (!ans[i]) ans[i] = val;
@@ -158,11 +174,11 @@ int main() {
             }
             last = val;
         } else if (vec.size() > 2) {
-            fin = val;
+            for (int i = 1; i < n; ++i) if (!ans[i]) ans[i] = val;
             break;
         }
     }
-    for (int i = 1; i < n; ++i) if (!ans[i]) ans[i] = fin;
+    
     for (int i = 1; i < n; ++i) {
         std::cout << ans[i] << '\n';
     }
