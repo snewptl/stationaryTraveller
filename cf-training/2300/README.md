@@ -88,7 +88,7 @@ https://codeforces.com/problemset/problem/1768/E - AC
 
 https://codeforces.com/problemset/problem/1748/E - AC
 
-https://codeforces.com/problemset/problem/1743/F
+https://codeforces.com/problemset/problem/1743/F - AC
 
 https://codeforces.com/problemset/problem/1738/E
 
