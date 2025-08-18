@@ -78,19 +78,15 @@ https://codeforces.com/problemset/problem/1814/E - AC, 用时1h30min
 
 https://codeforces.com/problemset/problem/1805/E - 用时 1h30min，且 WA on 16, 实现出错，改正后通过
 
-https://codeforces.com/problemset/problem/1799/E - 用时 2h，且 WA on 3
+https://codeforces.com/problemset/problem/1799/E - 用时 2h，且 WA on 3, 实现出错，改正后通过
 
-https://codeforces.com/problemset/problem/1783/E
+https://codeforces.com/problemset/problem/1783/E - TLE on 22, 好题
 
-https://codeforces.com/problemset/problem/1781/E
+https://codeforces.com/problemset/problem/1780/F - AC
 
-https://codeforces.com/problemset/problem/1780/F
+https://codeforces.com/problemset/problem/1768/E - AC
 
-https://codeforces.com/problemset/problem/1769/D3
-
-https://codeforces.com/problemset/problem/1768/E
-
-https://codeforces.com/problemset/problem/1748/E
+https://codeforces.com/problemset/problem/1748/E - AC
 
 https://codeforces.com/problemset/problem/1743/F
 
