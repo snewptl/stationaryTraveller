@@ -90,9 +90,11 @@ https://codeforces.com/problemset/problem/1748/E - AC
 
 https://codeforces.com/problemset/problem/1743/F - AC
 
-https://codeforces.com/problemset/problem/1738/E
+> 虽然已凑齐四连 AC，但是鉴于之前的题目通过率不高，于是额外再增加一些
 
-https://codeforces.com/problemset/problem/1712/E1
+https://codeforces.com/problemset/problem/1738/E - AC, 用时 2h
+
+https://codeforces.com/problemset/problem/1712/E1 - 未做出，需要知道一个因数数量平方和的结论
 
 https://codeforces.com/problemset/problem/1706/E
 
