@@ -15,17 +15,50 @@ typedef std::pair<ll, int> pli;
 typedef std::pair<ll, ll> pll;
 typedef double db;
 typedef long double ldb;
-const int maxn = 2e5 + 5;
+const int maxn = 3e5 + 5;
 const ll mod = 998244353;
 int l, r, n;
 int a[maxn];
-int p2[maxn];
-int ori[20], modi[20];
-std::vector<int> vec;
-int ans[20];
-int prefix[maxn];
+std::vector<pii> seg;
 bool is_out(int x) {
     return x > r || x < l;
+}
+void dfs(int bit, int val, int x, int ori) {
+    if (bit < 0) {
+        return;
+    }
+    x ^= (1 << bit) & ori;
+    if ((val | ((1 << bit) - 1)) >= l) {
+        if (!is_out(val) && !is_out(val | ((1 << bit) - 1))) {
+            seg.push_back({x, x | ((1 << bit) - 1)});
+        } else {
+            dfs(bit - 1, val, x, ori);
+        }
+    } 
+    if ((val | (1 << bit)) <= r) {
+        if (!is_out((val | (1 << bit))) && !is_out(val | ((1 << (bit + 1)) - 1))) {
+            seg.push_back({x ^ (1 << bit), x ^ (1 << bit) | ((1 << bit) - 1)});
+        } else {
+            dfs(bit - 1, val | (1 << bit), x ^ (1 << bit), ori);
+        }
+    }
+}
+int solve() {
+    std::sort(all(seg));
+    std::map<int, int> mp;
+    int count = 0;
+    for (auto [l, r] : seg) {
+        mp[l] += 1;
+        mp[r + 1] -= 1; 
+    }
+    int last = 0;
+    for (auto [cur, cnt] : mp) {
+        last += cnt;
+        if (last == n) {
+            return cur;
+        }
+    }
+    return 0; 
 }
 int main() {
     #ifndef ONLINE_JUDGE
@@ -35,70 +68,17 @@ int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(NULL);
 
-    p2[0] = 1;
-    for (int j = 1; j <= 20; ++j) 
-    p2[j] = p2[j - 1] * 2;
     int T = 1;
     std::cin >> T;
     while (T--) {
         std::cin >> l >> r;
         n = r - l + 1;
-        vec.clear();
-        for (int i = 0; i < 17; ++i) {
-            ori[i] = modi[i] = ans[i] = 0;
-        }
-        for (int i = l; i <= r; ++i) {
-            for (int j = 0; j < 17; ++j) {
-                if (i & p2[j]) {
-                    ori[j] += 1;
-                }
-            }
-        }
+        seg.clear();
         for (int i = 1; i <= n; ++i) {
             std::cin >> a[i];
-            for (int j = 0; j < 17; ++j) {
-                if (a[i] & p2[j]) {
-                    modi[j] += 1;
-                }
-            }
+            dfs(16, 0, 0, a[i]);
         }
-        for (int i = 16; i >= 0; --i) {
-            if (ori[i] == modi[i]) {
-                if (ori[i] != n / 2) {
-                    ans[i] = 0;
-                } else {
-                    vec.push_back(i);
-                }
-            } else {
-                ans[i] = 1;
-            }
-        }
-        for (int i = 1; i <= n; ++i) {
-            for (int j = 0; j < 17; ++j) {
-                if (ans[j]) {
-                    a[i] ^= p2[j];
-                }
-            }
-        }
-        for (int i = 1; i <= n; ++i) {
-            int cur = a[i];
-            for (auto it : vec) {
-                if (is_out(cur)) ans[it] = 1, cur ^= p2[it];
-                else {
-                    if (is_out(cur ^ p2[it])) {
-                        ans[it] = 0;
-                    } else {
-                        break;
-                    }
-                }
-            }
-        }
-        int fin = 0;
-        for (int i = 0; i < 17; ++i) {
-            if (ans[i]) fin |= p2[i];
-        }
-        std::cout << fin << '\n';
-        
+        std::cout << solve() << '\n';
     }
 
     return 0;

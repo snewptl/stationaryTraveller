@@ -104,11 +104,11 @@ https://codeforces.com/problemset/problem/1698/E - AC
 
 https://codeforces.com/problemset/problem/1695/D2 - AC, 用时 1h30min，好题。之前在2100的时候做过简单版本，但是依然做了很久
 
-https://codeforces.com/problemset/problem/1658/D2
+https://codeforces.com/problemset/problem/1658/D2 - AC，用时 3h，好题
 
-https://codeforces.com/problemset/problem/1654/E
+https://codeforces.com/problemset/problem/1654/E - 未做出，好题
 
-https://codeforces.com/problemset/problem/1628/C
+https://codeforces.com/problemset/problem/1628/C - AC，用时 1h25min
 
 https://codeforces.com/problemset/problem/1625/D
 
