@@ -110,8 +110,38 @@ https://codeforces.com/problemset/problem/1654/E - 未做出，好题
 
 https://codeforces.com/problemset/problem/1628/C - AC，用时 1h25min
 
-https://codeforces.com/problemset/problem/1625/D
+https://codeforces.com/problemset/problem/1625/D - AC(vp)，用时 1h5min
 
-https://codeforces.com/problemset/problem/1623/D
+https://codeforces.com/problemset/problem/1623/D - AC，用时 2h，实现出错导致一直无法通过样例，但其实是简单题
 
 https://codeforces.com/problemset/problem/1621/E
+
+https://codeforces.com/problemset/problem/1614/D2
+
+https://codeforces.com/problemset/problem/1610/E
+
+https://codeforces.com/problemset/problem/1603/C
+
+https://codeforces.com/problemset/problem/1601/C
+
+https://codeforces.com/problemset/problem/1594/E2
+
+https://codeforces.com/problemset/problem/1592/D
+
+https://codeforces.com/problemset/problem/1584/E
+
+https://codeforces.com/problemset/problem/1575/B
+
+https://codeforces.com/problemset/problem/1553/F
+
+https://codeforces.com/problemset/problem/1552/E
+
+https://codeforces.com/problemset/problem/1550/D
+
+https://codeforces.com/problemset/problem/1548/D1
+
+https://codeforces.com/problemset/problem/1540/B
+
+https://codeforces.com/problemset/problem/1536/E
+
+https://codeforces.com/problemset/problem/1534/E
