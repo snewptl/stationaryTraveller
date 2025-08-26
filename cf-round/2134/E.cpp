@@ -19,11 +19,14 @@ const int maxn = 2e5 + 5;
 const ll mod = 998244353;
 int n, dp[maxn], ans[maxn];
 pii a[maxn];
+int count;
 void swap(int x) {
+    ++count;
     std::cout << "swap " << x << std::endl;
     std::swap(a[x], a[x + 1]);
 }
 int thr(int x) {
+    ++count;
     std::cout << "throw " << x << std::endl;
     int res;
     std::cin >> res;
@@ -53,6 +56,7 @@ int main() {
             a[i].second = i;
             dp[i] = 0;
         }
+        count = 0;
         int res = thr(n - 1);
         if (res == 1) a[n - 1].first = 2;
         else a[n - 1].first = 1;
@@ -84,6 +88,7 @@ int main() {
                 dp[i] = dp[i + a[i].first] + 1;
             }
         }
+        assert(count <= (n * 3 + 1) / 2);
         for (int i = 1; i <= n; ++i) {
             ans[a[i].second] = a[i].first;
         }
