@@ -124,13 +124,9 @@ https://codeforces.com/problemset/problem/1603/C - AC
 
 https://codeforces.com/problemset/problem/1601/C - TLE on 14，理论复杂度正确，但是常数太大被卡掉了
 
-https://codeforces.com/problemset/problem/1594/E2
+https://codeforces.com/problemset/problem/1594/E2 - 用时 1h7min，使用了官方数据 debug（爆 long long 了）
 
-https://codeforces.com/problemset/problem/1592/D
-
-https://codeforces.com/problemset/problem/1584/E
-
-https://codeforces.com/problemset/problem/1575/B
+https://codeforces.com/problemset/problem/1592/D - AC
 
 https://codeforces.com/problemset/problem/1553/F
 
