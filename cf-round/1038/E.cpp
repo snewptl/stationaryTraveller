@@ -1,111 +1,118 @@
-#include <algorithm>
-#include <cstdio>
-#include <iostream>
-#include <map>
-#include <set>
-#include <queue>
-#include <vector>
-#include <bitset>
-#include <memory.h>
-#include <assert.h>
-#define all(x) x.begin(), x.end()
-typedef long long ll;
-typedef std::pair<int, int> pii;
-typedef std::pair<ll, int> pli;
-typedef std::pair<ll, ll> pll;
-typedef double db;
-typedef long double ldb;
-const int maxn = 2e5 + 5;
-const ll mod = 998244353;
-int ans = 0;
-int n;
-std::vector<int> a[5][5], sum[5][5];
-int cur[5][5];
+#include <bits/stdc++.h>
+using namespace std;
+ 
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define endl "\n"
+#define int long long
 
-void dfs(std::vector<int> used, int l, int r, int add) {
-    ans = std::max(ans, add);
-    for (int i = 1; i <= 3; ++i) {
-        for (int j = i + 1; j <= 4; ++j) {
-            if (cur[i][j] == a[i][j].size()) continue;
-            bool can = 0;
-            int nl, nr;
-            if (r == 0) {
-                can = 1;
-                nl = i;
-                nr = j;
-            } else if (l == i) {
-                can = 1;
-                nl = j;
-                nr = r;
-            } else if (l == j) {
-                can = 1;
-                nl = i;
-                nr = r;
-            } else if (r == i) {
-                can = 1;
-                nl = j;
-                nr = l;
-            } else if (r == j) {
-                can = 1;
-                nl = l;
-                nr = i;
-            }
-            if (can) {
-                if (nl > nr) std::swap(nl, nr);
-                std::vector<int> update;
-                if (!used[i]) update.push_back(i);
-                if (!used[j]) update.push_back(j);
-                for (auto it : update) {
-                    used[it] = 1;
-                    if (!sum[it][it].empty()) add += sum[it][it].back();
-                }
-                
-                add += a[i][j][cur[i][j]];
-                cur[i][j] += 1;
-                dfs(used, nl, nr, add); 
-                for (auto it : update) {
-                    used[it] = 0;
-                    if (!sum[it][it].empty()) add -= sum[it][it].back();
-                }
-                --cur[i][j];
-                add -= a[i][j][cur[i][j]];
-            }
-        }
-    }
+const int N=1005;
+const int M=16;
+
+struct data
+{
+	int c1, c2, val, idx;
+
+	bool operator<(data &b)
+	{
+		return val<b.val;
+	}
+};
+
+int n, sum=0, ans=0;
+bool ban[N], vis[N];
+int cnt[M], taken[M];
+data blocks[N];
+vector<data> g[M], edges[M];
+vector<int> path;
+
+int compress(int c1, int c2)
+{
+	if(c1>c2)
+		swap(c1, c2);
+	return c1*4 + c2;
 }
-int main() {
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    #endif
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(NULL);
 
-    std::cin >> n;
-    for (int i = 1; i <= n; ++i) {
-        int l, val, r;
-        std::cin >> l >> val >> r;
-        if (l > r) std::swap(l, r);
-        a[l][r].push_back(val);
-    }
-    for (int i = 1; i <= 4; ++i) {
-        for (int j = i; j <= 4; ++j) {
-            std::sort(all(a[i][j]));
-            std::reverse(all(a[i][j]));
-            sum[i][j] = a[i][j];
-            for (int t = 1; t < a[i][j].size(); ++t) {
-                sum[i][j][t] += sum[i][j][t - 1];
-            }
-        }
-    }
-    for (int i = 1; i <= 4; ++i) {
-        if (!sum[i][i].empty()) ans = std::max(ans, sum[i][i].back());
-    }
-    
-    std::vector<int> used;
-    used.resize(5, 0);
-    dfs(used, 0, 0, 0);
-    std::cout << ans << '\n';
+bool checker()
+{
+	memset(cnt, 0, sizeof(cnt));
+	for(int i=1;i<path.size();i++)
+		cnt[compress(path[i-1], path[i])]++;
+	for(int i=0;i<M;i++)
+		if(cnt[i]>taken[i])
+			return 0;
+	return 1;
+}
 
-    return 0;
+void euler(int u)
+{
+	for(auto &it:g[u])
+	{
+		int v=it.c2;
+		int idx=it.idx;
+		if(vis[idx]||ban[idx])
+			continue;
+		taken[compress(u, v)]++;
+		vis[idx]=1;
+		sum+=it.val;
+		euler(v);
+	}
+	path.push_back(u);
+}
+
+int32_t main()
+{
+	IOS;
+	cin>>n;
+	for(int i=1;i<=n;i++)
+	{
+		int c1, val, c2;
+		cin>>c1>>val>>c2;
+		c1--;
+		c2--;
+		blocks[i]=(data){c1, c2, val, i};
+		g[c1].push_back((data){c1, c2, val, i});
+		g[c2].push_back((data){c2, c1, val, i});
+		edges[compress(c1, c2)].push_back(blocks[i]);
+	}
+	for(int i=0;i<M;i++)
+		if(edges[i].size())
+			sort(edges[i].begin(), edges[i].end());
+	for(int mask=0;mask<(1<<M);mask++)
+	{
+		if(mask>>compress(0, 0)&1)
+			continue;
+		if(mask>>compress(1, 1)&1)
+			continue;
+		if(mask>>compress(2, 2)&1)
+			continue;
+		if(mask>>compress(3, 3)&1)
+			continue;
+
+		int check=0;
+		memset(ban, 0, sizeof(ban));
+		for(int i=0;i<M;i++)
+		{
+			if(!(mask>>i & 1))
+				continue;
+			if(edges[i].empty())
+				check=1;
+			else
+				ban[edges[i][0].idx]=1;
+		}
+		if(!check)
+			continue;
+
+		for(int i=0;i<4;i++)
+		{
+			memset(vis, 0, sizeof(vis));
+			path.clear();
+			sum=0;
+			memset(taken, 0, sizeof(taken));
+			euler(i);
+			if(checker())
+				ans=max(ans, sum);
+		}
+	}
+	cout<<ans;
+	return 0;
 }

@@ -128,7 +128,7 @@ https://codeforces.com/problemset/problem/1594/E2 - 用时 1h7min，使用了官
 
 https://codeforces.com/problemset/problem/1592/D - AC
 
-https://codeforces.com/problemset/problem/1553/F
+https://codeforces.com/problemset/problem/1553/F - TLE on 17
 
 https://codeforces.com/problemset/problem/1552/E
 
