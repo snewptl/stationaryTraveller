@@ -130,7 +130,7 @@ https://codeforces.com/problemset/problem/1592/D - AC
 
 https://codeforces.com/problemset/problem/1553/F - TLE on 17
 
-https://codeforces.com/problemset/problem/1552/E
+https://codeforces.com/problemset/problem/1552/E - 未做出，好题
 
 https://codeforces.com/problemset/problem/1550/D
 
