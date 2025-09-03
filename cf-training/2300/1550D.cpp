@@ -39,24 +39,44 @@ ll C(ll x, ll y) {
 pll check(int x) {
     ll methods = 0, res = 0;
     ll count[4] = {0, 0, 0, 0};
-    int move_l = 1;
-    move_l = std::max(move_l, l - x);
-    if (move_l > n) return {0, p[r - l + 1]};
-    count[2] += std::min(x * 2, n - move_l + 1);
-    move_l += x * 2;
-    if (move_l > n) return {0, p[r - l + 1]};
-    if (r - x * 2 - l >= 0) {
-        count[3] += std::min(r - x * 2 - l + 1, n - move_l + 1);
-        move_l += r - l - 2 * x + 1;
+    ll loc1 = r - x, loc2 = l + x;
+    if (loc1 < loc2) {
+        count[2] = loc1 - 1 + 1;
+        count[2] = std::min(n * 1ll, count[2]);
+        if (count[2] < n) {
+            count[0] = loc2 - loc1 - 1;
+            if (count[0] + count[2] >= n) {
+                count[0] = n - count[2];
+            }
+            if (count[0] + count[2] < n) {
+                ll fin = loc2 + r - l;
+                count[1] = fin - loc2 + 1;
+                if (count[1] + count[0] + count[2] >= n) {
+                    count[1] = n - count[0] - count[2];
+                }
+            }
+        }
     } else {
-        move_l += 2 * x - (r - l);
+        count[2] = std::max(loc2 - 1, 0ll);
+        if (count[2] > n) {
+            count[2] = n;
+        }
+        if (count[2] < n) {
+            count[3] = loc1 - std::max(1ll, loc2) + 1;
+            if (count[3] + count[2] > n) {
+                count[3] = n - count[2];
+            }
+            if (count[2] + count[3] < n) {
+                ll fin = loc1 + 2 * x;
+                count[1] = fin - loc1;
+                if (count[1] + count[2] + count[3] >= n) {
+                    count[1] = n - count[2] - count[3];
+                }
+            }
+        }
     }
-    if (move_l <= n) {
-        count[3] = std::min(n - move_l + 1, r - l + 1);
-    }
-    count[0] = n - (count[1] + count[2] + count[3]);
     if (count[1] + count[3] == 0 || count[2] + count[3] == 0) {
-        methods = p[r - l + 1];
+        methods = p[n];
         res = 0;
     } else {
         ll min = std::min(count[1], count[2]);
@@ -68,10 +88,12 @@ pll check(int x) {
         min += temp;
         min += add / 2;
         max += add / 2;
-        methods = p[count[0]];
-        if (add % 2) methods *= 2, methods %= 2;
-        methods *= C(count[3], min - pre_min), methods %= mod;
         add %= 2;
+        methods = C(count[3], min - pre_min);
+        if (add) methods += C(count[3], min - pre_min + 1);
+        methods %= mod;
+        methods *= p[count[0]];
+        methods %= mod;
         max += add;
         add = 0;
         res = min * max;
@@ -95,29 +117,32 @@ int main() {
     std::cin >> T;
     while (T--) {
         std::cin >> n >> l >> r;
-        ll count[4] = {0, 0, 0, 0};
         p[0] = 1;
         for (int i = 1; i <= n; ++i) {
             p[i] = p[i - 1] * (r - l + 1) % mod;
         }
         ll mx = check(1).first;
-        if (mx == 0) {
-            std::cout << p[r - l + 1] << '\n';
-        } else {
-            ll le = 1, ri = 1e9, border = 1;
-            while (le <= ri) {
-                ll mid = (le + ri) / 2;
-                pii cur = check(mid);
-                if (cur.first == mx) {
-                    le = mid + 1;
-                    border = mid;
-                } else {
-                    ri = mid - 1;
-                }
+        ll le = 1, ri = r - 1, border = 1;
+        while (le <= ri) {
+            ll mid = (le + ri) / 2;
+            pll cur = check(mid);
+            if (cur.first == mx) {
+                le = mid + 1;
+                border = mid;
+            } else {
+                ri = mid - 1;
             }
-            if ()
         }
-
+        int end = std::max(1ll, border - n);
+        ll ans = 0;
+        for (int i = border; i >= end; --i) {
+            ans += check(i).second;
+            ans %= mod;
+        }
+        ans += check(1).second * (end - 1);
+        ans %= mod;
+        std::cout << ans << '\n';
+        
 
     }
 
