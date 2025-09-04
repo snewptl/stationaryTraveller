@@ -136,7 +136,7 @@ https://codeforces.com/problemset/problem/1550/D - AC，用时 3h，做复杂了
 
 https://codeforces.com/problemset/problem/1548/D1 - AC, 用时 1h30min
 
-https://codeforces.com/problemset/problem/1540/B
+https://codeforces.com/problemset/problem/1540/B - 未通过样例，推错了式子
 
 https://codeforces.com/problemset/problem/1536/E
 
