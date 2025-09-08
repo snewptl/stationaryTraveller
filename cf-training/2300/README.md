@@ -138,17 +138,17 @@ https://codeforces.com/problemset/problem/1548/D1 - AC, 用时 1h30min
 
 https://codeforces.com/problemset/problem/1540/B - 未通过样例，推错了式子
 
-https://codeforces.com/problemset/problem/1536/E
+https://codeforces.com/problemset/problem/1536/E - 好题，未做出，智力题
 
-https://codeforces.com/problemset/problem/1534/E
+https://codeforces.com/problemset/problem/1534/E - 好题，未做出
 
-https://codeforces.com/problemset/problem/1495/C
+https://codeforces.com/problemset/problem/1495/C - 未做出，其实是简单题
 
-https://codeforces.com/problemset/problem/1494/D
+https://codeforces.com/problemset/problem/1494/D - AC，水题
 
-https://codeforces.com/problemset/problem/1476/E
+https://codeforces.com/problemset/problem/1476/E - AC，水题
 
-https://codeforces.com/problemset/problem/1453/E
+https://codeforces.com/problemset/problem/1453/E - AC
 
 https://codeforces.com/problemset/problem/1451/E2
 
