@@ -150,11 +150,9 @@ https://codeforces.com/problemset/problem/1476/E - AC，水题
 
 https://codeforces.com/problemset/problem/1453/E - AC
 
-https://codeforces.com/problemset/problem/1451/E2
+https://codeforces.com/problemset/problem/1451/E2 - AC，用时 1h20min
 
-https://codeforces.com/problemset/problem/1450/C2
-
-https://codeforces.com/problemset/problem/1425/D
+https://codeforces.com/problemset/problem/1450/C2 - 未做出，好题
 
 https://codeforces.com/problemset/problem/1422/D
 
