@@ -61,7 +61,7 @@ namespace Pre {
             int l = 1, r = i, res = 0;
             while (l <= r) {
                 int mid = (l + r) / 2;
-                if (get_sum(r) - get_sum(l - 1) >= i - a[i]) {
+                if (get_sum(r) - get_sum(mid - 1) >= i - a[i]) {
                     l = mid + 1;
                     res = mid;
                 } else {
@@ -90,7 +90,12 @@ int main() {
     for (int i = 1; i <= n; ++i) {
         fw[i] = 0;
     }
-
+    Pre::init();
+    for (int i = 1; i <= n; ++i) {
+        if (in_vec[i]) {
+            update(in_vec[i], 1);
+        }
+    }
     for (int i = 1; i <= q; ++i) {
         int x, y;
         std::cin >> x >> y;
