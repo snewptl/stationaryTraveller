@@ -154,11 +154,9 @@ https://codeforces.com/problemset/problem/1451/E2 - AC，用时 1h20min
 
 https://codeforces.com/problemset/problem/1450/C2 - 未做出，好题
 
-https://codeforces.com/problemset/problem/1422/D
+https://codeforces.com/problemset/problem/1422/D - AC
 
-https://codeforces.com/problemset/problem/1411/E
-
-https://codeforces.com/problemset/problem/1408/F
+https://codeforces.com/problemset/problem/1408/F - AC
 
 https://codeforces.com/problemset/problem/1404/C
 

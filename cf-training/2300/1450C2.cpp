@@ -38,6 +38,14 @@ pii count(int x, int y) {
     }
     return {row + col, std::min(row, col)};
 }
+void cal(int x) {
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= n; ++j) {
+            if (mp[i][j] == x) s.insert({count(i, j), {i, j}});
+        }
+    }   
+    
+}
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
@@ -64,11 +72,9 @@ int main() {
                 }
             }
         }
-        for (int i = 1; i <= n; ++i) {
-            for (int j = 1; j <= n; ++j) {
-                if (mp[i][]) s.insert({count(i, j), {i, j}});
-            }
-        }
+        cal(1);
+        cal(2);
+        cal(1);
     }
 
     return 0;
