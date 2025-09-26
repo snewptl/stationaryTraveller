@@ -15,7 +15,7 @@ typedef std::pair<ll, int> pli;
 typedef std::pair<ll, ll> pll;
 typedef double db;
 typedef long double ldb;
-const int maxn = 2e5 + 5;
+const int maxn = 3e5 + 5;
 const ll mod = 998244353;
 int n, q;
 int a[maxn];
@@ -61,7 +61,7 @@ namespace Pre {
             int l = 1, r = i, res = 0;
             while (l <= r) {
                 int mid = (l + r) / 2;
-                if (get_sum(r) - get_sum(mid - 1) >= i - a[i]) {
+                if (get_sum(i) - get_sum(mid - 1) >= i - a[i]) {
                     l = mid + 1;
                     res = mid;
                 } else {

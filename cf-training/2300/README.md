@@ -158,11 +158,7 @@ https://codeforces.com/problemset/problem/1422/D - AC
 
 https://codeforces.com/problemset/problem/1408/F - AC
 
-https://codeforces.com/problemset/problem/1404/C
-
-https://codeforces.com/problemset/problem/1403/B
-
-https://codeforces.com/problemset/problem/1399/F
+https://codeforces.com/problemset/problem/1404/C - AC, 用时 1h50min
 
 https://codeforces.com/problemset/problem/1396/C
 
