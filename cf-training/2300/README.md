@@ -160,7 +160,7 @@ https://codeforces.com/problemset/problem/1408/F - AC
 
 https://codeforces.com/problemset/problem/1404/C - AC, 用时 1h50min
 
-https://codeforces.com/problemset/problem/1396/C
+https://codeforces.com/problemset/problem/1396/C - AC, 用时 1h30min 
 
 https://codeforces.com/problemset/problem/1394/B
 
