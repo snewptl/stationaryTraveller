@@ -15,13 +15,14 @@ typedef std::pair<ll, int> pli;
 typedef std::pair<ll, ll> pll;
 typedef double db;
 typedef long double ldb;
-const int maxn = 1e5 + 5;
+const int maxn = 3e5 + 5;
 const ll mod = 998244353;
 int n;
 std::vector<std::vector<int>> e;
-std::vector<std::vector<ll>> dp;
+ll dp[maxn][32];
 ll sz[maxn];
 ll fac[maxn], inv_fac[maxn];
+const int dep = 30;
 ll quick_pow(ll x, ll y) {
     ll res = 1;
     while (y) {
@@ -44,15 +45,25 @@ void dfs(int u) {
         dfs(v);
         sz[u] += sz[v];
     }
-    dp[u].resize(sz[u], 0);
-    dp[u][0] = 1;
-    int sum = 0;
+
+    for (int i = 0; i <= dep + 1; ++i) {
+        dp[u][i] = 1;
+    }
+    ll cur = 0;
     for (auto v : e[u]) {
-        for (int i = sum; i >= 0; --i) {
-            for (int j = sz[v] - 1; j >= 0; --j) {
-                
+        for (int i = dep + 1; i >= 0; --i) {
+            ll res = 0;
+            for (int j = 0; j <= std::min(i, dep); ++j) {
+                ll ways = dp[v][j] * dp[u][i - j] % mod;
+                ll seq = fac[cur + sz[v] + i] * inv_fac[cur + i - j] % mod * inv_fac[sz[v] + j] % mod;
+                res += ways * seq % mod, res %= mod;
             }
+            dp[u][i] = res;
         }
+        cur += sz[v];
+    }
+    for (int i = 0; i <= dep; ++i) {
+        dp[u][i] = dp[u][i + 1];
     }
 }
 int main() {
@@ -65,7 +76,7 @@ int main() {
 
     std::cin >> n;
     fac[0] = 1;
-    for (int i = 1; i <= n; ++i) {
+    for (int i = 1; i <= 3e5; ++i) {
         fac[i] = fac[i - 1] * i % mod;
     }
     inv_fac[n] = inv(fac[n]);
@@ -74,13 +85,11 @@ int main() {
     }
     e.clear();
     e.resize(n + 1);
-    dp.clear();
-    dp.resize(n + 1);
     for (int i = 2; i <= n; ++i) {
         int u; std::cin >> u;
         e[u].push_back(i);
     }
     dfs(1);
-    std::cout << dp[1] << '\n';
+    std::cout << dp[1][0] << '\n';
     return 0;
 }
