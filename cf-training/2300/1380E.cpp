@@ -18,13 +18,13 @@ typedef long double ldb;
 const int maxn = 2e5 + 5;
 const ll mod = 998244353;
 int n, m;
-std::vector<std::vector<int>> vec;
-std::set<pii, std::greater<pii>> s;
-std::vector<std::set<pii>> seg;
-int val[maxn], piece[maxn];
-pii top[maxn];
-ll sum;
-int loc[maxn];
+std::vector<int> loc;
+std::vector<std::set<int>> s;
+int dsu[maxn];
+pii seg[maxn];
+int find(int x) {
+    return dsu[x] == x ? x : dsu[x] = find(dsu[x]);
+}
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
@@ -34,79 +34,58 @@ int main() {
     std::cin.tie(NULL);
 
     std::cin >> n >> m;
-    vec.clear();
-    vec.resize(m + 1);
+    loc.clear();
+    loc.resize(m + 1);
     s.clear();
-    seg.clear();
-    seg.resize(m + 1);
-    sum = 0;
+    s.resize(m + 1);
     for (int i = 1; i <= m; ++i) {
-        top[i] = {0, 0};
-        piece[i] = 0;
-        val[i] = 0;
         loc[i] = i;
     }
     for (int i = 1; i <= n; ++i) {
-        int x; std::cin >> x;
-        vec[x].push_back(i);
-        top[x] = {i, x};
+        seg[i] = {i, i};
+        dsu[i] = i;
     }
-    std::sort(top + 1, top + m + 1);
-    std::reverse(top + 1, top + m + 1);
-    for (int i = 1; i <= m; ++i) {
-        int real_i = top[i].second;
-        if (vec[real_i].empty()) break;
-        int last = -1, count = 0;
-        pii cur = {-1, -1};
-        for (auto it : vec[real_i]) {
-            if (last != it - 1) {
-                if (last != -1) {
-                    seg[i].insert(cur);
-                }
-                last = it;
-                ++count;
-                cur = {it, it};
-            } else {
-                cur.second = it;
+    int ans = n - 1;
+    for (int i = 1; i <= n; ++i) {
+        int t; std::cin >> t;
+        s[t].insert(i);
+        if (i != 1) {
+            int pre = i - 1;
+            if (s[t].count(pre)) {
+                --ans;
+                s[t].erase(pre);
+                seg[i] = {seg[pre].first, i};
+                dsu[pre] = i;
             }
         }
-        seg[i].insert(cur);
-        piece[real_i] = count;
-        val[real_i] = count * 2 + i;
-        s.insert({val[real_i], real_i});
-        sum += count;
     }
-    std::cout << sum * 2 + 1 - s.begin()->first << '\n';
+    std::cout << ans << '\n';
     for (int i = 1; i < m; ++i) {
         int a, b;
         std::cin >> a >> b;
-        s.erase({val[a], a});
-        s.erase({val[b], b});
-        int from = loc[a], to = loc[b];
-        if (seg[from].size() > seg[to].size()) std::swap(from, to);
-        int count = piece[a] + piece[b];
-        for (auto cur : seg[from]) {
-            
-            auto it = seg[to].lower_bound(cur);
-            if (it != seg[to].begin()) {
-                --it;
-                if (it->second == cur.first - 1) count -= 1;
-                ++it;
+        if (s[loc[a]].size() < s[loc[b]].size()) std::swap(loc[a], loc[b]);
+        for (auto it : s[loc[b]]) {
+            s[loc[a]].insert(it);
+            if (it != 1) {
+                int pre = seg[it].first - 1;
+                if (s[loc[a]].count(pre)) {
+                    --ans;
+                    s[loc[a]].erase(pre);
+                    seg[it] =  {seg[pre].first, it};
+                    dsu[pre] = it;
+                }
             }
-            if (it != seg[to].end()) {
-                if (it->first == cur.second + 1) count -= 1;
+            if (it != n) {
+                int nxt = seg[find(it + 1)].second;
+                if (s[loc[a]].count(nxt)) {
+                    --ans;
+                    s[loc[a]].erase(it);
+                    seg[nxt] = {seg[it].first, nxt};
+                    dsu[it] = nxt;
+                }
             }
         }
-        for (auto cur : seg[from]) {
-            seg[to].insert(cur);
-        }
-        piece[a] = count;
-        loc[a] = to;
-        val[a] = count * 2 
-        s.insert({});
+        std::cout << ans << '\n';
     }
-    
-
     return 0;
 }
-// 20 : 03 - 

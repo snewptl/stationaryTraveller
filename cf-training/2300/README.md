@@ -164,7 +164,7 @@ https://codeforces.com/problemset/problem/1396/C - AC, 用时 1h30min
 
 https://codeforces.com/problemset/problem/1394/B - 未做出，通过哈希来求集合的并，算是有些启发性
 
-https://codeforces.com/problemset/problem/1380/E
+https://codeforces.com/problemset/problem/1380/E - 未做出
 
 https://codeforces.com/problemset/problem/1379/D
 
