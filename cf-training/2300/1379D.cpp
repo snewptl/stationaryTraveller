@@ -20,8 +20,22 @@ const ll mod = 998244353;
 int n, h, m, k;
 pii train[maxn];
 std::map<int, int> prefix;
+bool contained(int p, pii seg) {
+    if (p < seg.second && p > seg.first) return true;
+    p += m;
+    if (p < seg.second && p > seg.first) return true;
+    return false;
+}
+bool check(int train_pos, int p) {
+    pii seg1 = {p, p + k};
+    pii seg2 = {p + m / 2, p + k + m / 2};
+    return contained(train_pos, seg1) || contained(train_pos, seg2);
+}
 void add(int l, int r) {
-    if (l < 0) {
+    if (r < 0) {
+        prefix[l + m] += 1;
+        prefix[r + m + 1] -= 1;
+    } else if (l < 0) {
         prefix[l + m] += 1;
         prefix[0] += 1;
         prefix[r + 1] -= 1;
@@ -51,6 +65,7 @@ int main() {
     }
     int ans = 0, last = -1, p = 0;
     for (auto &[it, val] : prefix) {
+        if (it >= m) break;
         if (last != -1) val += prefix[last];
         if (ans < val) {
             ans = val;
@@ -60,11 +75,15 @@ int main() {
     }
     std::vector<int> vec;
     for (int i = 1; i <= n; ++i) {
-        if (check(train[i].second, )) {
-            
+        if(check(train[i].second, p)) {
+            vec.push_back(i);
         }
     }
-    std::cout << n - ans << '\n';
+    std::cout << n - ans << ' ' << (p + k + m / 2) % (m / 2) << '\n';
+    for (auto it : vec) {
+        std::cout << it << ' ';
+    }
+    std::cout << '\n';
     
     return 0;
 }

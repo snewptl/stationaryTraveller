@@ -166,11 +166,11 @@ https://codeforces.com/problemset/problem/1394/B - 未做出，通过哈希来�
 
 https://codeforces.com/problemset/problem/1380/E - 未做出
 
-https://codeforces.com/problemset/problem/1379/D
+https://codeforces.com/problemset/problem/1379/D - AC, 用时 2h
 
-https://codeforces.com/problemset/problem/1371/E2
+https://codeforces.com/problemset/problem/1371/E2 - AC. 用时 2h
 
-https://codeforces.com/problemset/problem/1342/E
+https://codeforces.com/problemset/problem/1342/E - 未做出，以为需要 NTT，其实容斥即可
 
 https://codeforces.com/problemset/problem/1322/C
 
