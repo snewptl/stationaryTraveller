@@ -56,7 +56,7 @@ int main() {
             for (int i = 1; i <= n; ++i) {
                 bound[e[i].first - 1] = std::min(H - e[i].second, bound[e[i].first - 1]);
             }
-            for (int i = m - 1; i >= 0; --i) {
+            for (int i = H - 1; i >= 0; --i) {
                 bound[i] = std::min(bound[i], bound[i + 1]);
             }
 
