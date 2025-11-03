@@ -172,5 +172,36 @@ https://codeforces.com/problemset/problem/1371/E2 - AC. 用时 2h
 
 https://codeforces.com/problemset/problem/1342/E - 未做出，以为需要 NTT，其实容斥即可
 
-https://codeforces.com/problemset/problem/1322/C
+https://codeforces.com/problemset/problem/1322/C - 未做出, 好题
 
+https://codeforces.com/problemset/problem/1316/E
+
+https://codeforces.com/problemset/problem/1310/D
+
+https://codeforces.com/problemset/problem/1304/F1
+
+https://codeforces.com/problemset/problem/1292/C
+
+https://codeforces.com/problemset/problem/1285/E
+
+https://codeforces.com/problemset/problem/1282/D
+
+https://codeforces.com/problemset/problem/1276/C
+
+https://codeforces.com/problemset/problem/1268/C
+
+https://codeforces.com/problemset/problem/1254/C
+
+https://codeforces.com/problemset/problem/1252/B
+
+https://codeforces.com/problemset/problem/1251/E1
+
+https://codeforces.com/problemset/problem/1250/E
+
+https://codeforces.com/problemset/problem/1245/F
+
+https://codeforces.com/problemset/problem/1245/E
+
+https://codeforces.com/problemset/problem/1244/F
+
+https://codeforces.com/problemset/problem/1239/C

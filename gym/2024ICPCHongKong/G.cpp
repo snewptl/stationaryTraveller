@@ -24,21 +24,22 @@ int n;
 std::vector<std::string> s;
 int rt;
 std::vector<std::vector<int>> vec;
+std::map<int, ll> mp;
+ll vis[maxn];
 ll ans;
-void update(int u, int dep, std::string& str) {
+void update(int u, int dep, std::string& str, int round) {
     sum[u] += 1;
     if (u) {
         for (auto it : vec[sum[u]]) {
-            ans ^= sum[u] - it;
-            ans ^= sum[u];
+            mp[it] += it;
         }
     }
     if (dep == str.size()) return;
     int ch = str[dep] - 'a';
-    if (!trie[rt][ch]) {
-        trie[rt][ch] = ++count; 
+    if (!trie[u][ch]) {
+        trie[u][ch] = ++count; 
     }
-    update(trie[rt][ch], dep + 1, str);
+    update(trie[u][ch], dep + 1, str, round);
 }
 int main() {
     #ifndef ONLINE_JUDGE
@@ -62,19 +63,28 @@ int main() {
         s.resize(n + 1);
         rt = 0;
         count = 0;
+        for (int i = 1; i <= n; ++i) {
+            vis[i] = 0;
+        }
+        ans = 0;
+        for (int i = 1; i <= n; ++i) {
+            mp.clear();
+            std::cin >> s[i];
+            update(rt, 0, s[i], i);
+            for (auto [key, val] : mp) {
+                ans ^= vis[key];
+                vis[key] += val;
+                ans ^= vis[key];
+            }
+            std::cout << ans << ' ';
+        }
+        std::cout << '\n';
         for (int i = 0; i <= count; ++i) {
             for (int j = 0; j < 26; ++j) {
                 trie[i][j] = 0;
             }
             sum[i] = 0;
         }
-        ans = 0;
-        for (int i = 1; i <= n; ++i) {
-            std::cin >> s[i];
-            update(rt, 0, s[i]);
-            std::cout << ans << ' ';
-        }
-        std::cout << '\n';
     }
 
     return 0;
