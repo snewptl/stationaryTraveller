@@ -48,12 +48,11 @@ void solve() {
         s_le.insert({a[i], i});
     }
     for (int i = 1; i <= n; ++i) {
-        while (s_ri.size() > 3) s_ri.erase(s_ri.begin());
+        while (s_ri.size() > 3) s_ri.erase(*s_ri.rbegin());
         for (auto it : s_ri) {
             auto [val, j] = it;
             vec_ri[i].push_back({a[i] - val, {i, j}});
         }
-        std::reverse(all(vec_ri[i]));
         if (!vec_ri[i].empty()) vec_ri[i].pop_back();
         if (!vec_ri[i].empty()) {
             fin.insert(vec_ri[i].back());
