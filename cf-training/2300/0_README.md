@@ -178,7 +178,7 @@ https://codeforces.com/problemset/problem/1316/E - AC, 1h40min
 
 https://codeforces.com/problemset/problem/1304/F1 - AC, 1h40min
 
-https://codeforces.com/problemset/problem/1292/C
+https://codeforces.com/problemset/problem/1292/C - AC
 
 https://codeforces.com/problemset/problem/1285/E
 
