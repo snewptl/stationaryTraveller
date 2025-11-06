@@ -70,22 +70,22 @@ int main() {
         int last = 0;
         int fin = 0, flag = (count[1]), del = 0;
         for (auto cur : vec) {
-            int val = e[cur].first;
+            int val = e[cur].first, rt;
             for (int i = last + 1; i <= cur; ++i) {
                 auto [_, p] = e[i];
                 auto [u, v] = p;
                 if (find(u) != find(v)) {
                     count[find(u)] += count[find(v)];
                     count[find(v)] = 0;
-                    if (count[find(u)] >= 2) {
-                        if (flag && (u == 1 || v == 1))
-                            flag = 0;
-                        else ans += 1ll * (count[find(u)]) / 2 * val;
-                        fin = std::max(val, fin);
-                        count[find(u)] %= 2;
-                    }
                     fa[find(v)] = find(u);
+                    rt = find(u);
                 }
+            }
+            if (count[rt] >= 2) {
+                ans += 1ll * (count[rt]) / 2 * val;
+                if (flag && (find(1) == rt)) flag = 0, ans -= val;
+                fin = std::max(val, fin);
+                count[rt] %= 2;
             }
             last = cur;
         }
