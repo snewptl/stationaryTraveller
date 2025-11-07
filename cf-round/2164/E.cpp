@@ -15,16 +15,34 @@ typedef std::pair<ll, int> pli;
 typedef std::pair<ll, ll> pll;
 typedef double db;
 typedef long double ldb;
-const int maxn = 1e6 + 5;
+const int maxn = 2e6 + 5;
 const ll mod = 998244353;
 int n, m;
 std::pair<ll, pii> e[maxn];
+std::vector<std::vector<int>> g;
 int fa[maxn];
 int find(int x) {
     return x == fa[x] ? x : fa[x] = find(fa[x]);
 }
 int count[maxn], deg[maxn];
+int val[maxn];
 ll ans;
+int new_node;
+void dfs(int u) {
+    int sum = 0;
+    for (auto v : g[u]) {
+        val[v] = std::min(val[u], val[v]);
+        dfs(v);
+        sum += count[v];
+    }
+    if (sum == 1) {
+        count[u] = 1;
+    } else if (sum == 2) {
+        ans += val[u];
+        
+    }
+
+}
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("0_input.txt", "r", stdin);
@@ -38,11 +56,17 @@ int main() {
     while (T--) {
         std::cin >> n >> m;
         for (int i = 1; i <= n; ++i) {
-            fa[i] = i;
-            count[i] = 0;
             deg[i] = 0;
         }
+        for (int i = 1; i <= m + n; ++i) {
+            fa[i] = i;
+            val[i] = 0;
+            count[i] = 0;
+        }
         ans = 0;
+        new_node = n;
+        g.clear();
+        g.resize(m + n + 1);
         for (int i = 1; i <= m; ++i) {
             int u, v;
             ll w;
@@ -55,41 +79,24 @@ int main() {
         for (int i = 1;i <= n; ++i) {
             count[i] = deg[i] % 2;
         }
-        std::vector<int> vec;
         for (int i = 1; i <= m; ++i) {
-            while (!vec.empty()) {
-                auto [val, _] = e[vec.back()];
-                if (val >= e[i].first) {
-                    vec.pop_back();
-                } else {
-                    break;
-                }
+            auto [w, p] = e[i];
+            auto [u, v] = p;
+            if (find(u) != find(v)) {
+                ++new_node;
+                g[new_node].push_back(find(u));
+                g[new_node].push_back(find(v));
+                fa[find(u)] = new_node;
+                fa[find(v)] = new_node;
+                val[new_node] = w;
+            } else {
+                ++new_node;
+                g[new_node].push_back(find(u));
+                fa[find(u)] = new_node;
+                val[new_node] = w;
             }
-            vec.push_back(i);
         }
-        int last = 0;
-        int fin = 0, flag = (count[1]), del = 0;
-        for (auto cur : vec) {
-            int val = e[cur].first, rt;
-            for (int i = last + 1; i <= cur; ++i) {
-                auto [_, p] = e[i];
-                auto [u, v] = p;
-                if (find(u) != find(v)) {
-                    count[find(u)] += count[find(v)];
-                    count[find(v)] = 0;
-                    fa[find(v)] = find(u);
-                    rt = find(u);
-                }
-            }
-            if (count[rt] >= 2) {
-                ans += 1ll * (count[rt]) / 2 * val;
-                if (flag && (find(1) == rt)) flag = 0, ans -= val;
-                fin = std::max(val, fin);
-                count[rt] %= 2;
-            }
-            last = cur;
-        }
-        ans +=  fin;
+        dfs(m + n);
         std::cout << ans << '\n';
     }
 
