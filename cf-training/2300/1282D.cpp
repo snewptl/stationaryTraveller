@@ -35,12 +35,23 @@ int main() {
     int len;
     s = "a";
     int len1 = ask(s);
+    if (len1 >= 300) {
+        s.clear();
+        s.resize(len1, 'b');
+        ask(s);
+        exit(0);
+    }
     s.resize(len1 + 1, 'a');
     int diff = ask(s);
+    if (!diff) {
+        exit(0);
+    }
     if (len1 < diff) {
+        s.clear();
         s.resize(len1, 'b');
         ask(s);
     } else {
+        len = len1 + 1;
         for (int i = 0; i < len; ++i) {
             s[i] = 'b';
             int cur = ask(s);

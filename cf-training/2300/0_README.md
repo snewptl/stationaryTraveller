@@ -180,9 +180,9 @@ https://codeforces.com/problemset/problem/1304/F1 - AC, 1h40min
 
 https://codeforces.com/problemset/problem/1292/C - AC
 
-https://codeforces.com/problemset/problem/1285/E
+https://codeforces.com/problemset/problem/1285/E - AC, 1h25min
 
-https://codeforces.com/problemset/problem/1282/D
+https://codeforces.com/problemset/problem/1282/D - AC, 1h20min, 难点在于各种边界情况的判定, 十分无聊的题目
 
 https://codeforces.com/problemset/problem/1276/C
 
