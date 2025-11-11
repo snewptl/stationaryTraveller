@@ -184,9 +184,9 @@ https://codeforces.com/problemset/problem/1285/E - AC, 1h25min
 
 https://codeforces.com/problemset/problem/1282/D - AC, 1h20min, 难点在于各种边界情况的判定, 十分无聊的题目
 
-https://codeforces.com/problemset/problem/1276/C
+https://codeforces.com/problemset/problem/1276/C - AC, 1h40min
 
-https://codeforces.com/problemset/problem/1268/C
+https://codeforces.com/problemset/problem/1268/C - AC, 1h13min
 
 https://codeforces.com/problemset/problem/1254/C
 
