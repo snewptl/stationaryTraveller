@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "name": "linux-clang-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "compilerPath": "/usr/bin/clang",
+      "cStandard": "gnu23",
+      "cppStandard": "gnu++23",
+      "intelliSenseMode": "linux-clang-x64",
+      "compilerArgs": [
+        ""
+      ]
+    }
+  ],
+  "version": 4
+}
