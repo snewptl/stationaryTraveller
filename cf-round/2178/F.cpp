@@ -44,7 +44,7 @@ void dfs(int u, int p) {
         size[u] += size[v];
     }
     if (u != 1 && size[u] % 2 == 0) ans *= 1ll * size[u], ans %= mod, count += 1;
-    if (size[u] % 2 == 0) ans *= size[u], ans %= mod;
+    if (size[u] % 2 == 0 || u == 1) ans *= size[u], ans %= mod;
     if (size[u] % 2 == 0) size[u] = 0;
 }
 void dfs2(int u, int p) {

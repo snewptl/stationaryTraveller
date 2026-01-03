@@ -17,7 +17,14 @@ typedef double db;
 typedef long double ldb;
 const int maxn = 2e5 + 5;
 const ll mod = 998244353;
-
+ll x, y, k;
+bool check(ll max) {
+    for (int i = 1; i <= x; ++i) {
+        max -= max / y; 
+    }
+    if (max >= k) return true;
+    return false;
+}
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("0_input.txt", "r", stdin);
@@ -29,6 +36,18 @@ int main() {
     int T = 1;
     std::cin >> T;
     while (T--) {
+        std::cin >> x >> y >> k;
+        ll l = 1, r = 1e12, ans = -1;
+        while (l <= r) {
+            ll mid = (l + r) / 2;
+            if (check(mid)) {
+                r = mid - 1;
+                ans = mid;
+            } else {
+                l = mid + 1;
+            }
+        }
+        std::cout << ans << '\n';
     }
 
     return 0;

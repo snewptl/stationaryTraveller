@@ -17,7 +17,7 @@ typedef double db;
 typedef long double ldb;
 const int maxn = 2e5 + 5;
 const ll mod = 998244353;
-
+int n, a[maxn];
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("0_input.txt", "r", stdin);
@@ -29,6 +29,18 @@ int main() {
     int T = 1;
     std::cin >> T;
     while (T--) {
+        std::cin >> n;
+        for (int i = 1; i <= n; ++i) {
+            std::cin >> a[i];
+        } 
+        int max = 0, count = 0;
+        for (int i = 1; i <= n; ++i)  {
+            if (max > a[i]) {
+                count += 1;
+            }
+            max = std::max(a[i], max);
+        }
+        std::cout << count << '\n';
     }
 
     return 0;
