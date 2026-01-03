@@ -188,18 +188,48 @@ https://codeforces.com/problemset/problem/1276/C - AC, 1h40min
 
 https://codeforces.com/problemset/problem/1268/C - AC, 1h13min
 
-https://codeforces.com/problemset/problem/1254/C
+https://codeforces.com/problemset/problem/1254/C - 未做出
 
-https://codeforces.com/problemset/problem/1252/B
+https://codeforces.com/problemset/problem/1251/E1 - AC
 
-https://codeforces.com/problemset/problem/1251/E1
+https://codeforces.com/problemset/problem/1245/F - WA on 2, corner case
 
-https://codeforces.com/problemset/problem/1250/E
+https://codeforces.com/problemset/problem/1244/F - AC
 
-https://codeforces.com/problemset/problem/1245/F
+https://codeforces.com/problemset/problem/1239/C - WA on 4, 理解错题意
 
-https://codeforces.com/problemset/problem/1245/E
+# 2026 年 1 月
+https://codeforces.com/problemset/problem/1245/E - AC
 
-https://codeforces.com/problemset/problem/1244/F
+https://codeforces.com/problemset/problem/1236/D - AC, 1h20min
 
-https://codeforces.com/problemset/problem/1239/C
+https://codeforces.com/problemset/problem/1228/E
+
+https://codeforces.com/problemset/problem/1217/E
+
+https://codeforces.com/problemset/problem/1211/F
+
+https://codeforces.com/problemset/problem/1204/E
+
+https://codeforces.com/problemset/problem/1203/F2
+
+https://codeforces.com/problemset/problem/1200/F
+
+https://codeforces.com/problemset/problem/1198/D
+
+https://codeforces.com/problemset/problem/1197/E
+
+https://codeforces.com/problemset/problem/1190/C
+
+https://codeforces.com/problemset/problem/1188/B
+
+https://codeforces.com/problemset/problem/1182/E
+
+https://codeforces.com/problemset/problem/1167/F
+
+https://codeforces.com/problemset/problem/1156/F
+
+https://codeforces.com/problemset/problem/1151/F
+
+https://codeforces.com/problemset/problem/1148/E
+
