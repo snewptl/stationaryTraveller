@@ -203,11 +203,9 @@ https://codeforces.com/problemset/problem/1245/E - AC
 
 https://codeforces.com/problemset/problem/1236/D - AC, 1h20min
 
-https://codeforces.com/problemset/problem/1228/E
+https://codeforces.com/problemset/problem/1228/E - 未做出
 
-https://codeforces.com/problemset/problem/1217/E
-
-https://codeforces.com/problemset/problem/1211/F
+https://codeforces.com/problemset/problem/1217/E - TLE on 83, 被卡常了...
 
 https://codeforces.com/problemset/problem/1204/E
 
