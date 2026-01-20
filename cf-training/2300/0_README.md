@@ -207,23 +207,21 @@ https://codeforces.com/problemset/problem/1228/E - 未做出
 
 https://codeforces.com/problemset/problem/1217/E - TLE on 83, 被卡常了...
 
-https://codeforces.com/problemset/problem/1204/E
+https://codeforces.com/problemset/problem/1204/E - 未做出，好题
 
-https://codeforces.com/problemset/problem/1203/F2
+https://codeforces.com/problemset/problem/1200/F - AC，简单题，但是最开始的时候 RE on 7，调了很久没发现问题，但是加上一个 assert 后居然又通过了，感觉是cf的测评机出了问题。提交记录分别是 356600877 和 356597037
 
-https://codeforces.com/problemset/problem/1200/F
+https://codeforces.com/problemset/problem/1198/D - AC
 
-https://codeforces.com/problemset/problem/1198/D
+https://codeforces.com/problemset/problem/1197/E - WA on 7, 发现思路有些问题，遂改成线段树，但是依然 WA 2，发现是corner case， 改正后通过，这道题在赛场上要是遇到会很头疼...
 
-https://codeforces.com/problemset/problem/1197/E
+https://codeforces.com/problemset/problem/1190/C - AC
 
-https://codeforces.com/problemset/problem/1190/C
+https://codeforces.com/problemset/problem/1188/B - 未做出，神奇小清新数学题，很有趣
 
-https://codeforces.com/problemset/problem/1188/B
+https://codeforces.com/problemset/problem/11·82/E - AC, 2h
 
-https://codeforces.com/problemset/problem/1182/E
-
-https://codeforces.com/problemset/problem/1167/F
+https://codeforces.com/problemset/problem/1167/F - AC, 1h30min
 
 https://codeforces.com/problemset/problem/1156/F
 
