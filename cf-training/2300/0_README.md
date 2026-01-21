@@ -223,7 +223,7 @@ https://codeforces.com/problemset/problem/11·82/E - AC, 2h
 
 https://codeforces.com/problemset/problem/1167/F - AC, 1h30min
 
-https://codeforces.com/problemset/problem/1156/F
+https://codeforces.com/problemset/problem/1156/F - TLE on 7
 
 https://codeforces.com/problemset/problem/1151/F
 
