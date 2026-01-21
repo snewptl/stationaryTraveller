@@ -225,7 +225,56 @@ https://codeforces.com/problemset/problem/1167/F - AC, 1h30min
 
 https://codeforces.com/problemset/problem/1156/F - TLE on 7
 
-https://codeforces.com/problemset/problem/1151/F
+https://codeforces.com/problemset/problem/1151/F - AC, 1h20min
 
-https://codeforces.com/problemset/problem/1148/E
+https://codeforces.com/problemset/problem/1148/E - AC
+
+https://codeforces.com/problemset/problem/1139/D
+
+https://codeforces.com/problemset/problem/1132/E
+
+https://codeforces.com/problemset/problem/1132/D
+
+https://codeforces.com/problemset/problem/1131/E
+
+https://codeforces.com/problemset/problem/1101/G
+
+https://codeforces.com/problemset/problem/1096/F
+
+https://codeforces.com/problemset/problem/1093/G
+
+https://codeforces.com/problemset/problem/1090/E
+
+https://codeforces.com/problemset/problem/1085/E
+
+https://codeforces.com/problemset/problem/1073/E
+
+https://codeforces.com/problemset/problem/1070/J
+
+https://codeforces.com/problemset/problem/1070/G
+
+https://codeforces.com/problemset/problem/1065/E
+
+https://codeforces.com/problemset/problem/1046/I
+
+https://codeforces.com/problemset/problem/1045/C
+
+https://codeforces.com/problemset/problem/1042/E
+
+https://codeforces.com/problemset/problem/1039/A
+
+https://codeforces.com/problemset/problem/1015/F
+
+https://codeforces.com/problemset/problem/1009/F
+
+https://codeforces.com/problemset/problem/995/C
+
+
+
+
+
+
+
+
+
 
