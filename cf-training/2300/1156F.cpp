@@ -21,26 +21,8 @@ int n;
 int a[maxn];
 int vis[maxn];
 int nxt[maxn];
-ll fw[maxn][maxn];
-int lowbit(int x) {
-    return x & (-x);
-}
-void update(int lev, int pos, ll val) {
-    while (pos <= n) {
-        fw[lev][pos] += val;
-        fw[lev][pos] %= mod;
-        pos += lowbit(pos);
-    }
-}
-ll query(int lev, int pos) {
-    ll res =  0;
-    while (pos > 0) {
-        res += fw[lev][pos];
-        res %= mod;
-        pos -= lowbit(pos);
-    }
-    return res;
-}
+ll dp[maxn][maxn];
+ll inv[maxn];
 ll quick_pow(ll x, ll y) {
     ll res = 1;
     while (y) {
@@ -52,7 +34,7 @@ ll quick_pow(ll x, ll y) {
     }
     return res;
 }
-ll inv(ll x) {
+ll Inv(ll x) {
     return quick_pow(x, mod - 2);
 }
 int main() {
@@ -63,28 +45,30 @@ int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(NULL);
 
-    // std::cin >> n;
-    // for (int i = 1; i <= n; ++i) {
-    //     std::cin >> a[i];
-    //     vis[a[i]] += 1;
-    // }
-    n = 5000;
+    std::cin >> n;
     for (int i = 1; i <= n; ++i) {
-        vis[i] = 1;
+        std::cin >> a[i];
+        vis[a[i]] += 1;
     }
     for (int i = n; i >= 1; --i) {
         nxt[i] = vis[i];
         if (i != n) nxt[i] += nxt[i + 1];
     }
-    update(1, 1, inv(n));
+    for (int i = 1; i <= n; ++i) {
+        inv[i] = Inv(i);
+    }
+    dp[1][1] = inv[n];
     ll ans = 0;
     for (int i = 1; i < n; ++i) {
         for (int j = 1; j <= n; ++j) {
-            if (!vis[j]) continue;
-            ll base = vis[j] * query(i, j) % mod * inv(n - i) % mod;
-            update(i + 1, j + 1, base);
-            ans +=  base * (vis[j] - 1) % mod;
-            ans %= mod;
+            dp[i][j] += dp[i][j - 1];
+            if (vis[j]) {
+                ll base = vis[j] * dp[i][j] % mod * inv[n - i] % mod;
+                dp[i + 1][j + 1] += base;
+                dp[i + 1][j + 1] %= mod;
+                ans +=  base * (vis[j] - 1) % mod;
+                ans %= mod;
+            }
         }
     }
 
