@@ -229,7 +229,7 @@ https://codeforces.com/problemset/problem/1151/F - AC, 1h20min
 
 https://codeforces.com/problemset/problem/1148/E - AC
 
-https://codeforces.com/problemset/problem/1139/D
+https://codeforces.com/problemset/problem/1139/D - 未做出， 好题
 
 https://codeforces.com/problemset/problem/1132/E
 
