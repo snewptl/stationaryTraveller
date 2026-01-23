@@ -213,7 +213,7 @@ https://codeforces.com/problemset/problem/1200/F - AC，简单题，但是最开
 
 https://codeforces.com/problemset/problem/1198/D - AC
 
-https://codeforces.com/problemset/problem/1197/E - WA on 7, 发现思路有些问题，遂改成线段树，但是依然 WA 2，发现是corner case， 改正后通过，这道题在赛场上要是遇到会很头疼...
+https://codeforces.com/problemset/problem/1197/E - WA on 7, 发现思路有些问题，遂改成线段树，但是依然 WA 2，发现是corner case， 改正后通过，这道题在赛场上要是遇到会很头疼... 
 
 https://codeforces.com/problemset/problem/1190/C - AC
 
@@ -231,7 +231,7 @@ https://codeforces.com/problemset/problem/1148/E - AC
 
 https://codeforces.com/problemset/problem/1139/D - 未做出， 好题
 
-https://codeforces.com/problemset/problem/1132/E
+https://codeforces.com/problemset/problem/1132/E - AC, 2h
 
 https://codeforces.com/problemset/problem/1132/D
 
