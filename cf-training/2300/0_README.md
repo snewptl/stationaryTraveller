@@ -235,7 +235,7 @@ https://codeforces.com/problemset/problem/1132/E - AC, 2h
 
 https://codeforces.com/problemset/problem/1132/D - AC
 
-https://codeforces.com/problemset/problem/1131/E
+https://codeforces.com/problemset/problem/1131/E - AC
 
 https://codeforces.com/problemset/problem/1101/G
 
