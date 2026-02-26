@@ -237,15 +237,11 @@ https://codeforces.com/problemset/problem/1132/D - AC
 
 https://codeforces.com/problemset/problem/1131/E - AC
 
-https://codeforces.com/problemset/problem/1101/G
+https://codeforces.com/problemset/problem/1101/G - 未做出，好题
 
-https://codeforces.com/problemset/problem/1096/F
+https://codeforces.com/problemset/problem/1096/F - WA, fenwick tree 写错
 
-https://codeforces.com/problemset/problem/1093/G
-
-https://codeforces.com/problemset/problem/1090/E
-
-https://codeforces.com/problemset/problem/1085/E
+https://codeforces.com/problemset/problem/1093/G - AC
 
 https://codeforces.com/problemset/problem/1073/E
 
