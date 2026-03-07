@@ -245,10 +245,6 @@ https://codeforces.com/problemset/problem/1093/G - AC
 
 https://codeforces.com/problemset/problem/1073/E
 
-https://codeforces.com/problemset/problem/1070/J
-
-https://codeforces.com/problemset/problem/1070/G
-
 https://codeforces.com/problemset/problem/1065/E
 
 https://codeforces.com/problemset/problem/1046/I

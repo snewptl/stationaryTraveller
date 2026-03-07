@@ -19,19 +19,56 @@ const int maxn = 2e5 + 5;
 const ll mod = 998244353;
 ll l, r;
 int k;
+ll p10[20], pk[20], prefix10[20];
 ll dp[20][10];
-ll p10[20];
-ll C[11][11], sum[10];
-ll dfs(int r, int dep, int flag, int used) {
-    if (dep) {
-        ll digit = r / p10[dep];
-        r -= digit * p10[dep];
-        for (int i = 0; i < digit) {
-            dfs(r, dep - 1, 0, )
-        }
-    } else {
-
+std::vector<ll> count(10, 0);
+int digit_sum() {
+    int res = 0;
+    for (int i = 1; i <= 9; ++i) {
+        if (count[i]) res += 1;
     }
+    if (!res) return res;
+    return res + count[0];
+}
+void try_update(int pos, int delta) {
+    if (pos != 0) count[pos] += delta;
+    else {
+        if (digit_sum()) {
+            count[pos] += delta;
+        }
+    }
+}
+ll solve(ll x) {
+    ll ans = 0, sum = 0;
+    count.clear();
+    count.resize(10, 0);
+    for (int i = 17; i >= 0; --i) {
+        int cur = l / p10[i];
+        for (int j = 0; j < cur; ++j) {
+            try_update(j, 1);
+            sum += j * p10[i] % mod;
+            sum %= mod;
+            if (digit_sum() <= k) {
+                for (int t = 0; t <= 9; ++t) {
+                    ans += pk[i] * sum % mod;
+                    ans %= mod;
+                }
+                if (i) {
+                    for (int t = 1; t <= 9; ++t) {
+                        ans += pk[i - 1] * prefix10[i] % mod * t % mod;
+                        ans %= mod;
+                    }
+                }
+            }
+            try_update(j, -1);
+            sum -= j * p10[i] % mod;
+            sum = (sum + mod) % mod;
+        }
+        try_update(cur, 1);
+        sum += cur * p10[i];
+    }
+    if (digit_sum() <= k) ans += x, ans %= mod;
+    return ans;
 }
 int main() {
     #ifndef ONLINE_JUDGE
@@ -45,24 +82,20 @@ int main() {
     for (int i = 1; i < 18; ++i) {
         p10[i] = p10[i - 1] * 10 % mod;
     }
-    C[1][0] = C[1][1] = 1;
-    for (int i = 2; i <= 10; ++i) {
-        C[i][0] = 1;
-        for (int j = 1; j <= i; ++j) {
-            C[i][j] = C[i][j - 1] + C[i - 1][j - 1];
-            C[i][j] %= mod;
+    for (int i = 0; i < 18; ++i) {
+        prefix10[i] = p10[i];
+        if (i) {
+            prefix10[i] += prefix10[i - 1];
         }
+        prefix10[i] %= mod;
     }
-    for (int i = 1; i <= 10; ++i) {
-        sum[i] = sum[i - 1] * (10 - (i - 1)) % mod;
-        for (int j = 0; j <= 9; ++j) {
-            sum[i] += C[10 - 1][i - 1] * i % mod;
-            sum[i] %= mod;
-        }
+    pk[0] = 1;
+    for (int i = 1; i < 18; ++i) {
+        pk[i] = pk[i - 1] * k % mod;
     }
     
     std::cin >> l >> r >> k;
-    std::cout << (dfs(r, 17, 1, 0) - dfs(l - 1, 17, 1, 0) + mod) % mod << '\n';
+    std::cout << (solve(r) - solve(l - 1) + mod) % mod << '\n';
     return 0;
 }
 // 10 : 26 - 
