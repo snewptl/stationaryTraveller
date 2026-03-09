@@ -21,6 +21,7 @@ ll l, r;
 int k;
 ll p10[20], pk[20], prefix10[20];
 ll dp[20][10];
+ll C[10][10];
 std::vector<ll> count(10, 0);
 int digit_sum() {
     int res = 0;
@@ -80,7 +81,7 @@ int main() {
 
     p10[0] = 1;
     for (int i = 1; i < 18; ++i) {
-        p10[i] = p10[i - 1] * 10 % mod;
+        p10[i] = p10[i - 1] * 10;
     }
     for (int i = 0; i < 18; ++i) {
         prefix10[i] = p10[i];
