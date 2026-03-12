@@ -43,12 +43,12 @@ void dfs(int u, int p) {
     } else {
         for (auto v : e[u]) {
             if (v == p || v == son) continue;
-            for (int i = 0; i < loc[v]->size(); ++i) {
-                (*loc[u])[i] += (*loc[v])[i];
-                if (res[u] < (*loc[u])[i] || (res[u] == (*loc[u])[i] && pos[u] > i + 1) ) {
+            for (int i = loc[u]->size() - 1, j = loc[v]->size() - 1; j >= 0; --i, --j) {
+                (*loc[u])[i] += (*loc[v])[j];
+                int newPos = loc[u]->size() - 1 - i + 1;
+                if (res[u] < (*loc[u])[i] || (res[u] == (*loc[u])[i] && pos[u] > newPos) ) {
                     res[u] = std::max(res[u], (*loc[u])[i]);
-                    pos[u] = i + 1;
-
+                    pos[u] = newPos;
                 }
             }
         }

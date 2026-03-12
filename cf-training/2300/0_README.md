@@ -249,7 +249,7 @@ https://codeforces.com/problemset/problem/1065/E - 未做出
 
 https://codeforces.com/problemset/problem/1042/E - AC
 
-https://codeforces.com/problemset/problem/1009/F
+https://codeforces.com/problemset/problem/1009/F - AC
 
 https://codeforces.com/problemset/problem/995/C
 
