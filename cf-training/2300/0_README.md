@@ -251,7 +251,7 @@ https://codeforces.com/problemset/problem/1042/E - AC
 
 https://codeforces.com/problemset/problem/1009/F - AC
 
-https://codeforces.com/problemset/problem/995/C
+https://codeforces.com/problemset/problem/995/C - WA on 6, 想假了
 
 
 

@@ -19,13 +19,18 @@ const int maxn = 2e5 + 5;
 const ll mod = 998244353;
 int n;
 pii a[maxn];
-std::set<std::pair<pii, int>> s[2];
+std::set<std::pair<pll, int>> s[3];
 pii cur;
 int dir[maxn];
 std::vector<std::vector<pii>> e; 
-void insert(int x, int y, int id) {
-    if (1ll * x * y >= 0) s[0].insert({{x, y}, id});
-    else s[1].insert({{x, y}, id}); 
+void insert(ll x, ll y, int id) {
+    if (y < 0) dir[id] = -1, x *= -1, y *= -1;
+    if (y * y <= 3 * x * x) {
+        if (x > 0) s[0].insert({{x, y}, id});
+        else s[2].insert({{x, y}, id});
+    }  else {
+        s[1].insert({{x, y}, id});
+    }
 }
 ll len(pii cur) {
     auto [x, y] = cur;
@@ -33,7 +38,7 @@ ll len(pii cur) {
 }
 void dfs(int u) {
     for (auto [v, w] : e[u]) {
-        dir[v] = dir[u] * w;
+        dir[v] *= dir[u] * w;
         dfs(v); 
     }
 }
@@ -47,21 +52,24 @@ int main() {
 
     std::cin >> n;
     e.resize(2 * n);
+    for (int i = 1; i <= 2 * n - 1; ++i) {
+        dir[i] = 1;
+    }
     int node_count = n;
     for (int i = 1; i <= n; ++i) {
         int x, y;
         std::cin >> x >> y;
         insert(x, y, i);
     }
-    while (s[1].size() > 1 || s[0].size() > 1) {
-        for (int t = 0; t < 2; ++ t) {
+    while (s[1].size() > 1 || s[0].size() > 1 || s[2].size() > 1) {
+        for (int t = 0; t < 3; ++ t) {
             if (s[t].size() > 1) {
-                ++node_count;
                 auto [pos1, id1] = *s[t].begin();
                 s[t].erase(s[t].begin());
                 auto [pos2, id2] = *s[t].begin();
                 s[t].erase(s[t].begin());
                 
+                ++node_count;
                 a[node_count] = {pos1.first - pos2.first, pos1.second - pos2.second};
                 if (len(a[node_count]) > 1e12) {
                     a[node_count] = {pos1.first + pos2.first, pos1.second + pos2.second};
@@ -75,23 +83,53 @@ int main() {
             }
         }
     }
-    if (s[1].size() == 1 && s[0].size() == 1) {
-        auto [pos1, id1] = *s[0].begin();
-        auto [pos2, id2] = *s[1].begin();
-        ++node_count;
-        a[node_count] = {pos1.first - pos2.first, pos1.second - pos2.second};
-        if (len(a[node_count]) > 2e12) {
-            a[node_count] = {pos1.first + pos2.first, pos1.second + pos2.second};
-            e[node_count].push_back({id1, 1});
-            e[node_count].push_back({id2, 1});
-        } else {
-            e[node_count].push_back({id1, 1});
-            e[node_count].push_back({id2, -1});
+    std::vector<std::pair<pll, int>> vec;
+    for (int t = 0; t < 3; ++t) {
+        if (s[t].size()) {
+            vec.push_back(*s[t].begin());
         }
     }
-    for (int i = 1; i <= node_count; ++i) {
-        dir[i] = 1;
+    if (vec.size() == 3) {
+        std::vector<std::pair<pll, int>> temp;
+        int flag = 0;
+        ++node_count;
+        for (int i = 0; i < 3; ++i) {
+            for (int j = i + 1; j < 3; ++j) {
+                if (flag) break;
+                auto [pos1, id1] = vec[i];
+                auto [pos2, id2] = vec[j];
+                flag = 1;
+                a[node_count] = {pos1.first - pos2.first, pos1.second - pos2.second};
+                if (len(a[node_count]) <= 1e12) {
+                    e[node_count].push_back({id1, 1});
+                    e[node_count].push_back({id2, -1});
+                } else {
+                    a[node_count] = {pos1.first + pos2.first, pos1.second + pos2.second};
+                    if (len(a[node_count]) <= 1e12) {
+                        e[node_count].push_back({id1, 1});
+                        e[node_count].push_back({id2, 1});
+                    } else {
+                        flag = 0;
+                    }
+                }
+                if (flag) {
+                    temp.push_back({a[node_count], node_count});
+                    for (int k = 0; k < 3; ++k) {
+                        if (k == i || k == j) continue;
+                        temp.push_back(vec[k]);
+                        break;
+                    }
+                    vec = temp;
+                }
+            }
+        }
+    } 
+    if (vec.size() == 2) {
+        ++node_count;
+        e[node_count].push_back({vec[0].second, 1});
+        e[node_count].push_back({vec[1].second, 1});
     }
+
     dfs(node_count);
     for (int i = 1; i <= n; ++i) {
         std::cout << dir[i] << ' ';
