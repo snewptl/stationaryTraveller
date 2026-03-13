@@ -24,12 +24,13 @@ pii cur;
 int dir[maxn];
 std::vector<std::vector<pii>> e; 
 void insert(ll x, ll y, int id) {
-    if (y < 0) dir[id] = -1, x *= -1, y *= -1;
+    pll realNode = {x, y};
+    if (y < 0) x = -x, y = -y;
     if (y * y <= 3 * x * x) {
-        if (x > 0) s[0].insert({{x, y}, id});
-        else s[2].insert({{x, y}, id});
+        if (x > 0) s[0].insert({realNode, id});
+        else s[2].insert({realNode, id});
     }  else {
-        s[1].insert({{x, y}, id});
+        s[1].insert({realNode, id});
     }
 }
 ll len(pii cur) {
@@ -38,7 +39,7 @@ ll len(pii cur) {
 }
 void dfs(int u) {
     for (auto [v, w] : e[u]) {
-        dir[v] *= dir[u] * w;
+        dir[v] = dir[u] * w;
         dfs(v); 
     }
 }
@@ -86,6 +87,7 @@ int main() {
     std::vector<std::pair<pll, int>> vec;
     for (int t = 0; t < 3; ++t) {
         if (s[t].size()) {
+            assert(len(s[t].begin()->first) <= 1e12);
             vec.push_back(*s[t].begin());
         }
     }
@@ -125,9 +127,20 @@ int main() {
         }
     } 
     if (vec.size() == 2) {
+        assert(len(vec[0].first) <= 1e12);
+        assert(len(vec[1].first) <= 1e12);
         ++node_count;
-        e[node_count].push_back({vec[0].second, 1});
-        e[node_count].push_back({vec[1].second, 1});
+        auto [pos1, id1] = vec[0];
+        auto [pos2, id2] = vec[1];
+        a[node_count] = {pos1.first - pos2.first, pos1.second - pos2.second};
+        if (len(a[node_count]) <= 2e12) {
+            e[node_count].push_back({id1, 1});
+            e[node_count].push_back({id2, -1});
+        } else {
+            a[node_count] = {pos1.first + pos2.first, pos1.second + pos2.second};
+            e[node_count].push_back({id1, 1});
+            e[node_count].push_back({id2, 1});
+        }
     }
 
     dfs(node_count);

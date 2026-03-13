@@ -253,6 +253,60 @@ https://codeforces.com/problemset/problem/1009/F - AC
 
 https://codeforces.com/problemset/problem/995/C - WA on 6, 想假了
 
+https://codeforces.com/problemset/problem/993/E
+
+https://codeforces.com/problemset/problem/985/F
+
+https://codeforces.com/problemset/problem/960/E
+
+https://codeforces.com/problemset/problem/949/D
+
+https://codeforces.com/problemset/problem/938/E
+
+https://codeforces.com/problemset/problem/936/C
+
+https://codeforces.com/problemset/problem/935/E
+
+https://codeforces.com/problemset/problem/915/E
+
+https://codeforces.com/problemset/problem/901/C
+
+https://codeforces.com/problemset/problem/898/F
+
+https://codeforces.com/problemset/problem/895/E
+
+https://codeforces.com/problemset/problem/893/F
+
+https://codeforces.com/problemset/problem/891/C
+
+https://codeforces.com/problemset/problem/884/D
+
+https://codeforces.com/problemset/problem/883/C
+
+https://codeforces.com/problemset/problem/878/B
+
+https://codeforces.com/problemset/problem/877/F
+
+https://codeforces.com/problemset/problem/873/E
+
+https://codeforces.com/problemset/problem/870/E
+
+https://codeforces.com/problemset/problem/858/F
+
+https://codeforces.com/problemset/problem/856/B
+
+https://codeforces.com/problemset/problem/852/I
+
+https://codeforces.com/problemset/problem/846/E
+
+https://codeforces.com/problemset/problem/838/E
+
+https://codeforces.com/problemset/problem/830/C
+
+https://codeforces.com/problemset/problem/825/E
+
+
+
 
 
 
