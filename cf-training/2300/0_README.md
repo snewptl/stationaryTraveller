@@ -253,11 +253,11 @@ https://codeforces.com/problemset/problem/1009/F - AC
 
 https://codeforces.com/problemset/problem/995/C - WA on 6, 想假了
 
-https://codeforces.com/problemset/problem/993/E
+https://codeforces.com/problemset/problem/993/E - 未做出
 
-https://codeforces.com/problemset/problem/985/F
+https://codeforces.com/problemset/problem/985/F - AC
 
-https://codeforces.com/problemset/problem/960/E
+https://codeforces.com/problemset/problem/960/E - AC
 
 https://codeforces.com/problemset/problem/949/D
 
