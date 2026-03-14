@@ -257,7 +257,7 @@ https://codeforces.com/problemset/problem/993/E - 未做出
 
 https://codeforces.com/problemset/problem/985/F - AC
 
-https://codeforces.com/problemset/problem/960/E - AC
+https://codeforces.com/problemset/problem/960/E - AC, 2h
 
 https://codeforces.com/problemset/problem/949/D
 
