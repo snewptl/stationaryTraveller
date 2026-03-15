@@ -8,6 +8,7 @@
 #include <assert.h>
 #include <memory.h>
 #include <cmath>
+#include <iomanip>
 #define all(x) x.begin(), x.end()
 typedef long long ll;
 typedef std::pair<int, int> pii;
@@ -41,7 +42,7 @@ int main() {
         for (int i = n; i >= 1; --i) {
             dp[i] = std::max(dp[i + 1], dp[i + 1] * (1 - 1.0 * p[i] / 100) + c[i]);
         }
-        std::cout << dp[1] << '\n';
+        std::cout << std::setprecision(10) << dp[1] << '\n';
     }
 
     return 0;
