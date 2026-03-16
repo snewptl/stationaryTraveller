@@ -15,27 +15,33 @@ typedef std::pair<ll, int> pli;
 typedef std::pair<ll, ll> pll;
 typedef double db;
 typedef long double ldb;
-const int maxn = 5e5 + 5;
+const int maxn = 2e5 + 5;
 const ll mod = 998244353;
-int n, k, root;
 std::vector<std::vector<int>> e;
-pii dis[maxn];
-int vis[maxn];
+std::vector<std::vector<int>> left_most;
+std::vector<std::set<int>> remain;
+std::vector<std::vector<int>> opt;
+int n;
+int fa[maxn];
+int given[maxn];
+int dep[maxn];
+int used[maxn];
+int max_dep;
 void dfs(int u, int p) {
-    int count = 0;
+    int son = 0;
+    max_dep = std::max(max_dep, dep[u]);
+    remain[dep[u]].insert(u);
     for (auto v : e[u]) {
         if (v == p) continue;
+        fa[v] = u;
+        if (!son) son = v;
+        dep[v] = dep[u] + 1;
         dfs(v, u);
-        count += 1;
-        int cur = dis[v].first + 1;
-        if (cur >= dis[u].first) {
-            dis[u].second = std::min(dis[u].second, cur);
-        } else {
-            dis[u].second = dis[u].first;
-            dis[u].first = cur;
-        }
     }
-    if (!count || dis[u].first + dis[u].second <= k + 1) vis[u] = 1, dis[u].first = 0;
+    if (son) {
+        left_most[dep[son]].push_back(son);
+    }
+
 }
 int main() {
     #ifndef ONLINE_JUDGE
@@ -48,22 +54,36 @@ int main() {
     int T = 1;
     std::cin >> T;
     while (T--) {
-        std::cin >> n >> k >> root;
+        int n;
+        std::cin >> n;
+        max_dep = 0;
         e.clear();
         e.resize(n + 1);
+        left_most.clear();
+        left_most.resize(n + 1);
+        remain.clear();
+        remain.resize(n + 1);
+        opt.clear();
         for (int i = 1; i <= n; ++i) {
-            dis[i] = {1e9, 1e9};
-            vis[i] = 0; 
+            given[i] = 0;
+            used[i] = 0;
         }
         for (int i = 1; i < n; ++i) {
             int u, v;
             std::cin >> u >> v;
             e[u].push_back(v);
             e[v].push_back(u);
+        }  
+        dfs(1, 0);
+        int ans = 0;
+        for (int i = max_dep; i >= 0; --i) {
+            if (left_most[i].size() > 1) {
+                ans = std::max(ans, (int)remain[i].size());
+            } else {
+                ans = std::max(ans, (int)remain[i].size() + 1);
+            }
         }
-        dfs(root, 0);
-        if (vis[root]) std::cout << "YES\n";
-        else std::cout << "NO\n";
+        std::cout << ans << '\n';
     }
 
     return 0;
