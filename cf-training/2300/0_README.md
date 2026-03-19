@@ -259,7 +259,7 @@ https://codeforces.com/problemset/problem/985/F - AC
 
 https://codeforces.com/problemset/problem/960/E - AC, 2h
 
-https://codeforces.com/problemset/problem/949/D
+https://codeforces.com/problemset/problem/949/D - AC
 
 https://codeforces.com/problemset/problem/938/E
 

@@ -17,7 +17,7 @@ typedef double db;
 typedef long double ldb;
 const int maxn = 2e5 + 5;
 const ll mod = 998244353;
-int n, d;
+ll n, d;
 ll b;
 ll a[maxn];
 int main() {
@@ -32,45 +32,54 @@ int main() {
     for (int i = 1; i <= n; ++i) {
         std::cin >> a[i];
     }
-    int ans = 0;
-    int end = (n + 1) / 2, now = 1, last = 0;
+    int ans = (n + 1) / 2;
+    ll end = (n + 1) / 2, now = 1, last = 0;
     pii le_border = {1, d + 1}, ri_border = {n - d, n};
     while (now <= end) {
         ll cur_le = b;
-        while (le_border.second <= n && cur_le) {
+        le_border.second = std::min(now + d * now, n);
+        while (now <= end && cur_le) {
             ll min = std::min(a[le_border.first], cur_le);
             cur_le -= min;
             a[le_border.first] -= min;
-            if (!a[le_border.first]) ++le_border.first;
-            if (cur_le && le_border.first > le_border.second) {
-                ++le_border.second;
-                ++now;
+            if (cur_le) {
+                if (!a[le_border.first]) ++le_border.first;
+                if (le_border.first > le_border.second) {
+                    ++now;
+                    le_border.second = std::min(now + d * now, n);
+                }
             }
         }
+
+        ri_border.first = std::max(1ll, n - now + 1 - d * now);
         ll cur_ri = b;
-        while (ri_border.first <= ri_border.second && cur_ri) {
+        while (now <= n / 2 && cur_ri) {
             ll min = std::min(a[ri_border.second], cur_ri);
             cur_ri -= min;
             a[ri_border.second] -= min;
-            if (!a[ri_border.second]) --ri_border.second;
-        }
-        if (cur_le || cur_ri) {
-            if (le_border.first == 1) {
-                a[1] += b - 
+            if (cur_ri) {
+                if (!a[ri_border.second]) --ri_border.second;
+                if (ri_border.first > ri_border.second) {
+                    ++now;
+                    ri_border.first = std::max(1ll, n - now + 1 - d * now);
+                }
+
             }
-            --le_border.first;
-            a[le_border.first] = b - cur_le;
-
-        } else {
-
         }
-        
-        ++le_border.second;
-        le_border.second = std::min(le_border.second, n);
-        --ri_border.first;
-        ri_border.first = std::max(ri_border.first, 1);
+
+        if (cur_le) {
+            break;
+        } else {
+            if (cur_ri) {
+                if (n % 2) ans -= 1;
+                break;
+            } else {
+                ans -= 1;
+                ++now;
+            }
+        }
     }
-    
+    std::cout << ans << '\n';
 
     return 0;
 }
