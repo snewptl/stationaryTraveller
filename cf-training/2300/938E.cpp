@@ -50,13 +50,10 @@ int main() {
     for (int i = 1; i <= n; ++i) {
         fac[i] = fac[i - 1] * i % mod;
     } 
-    sum_fac[1] = 1;
-    for (int i = 2; i <= n; ++i) {
-        sum_fac[i] = sum_fac[i - 1] * i % mod + i;
+    sum_fac[0] = 1;
+    for (int i = 1; i < n; ++i) {
+        sum_fac[i] = sum_fac[i - 1] * i % mod + 1;
         sum_fac[i] %= mod;
-    }
-    for (int i = 0; i <= n; ++i) {
-        sum_fac[i] += 1;
     }
     for (int i = 1; i <= n; ++i) {
         if (a[i] == a[i - 1]) continue;

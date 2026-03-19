@@ -261,7 +261,7 @@ https://codeforces.com/problemset/problem/960/E - AC, 2h
 
 https://codeforces.com/problemset/problem/949/D - AC
 
-https://codeforces.com/problemset/problem/938/E
+https://codeforces.com/problemset/problem/938/E - WA on 3, 想假了
 
 https://codeforces.com/problemset/problem/936/C
 
