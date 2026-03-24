@@ -263,7 +263,7 @@ https://codeforces.com/problemset/problem/949/D - AC
 
 https://codeforces.com/problemset/problem/938/E - WA on 3, 想假了
 
-https://codeforces.com/problemset/problem/936/C
+https://codeforces.com/problemset/problem/936/C - WA on 6, 想假了
 
 https://codeforces.com/problemset/problem/935/E
 

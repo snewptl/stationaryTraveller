@@ -32,24 +32,29 @@ void one_swap(int x) {
         temp[i] = s[n - 1 - i];
     }
     s = temp;
-    std::cout << x << ' ' << s << '\n';
+    // std::cout << x << ' ' << s << '\n';
 }
 bool solve() {
     for (int i = 0; i < n; ++i) {
-        if (s[i] != t[i]) {
-            int flag = 0;
-            for (int j = i + 1; j < n; ++j) {
-                if (t[i] == s[j]) {
-                    flag = 1;
-                    one_swap(j + 1);
-                    one_swap(n - 1 - j + i);
-                    one_swap(n - i);
-                    break;
-                }
-            }
-            if (!flag) return false;
+        char ch;
+        if (i % 2 == 0) {
+            ch = t[(n - 1) / 2 - i / 2];
+        } else {
+            ch = t[(n - 1) / 2 + (i + 1) / 2];
         }
+        int flag = 0;
+        for (int j = i; j < n; ++j) {
+            if (ch == s[j]) {
+                flag = 1;
+                one_swap(j + 1);
+                one_swap(n - 1 - j + i);
+                one_swap(n - i);
+                break;
+            }
+        }
+        if (!flag) return false;
     }
+    if (n % 2) one_swap(0);
     std::cout << opt.size() << '\n';
     for (auto it : opt) {
         std::cout << it << ' ';
@@ -64,7 +69,7 @@ int main() {
     #endif
     std::ios::sync_with_stdio(false);
     std::cin.tie(NULL);
-
+ 
     int T = 1;
     // std::cin >> T;
     while (T--) {
@@ -72,9 +77,9 @@ int main() {
         if (!solve()) {
             std::cout << "-1\n";
         }
-
+ 
     }
-
+ 
     return 0;
 }
 // 8 : 45 - 
