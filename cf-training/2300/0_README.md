@@ -265,9 +265,9 @@ https://codeforces.com/problemset/problem/938/E - WA on 3, 想假了
 
 https://codeforces.com/problemset/problem/936/C - WA on 6, 想假了
 
-https://codeforces.com/problemset/problem/935/E
+https://codeforces.com/problemset/problem/935/E - AC
 
-https://codeforces.com/problemset/problem/915/E
+https://codeforces.com/problemset/problem/915/E - AC
 
 https://codeforces.com/problemset/problem/901/C
 
