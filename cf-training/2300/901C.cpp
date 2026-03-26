@@ -21,7 +21,8 @@ const ll mod = 998244353;
 int n, m, q;
 std::vector<std::vector<int>> e;
 std::vector<pii> seg;
-
+int right[maxn];
+ll prefix[maxn];
 namespace tarjan {
     int dfn[maxn], low[maxn], dfncnt, s[maxn], in_stack[maxn], tp;
     int scc[maxn], sc; 
@@ -84,18 +85,35 @@ int main() {
     for (int i = 1; i <= n; ++i) {
         if (!tarjan::scc[i]) tarjan::tarjan(i, 0);
     }
-    int ans = 0;
     std::set<int> s;
     for (auto [x, y] : seg) {
         s.insert(y);
     }
-    int last = 0;
+    for (int i = 1; i  <= n; ++i) right[i] = n;
+    std::sort(all(seg));
+    int last = 0, cur = *s.begin() - 1;
     for (auto [x, y] : seg) {
-        ans += (*s.begin() - x) * (x - last);
-        last = x;
+        for (int i = last + 1; i <= x; ++i) right[i] = cur;
         s.erase(y);
+        last = x;
+        if (!s.empty()) cur = *s.begin() - 1;
     }
-    std::cout << ans << '\n';
+    for (int i = 1; i <= n; ++i) {
+        prefix[i] = right[i];
+        if (i > 1) prefix[i] += prefix[i - 1];
+    }
+    std::cin >> q;
+    while (q--) {
+        int l, r;
+        std::cin >> l >> r;
+        auto pos = std::lower_bound(right + l, right + n + 1, r) - right;
+        --pos;
+        ll res = prefix[pos] - prefix[l - 1];
+        res -= 1ll * (l - 1 + l - 1 + pos - l) * (pos - l + 1) / 2;
+        res += 1ll * (r - pos) * (r - pos + 1) / 2;
+        std::cout << res << '\n';
+    }
+
     
 
     return 0;
