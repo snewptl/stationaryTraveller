@@ -17,11 +17,11 @@ typedef double db;
 typedef long double ldb;
 const int maxn = 2e5 + 5;
 const ll mod = 998244353;
-<<<<<<< HEAD
-
-=======
 int n;
->>>>>>> 33881cd33f7faea7c29e55e4b113180466582591
+ll a[maxn], b[maxn];
+ll lcm(ll x, ll y) {
+    return x / std::__gcd(x, y) * y;
+}
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("0_input.txt", "r", stdin);
@@ -33,15 +33,25 @@ int main() {
     int T = 1;
     std::cin >> T;
     while (T--) {
-<<<<<<< HEAD
-=======
         std::cin >> n;
         for (int i = 1; i <= n; ++i) {
-            std::cout << n - i + 1 << ' ';
+            std::cin >> a[i];
         }
-        std::cout << '\n';
-
->>>>>>> 33881cd33f7faea7c29e55e4b113180466582591
+        for (int i = 1; i <= n; ++i) {
+            std::cin >> b[i];
+        }
+        int ans = 0;
+        for (int i = 1; i <= n; ++i) {
+            ll l = 1, r = 1;
+            if (i > 1) {
+                l = std::__gcd(a[i - 1], a[i]);
+            }
+            if (i < n) {
+                r = std::__gcd(a[i], a[i + 1]);
+            }
+            if (b[i] > lcm(l, r)) ans += 1;
+        }
+        std::cout << ans << '\n';
     }
 
     return 0;

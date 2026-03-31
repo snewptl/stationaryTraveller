@@ -18,6 +18,7 @@ typedef long double ldb;
 const int maxn = 5e4 + 5;
 const ll mod = 998244353;
 int n;
+<<<<<<< HEAD
 ll a[maxn], b[maxn], c[maxn];
 ll vis[1000000 + 5];
 std::vector<ll> vec;
@@ -25,6 +26,19 @@ int dp[maxn][51];
 ll lcm(ll x, ll y) {
     return x / std::__gcd(x, y) * y;
 }
+=======
+ll a[maxn], b[maxn], c[maxn], lcms[maxn];
+ll vis[1000000 + 5];
+std::vector<ll> vec;
+int remain[maxn];
+int dp[maxn][1e3];
+ll lcm(ll x, ll y) {
+    return x / std::__gcd(x, y) * y;
+}
+std::pair<pii, int> cal(int x) {
+    return {{remain[x], std::min(n - x + 1, x)}, x};
+}
+>>>>>>> 33881cd33f7faea7c29e55e4b113180466582591
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("0_input.txt", "r", stdin);
@@ -42,7 +56,10 @@ int main() {
             if (i % it == 0) break;
         }
     }
+<<<<<<< HEAD
     vec.resize(50);
+=======
+>>>>>>> 33881cd33f7faea7c29e55e4b113180466582591
     int T = 1;
     std::cin >> T;
     while (T--) {
@@ -52,9 +69,14 @@ int main() {
             c[i] = a[i];
         }
         for (int i = 0; i <= n + 1; ++i) {
+<<<<<<< HEAD
             for (int j = 0; j <= 50; ++j) {
                 dp[i][j] = -1;
             }
+=======
+            remain[i] = 0;
+            dp[i][0] = dp[i][1] = dp[i][2] = 0;
+>>>>>>> 33881cd33f7faea7c29e55e4b113180466582591
         }
         for (int i = 1; i <= n; ++i) {
             std::cin >> b[i];
@@ -72,6 +94,7 @@ int main() {
             if (LCM <= b[i]) {
                 c[i] = LCM;
             }
+<<<<<<< HEAD
         }
         c[0] = 1;
         c[n + 1] = 1;
@@ -102,3 +125,42 @@ int main() {
 
     return 0;
 }
+=======
+            lcms[i] = LCM;
+        }
+        c[0] = 1;
+        c[n + 1] = 1;
+        std::set<std::pair<pii, int>> s;
+        for (int i = 1; i <= n; ++i) {
+            ll ban1 = c[i - 1] / std::__gcd(c[i - 1], c[i]);
+            ll ban2 = c[i + 1] / std::__gcd(c[i + 1], c[i]);
+            if (c[i] != a[i]) {
+                ans += 1;
+            } else {
+                ll fac = b[i] / lcms[i];
+                auto pos = std::upper_bound(vec.begin(), vec.end(), fac);
+                if (pos == vec.begin()) continue;
+                --pos;
+                while (pos != vec.begin() && (ban1 % *pos == 0 || ban2 % *pos == 0)) {
+                    --pos;
+                }
+                if ((ban1 % *pos == 0 || ban2 % *pos == 0)) continue;
+                remain[i] = pos - vec.begin() + 1;
+            }
+        }
+        for (int i = 1; i <= n; ++i) {
+            dp[i][0] = std::max(dp[i - 1][0], std::max(dp[i - 1][1], dp[i - 1][2]));
+            if (remain[i]) {
+                dp[i][1] = std::max(dp[i - 1][2], dp[i - 1][0]) + 1;
+            }
+            if (remain[i] > 1) {
+                dp[i][2] = std::max(dp[i - 1][1], dp[i - 1][0]) + 1;
+            }
+        }
+        
+        std::cout << ans + std::max(std::max(dp[n][0], dp[n][1]), dp[n][2]) << '\n';
+    }
+
+    return 0;
+}
+>>>>>>> 33881cd33f7faea7c29e55e4b113180466582591
