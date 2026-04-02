@@ -18,15 +18,6 @@ typedef long double ldb;
 const int maxn = 5e4 + 5;
 const ll mod = 998244353;
 int n;
-<<<<<<< HEAD
-ll a[maxn], b[maxn], c[maxn];
-ll vis[1000000 + 5];
-std::vector<ll> vec;
-int dp[maxn][51];
-ll lcm(ll x, ll y) {
-    return x / std::__gcd(x, y) * y;
-}
-=======
 ll a[maxn], b[maxn], c[maxn], lcms[maxn];
 ll vis[1000000 + 5];
 std::vector<ll> vec;
@@ -38,7 +29,6 @@ ll lcm(ll x, ll y) {
 std::pair<pii, int> cal(int x) {
     return {{remain[x], std::min(n - x + 1, x)}, x};
 }
->>>>>>> 33881cd33f7faea7c29e55e4b113180466582591
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("0_input.txt", "r", stdin);
@@ -56,10 +46,6 @@ int main() {
             if (i % it == 0) break;
         }
     }
-<<<<<<< HEAD
-    vec.resize(50);
-=======
->>>>>>> 33881cd33f7faea7c29e55e4b113180466582591
     int T = 1;
     std::cin >> T;
     while (T--) {
@@ -69,14 +55,8 @@ int main() {
             c[i] = a[i];
         }
         for (int i = 0; i <= n + 1; ++i) {
-<<<<<<< HEAD
-            for (int j = 0; j <= 50; ++j) {
-                dp[i][j] = -1;
-            }
-=======
             remain[i] = 0;
             dp[i][0] = dp[i][1] = dp[i][2] = 0;
->>>>>>> 33881cd33f7faea7c29e55e4b113180466582591
         }
         for (int i = 1; i <= n; ++i) {
             std::cin >> b[i];
@@ -94,38 +74,6 @@ int main() {
             if (LCM <= b[i]) {
                 c[i] = LCM;
             }
-<<<<<<< HEAD
-        }
-        c[0] = 1;
-        c[n + 1] = 1;
-        dp[0][0] = 0;
-        for (int i = 1; i <= n; ++i) {
-            for (int j = 0; j <= 50; ++j) {
-                if (dp[i - 1][j] == -1) continue;
-                ll ban1 = c[i - 1] / std::__gcd(c[i - 1], c[i]);
-                if (j) ban1 *= vec[j - 1];
-                ll ban2 = c[i + 1] / std::__gcd(c[i + 1], c[i]);
-                if (c[i] != a[i]) dp[i][0] = std::max(dp[i][0], dp[i - 1][j] + 1);
-                else {
-                    dp[i][0] = std::max(dp[i - 1][j], dp[i][0]);
-                    ll fac = b[i] / a[i];
-                    for (int k = 0; k < 50; ++k) {
-                        if (ban1 % vec[k] == 0 || ban2 % vec[k] == 0) continue;
-                        if (fac < vec[k]) break;
-                        dp[i][k + 1] = std::max(dp[i][k + 1], dp[i - 1][j] + 1);
-                    }
-                }
-            }
-        }
-        for (int i = 0; i <= 50; ++i) {
-            ans = std::max(ans, dp[n][i]);
-        }
-        std::cout << ans << '\n';
-    }
-
-    return 0;
-}
-=======
             lcms[i] = LCM;
         }
         c[0] = 1;
@@ -163,4 +111,3 @@ int main() {
 
     return 0;
 }
->>>>>>> 33881cd33f7faea7c29e55e4b113180466582591
