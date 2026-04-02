@@ -17,7 +17,7 @@ typedef double db;
 typedef long double ldb;
 const int maxn = 2e5 + 5;
 const ll mod = 998244353;
-
+int n, m;
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("0_input.txt", "r", stdin);

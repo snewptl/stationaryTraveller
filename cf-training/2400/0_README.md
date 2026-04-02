@@ -2,7 +2,7 @@
 
 https://codeforces.com/problemset/problem/2176/F - 未做出
 
-https://codeforces.com/problemset/problem/2176/E
+https://codeforces.com/problemset/problem/2176/E - AC
 
 https://codeforces.com/problemset/problem/2174/C1
 
