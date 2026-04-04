@@ -50,10 +50,14 @@ int main() {
         for (int i = n - 1; i >= 0; --i) {
             invpw[i] = invpw[i + 1] * m % p;
         }
+        prefix[1][0] = 1;
         for (int i = 1; i <= n; ++i) {
-            if (i > 2) prefix[i % 2][i] += prefix[i % 2][i - 2];
-            prefix[i % 2][i] += invpw[i];
-            prefix[i % 2][i] %= p;
+            for (int j = 0; j < 2; ++j) {
+                prefix[j][i] = prefix[j][i - 1];
+                prefix[j][i] += invpw[i];
+                prefix[j][i] %= p;
+
+            }
         }
         ll all_sum = 0;
         for (int i = 1; i <= n; ++i) {
@@ -67,13 +71,15 @@ int main() {
             ans += res;
             ans %= p;
         }
-        ans *= qp(2, p - 2);
-        ans %= p;
         for (int i = 1; i <= n; ++i) {
-            ans -=  prefix[i % 2][i];
-            ans = (ans + p) % p;
-            ans += invpw[i / 2] * i % p;
-            ans %= p;
+            ll delta = 0;
+            delta -=  prefix[i % 2][i / 2] * invpw[i / 2] % p;
+            delta -= (prefix[i % 2][i / 2] - invpw[i / 2]) % p * invpw[i / 2]  % p ;
+            delta += invpw[i / 2] * ((i + 1) / 2 - 1) % p * 2 % p;
+            delta += invpw[i / 2];
+            delta = (delta % p + p) % p;
+            delta *= (n - i + 1), delta %= p;
+            ans = (ans + delta) % p;
         }
         std::cout << ans << '\n';
     }

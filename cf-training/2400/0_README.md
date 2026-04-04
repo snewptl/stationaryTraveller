@@ -4,11 +4,9 @@ https://codeforces.com/problemset/problem/2176/F - 未做出
 
 https://codeforces.com/problemset/problem/2176/E - AC
 
-https://codeforces.com/problemset/problem/2174/C1
+https://codeforces.com/problemset/problem/2174/C1 - 未做出
 
-https://codeforces.com/problemset/problem/2171/H
-
-https://codeforces.com/problemset/problem/2169/E
+https://codeforces.com/problemset/problem/2169/E - AC
 
 https://codeforces.com/problemset/problem/2161/E
 
