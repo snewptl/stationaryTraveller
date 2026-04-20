@@ -10,11 +10,11 @@ https://codeforces.com/problemset/problem/2169/E - AC
 
 https://codeforces.com/problemset/problem/2161/E - AC, 3h
 
-https://codeforces.com/problemset/problem/2153/E
+https://codeforces.com/problemset/problem/2153/E - 未做出
 
-https://codeforces.com/problemset/problem/2143/E
+https://codeforces.com/problemset/problem/2143/E - WA on 2
 
-https://codeforces.com/problemset/problem/2122/D
+https://codeforces.com/problemset/problem/2122/D - 未做出, 好题
 
 https://codeforces.com/problemset/problem/2110/F
 
