@@ -25,17 +25,7 @@ bool solve() {
         int m = (sz - n) / (2 * n + 1);
         if (m < n) return false;
         if (m * n * 2 + m + n != sz) continue;
-        int need = 0;
-        if (n == 1) {
-            need += m - 1;
-        } else {
-            need += (n - 2) / 2;
-            need += (m - 2) / 2;
-            if (m % 2) need += (n - 2) / 2;
-            else need += (n - 2 + 1) / 2;
-            if (n % 2) need += (m - 2) / 2;
-            else need += (m - 2 + 1) / 2;
-        }
+        int need = m - n;
         if (need > p) continue;
         std::cout << n << ' ' << m << '\n';
         return true; 
