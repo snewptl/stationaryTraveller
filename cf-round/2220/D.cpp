@@ -18,10 +18,17 @@ typedef long double ldb;
 const int maxn = 2e5 + 5;
 const ll mod = 998244353;
 int n;
-int ask(int l, int r) {
-    std::cout << "? " << r - l + 1  << ' ';
+int ask(int l, int r, std::vector<int> appendlist) {
+    int sz = r - l + 1 + appendlist.size();
+    if (sz <= 0) {
+        return 0;
+    }
+    std::cout << "? " << sz  << ' ';
     for (int i = l; i <= r; ++i) {
         std::cout << i << ' ';
+    }
+    for (auto it : appendlist) {
+        std::cout << it << ' ';
     }
     std::cout << std::endl;
     int res;
@@ -29,48 +36,34 @@ int ask(int l, int r) {
     return res;
 }
 void solve() {
-    int l = 3, r = n;
-    std::vector<int> vec;
-    int res = 0;
+    int l = 1, r = n;
+    std::vector<int> vec, appendlist;
+    int pos = 0;
     while (l <= r) {
         int mid = (l + r) / 2;
-        if (ask(1, mid - 1) < ask(mid, n)) r = mid + 1, res = mid;
-        else l = mid - 1;
+        int resl = ask(1, mid, appendlist), lenl = mid + appendlist.size();
+        if ((lenl - resl) % 2) r = mid - 1, pos = mid;
+        else l = mid + 1;
     }
-    vec.push_back(res);
-    
-    if (res != n || ask(1, res + 1) > ask(res + 2, n)) {
-        l = res + 2, r = n;
-        while (l <= r) {
-            int mid = (l + r) / 2;
-            if () l = mid + 1, res = mid;
-            else r = mid - 1;
-        }
-        vec.push_back(res);
-        l = vec[0] + 1, r = vec[1] - 1;
-        while (l <= r) {
-            int mid = (l + r) / 2;
-            if (dir2(mid)) l = mid + 1, res = mid;
-            else r = mid - 1;
-        }
-        vec.push_back(res);
-    } else {
-        l = 1, r = res - 1;
-        while (l <= r) {
-            int mid = (l + r) / 2;
-            if (dir2(mid)) l = mid + 1, res = mid;
-            else r = mid - 1;
-        }
-        vec.push_back(res);
-        l = 1, r = res - 1;
-        while (l <= r) {
-            int mid = (l + r) / 2;
-            if (dir3(mid)) l = mid + 1, res = mid;
-            else r = mid - 1;
-        }
-        vec.push_back(res);
-
+    vec.push_back(pos);
+    appendlist.push_back(pos);
+    l = 1, r = pos - 1;
+    while (l <= r) {
+        int mid = (l + r) / 2;
+        int resl = ask(1, mid, appendlist), lenl = mid + appendlist.size();
+        if ((lenl - resl) % 2) r = mid - 1, pos = mid;
+        else l = mid + 1;
     }
+    vec.push_back(pos);
+    appendlist.push_back(pos);
+    l = 1, r = pos - 1;
+    while (l <= r) {
+        int mid = (l + r) / 2;
+        int resl = ask(1, mid, appendlist), lenl = mid + appendlist.size();
+        if ((lenl - resl) % 2) r = mid - 1, pos = mid;
+        else l = mid + 1;
+    }
+    vec.push_back(pos);
     std::cout << "! " << vec[2] << ' ' << vec[1] << ' ' << vec[0] << std::endl;
 }
 int main() {
