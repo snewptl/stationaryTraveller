@@ -17,22 +17,7 @@ typedef double db;
 typedef long double ldb;
 const int maxn = 2e5 + 5;
 const ll mod = 998244353;
-int p, q;
-bool solve() {
 
-    int sz = p + q * 2;
-    for (int n = 1; n <= 2e4; ++n) {
-        int m = (sz - n) / (2 * n + 1);
-        if (m < n) return false;
-        if (m * n * 2 + m + n != sz) continue;
-        int need = m - n;
-        if (need > p) continue;
-        std::cout << n << ' ' << m << '\n';
-        return true; 
-    }
-    
-    return false;
-}
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("0_input.txt", "r", stdin);
@@ -44,8 +29,6 @@ int main() {
     int T = 1;
     std::cin >> T;
     while (T--) {
-        std::cin >> p >> q;
-        if (!solve()) std::cout << "-1\n";
     }
 
     return 0;
