@@ -16,7 +16,7 @@ https://codeforces.com/problemset/problem/2143/E - WA on 2
 
 https://codeforces.com/problemset/problem/2122/D - 未做出, 好题
 
-https://codeforces.com/problemset/problem/2110/F
+https://codeforces.com/problemset/problem/2110/F - WA on 2, 看了官方数据后AC, 其实是简单题
 
 https://codeforces.com/problemset/problem/2109/E
 
