@@ -21,7 +21,10 @@ int n;
 int cnt = 0;
 int ask(int type, ll x) {
     cnt += 1;
-    // if (cnt > n + 3) assert(false);
+    if (cnt > n + 3) {
+        std::cout << cnt << '\n';
+        assert(false);
+    }
     if (type == 1) {
         std::cout << "I " << x << std::endl;
     } else {
@@ -66,7 +69,12 @@ int main() {
                 }
             } else {
                 // &
-                k = 1;
+                // | c == (1 << n) -1
+                if (cur == 1) {
+                    k = 2;
+                } else {
+                    k = 1;
+                }
                 c = (1ll << n) - 1;
             }
 

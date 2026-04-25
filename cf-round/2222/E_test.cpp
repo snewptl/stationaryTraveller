@@ -57,8 +57,8 @@ int main() {
     // std::cin >> T;
     while (T--) {
         // std::cin >> n;
-        n = 3;
-        K = 2, C = 1;
+        n = 2;
+        K = 2, C = 3;
         s.insert((1 << n) - 1);
         std::cout << (1 << n) - 1 << std::endl;
         int res = ask(1, (1 << n) - 1);
@@ -78,8 +78,13 @@ int main() {
                 }
             } else {
                 // &
-                k = 1;
-                c = (1 << n) - 1;
+                // | c == (1 << n) -1
+                if (cur == 1) {
+                    k = 2;
+                } else {
+                    k = 1;
+                }
+                c = (1ll << n) - 1;
             }
 
         } else {
