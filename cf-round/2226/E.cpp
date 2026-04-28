@@ -41,7 +41,7 @@ void build(int rt, int l, int r) {
     int mid = (l + r) / 2;
     t[rt].lz = 0;
     if (l == r) {
-        t[rt].min = -1;
+        t[rt].min = 0;
         return;
     }
     build(rt << 1, l, mid);
@@ -85,19 +85,29 @@ int main() {
         std::cin >> n;
         build(1, 0, n);
         int last = 0;
+        update(1, 0, n, 0, 0, -1);
         for (int i = 1; i <= n; ++i) {
             std::cin >> a[i];
             all[a[i]] += 1;
             update(1, 0, n, 0, std::min((last - 1) / 2, n), 1);
             while (query(1, 0, n, 0, last) >= 0) {
-                update(1, 0, n, 0, n, -1);
+                update(1, 0, n, 0, last, -1);
                 if (all[last]) {
                     update(1, 0, n, 0, (last - 1) / 2, -1);
                     update(1, 0, n, 0, last, 1);
                 }
                 last += 1;
+                if (query(1, 0, n, 0, last) < 0) {
+                    last -= 1;
+                    update(1, 0, n, 0, last, 1);
+                    if (all[last]) {
+                        update(1, 0, n, 0, (last - 1) / 2, 1);
+                        update(1, 0, n, 0, last, -1);
+                    }
+                    break;
+                }
             }
-            std::cout << last << ' ';
+            std::cout << last + 1 << ' ';
         }
         std::cout << '\n';
         for (int i = 1; i <= n; ++i) {
