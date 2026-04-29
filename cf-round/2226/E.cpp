@@ -89,7 +89,7 @@ int main() {
         for (int i = 1; i <= n; ++i) {
             std::cin >> a[i];
             all[a[i]] += 1;
-            if (a[i] == last && all[a[i]] == 1) {
+            if (all[a[i]] == 1 && a[i] <= last) {
                 update(1, 0, n, 0, a[i], 1);
             } else {
                 update(1, 0, n, 0, std::min((a[i] - 1) / 2, n), 1);
