@@ -6,6 +6,7 @@
 #include <queue>
 #include <vector>
 #include <assert.h>
+#include <unordered_map>
 #include <memory.h>
 #include <cmath>
 #define all(x) x.begin(), x.end()
