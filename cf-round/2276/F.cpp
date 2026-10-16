@@ -55,7 +55,8 @@ bool solve() {
     if (alice(k, 2)) {
         if (count[k + 1]) {
             int remain = n - (k + 1);
-            if (remain <= k) return true;
+            if (remain == 0) return false;
+            else if (remain <= k) return true;
             else if ((remain - k) % 2) return false;
             else return true;
         }
@@ -78,10 +79,10 @@ int main() {
         for (int i = 1; i <= n; ++i) {
             std::cin >> p[i];
         }
-        for (int i = 1; i <= n; ++i) {
+        for (int i = 1; i <= n + 2; ++i) {
             vis[i] = 0;
         }
-        for (int i = 0; i <= n; ++i) {
+        for (int i = 0; i <= n + 2; ++i) {
             count[i] = 0;
         }
         for (int i = 1; i <= n; ++i) {
