@@ -42,7 +42,7 @@ ll LCM(ll x, ll y) {
 void dfs(int u, ll cur, ll lcm) {
     min[u] = cur;
     if (e[u].size() == 0) return;
-    std::map<ll, int> used;
+    std::unordered_map<ll, int> used;
     while (!used[cur % e[u].size()]) {
         if (cur >= 1e18) break;
         auto [w, v] = e[u][cur % e[u].size()];
