@@ -18,7 +18,8 @@ typedef long double ldb;
 const int maxn = 2e5 + 5;
 const ll mod = 998244353;
 int n;
-int a[maxn];
+int b[105];
+
 int main() {
     #ifndef ONLINE_JUDGE
     freopen("0_input.txt", "r", stdin);
@@ -31,14 +32,19 @@ int main() {
     std::cin >> T;
     while (T--) {
         std::cin >> n;
-        std::set<int> s;
         for (int i = 1; i <= n; ++i) {
-            std::cin >> a[i];
-            s.insert(a[i]);
+            std::cin >> b[i];
         }
-
+        std::sort(b + 1, b + n + 1);
+        int flag = 1;
+        for (int i = 1; i <= n - 2; ++i) {
+            if (b[i] != b[i + 2] % b[i + 1]) {
+                flag = 0;
+            }
+        }
+        if (flag) std::cout << b[n] << ' ' << b[n - 1] << '\n';
+        else std::cout << "-1\n";
     }
 
     return 0;
 }
-// 15 : 54 - 
