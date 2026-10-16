@@ -18,7 +18,7 @@ https://codeforces.com/problemset/problem/2122/D - 未做出, 好题
 
 https://codeforces.com/problemset/problem/2110/F - WA on 2, 看了官方数据后AC, 其实是简单题
 
-https://codeforces.com/problemset/problem/2109/E
+https://codeforces.com/problemset/problem/2109/E - AC, 1h30min
 
 https://codeforces.com/problemset/problem/2097/C
 

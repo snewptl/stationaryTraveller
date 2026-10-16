@@ -15,7 +15,7 @@ int main() {
     // 生成测试数据
     system("g++ --std=c++17 std.cpp -o std");
     system("g++ --std=c++17 myCode.cpp -o myCode");
-    system("g++ --std=c++17 dataGenerater.cpp -o dataGenerater");
+    system("g++ --std=c++17 dataGenerator.cpp -o dataGenerator");
     while (true) {
         system("./dataGenerater");
         system("./std");
