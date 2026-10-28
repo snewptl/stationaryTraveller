@@ -36,9 +36,15 @@ bool bob() {
 }
 bool alice(int x, int min) {
     // std::cout << x << ' ' << min << '\n';
-    if (x != k || count[1]) {
+    int need = (x == k ? 1 : 0);
+    if (count[k + 1]) {
+        need = (n - (k - x)) % (k + 1);
+        if (k == x && need == 0) return false;
+    } 
+
+    if (count[1] >= need) {
         if(bob()) return true;
-    }  
+    }
     for (int i = min; i <= x; ++i) {
         if (!count[i]) continue;
         count[i] -= 1;
@@ -55,8 +61,7 @@ bool solve() {
     if (alice(k, 2)) {
         if (count[k + 1]) {
             int remain = n - (k + 1);
-            if (remain == 0) return false;
-            else if (remain <= k) return true;
+            if (remain <= k) return true;
             else if ((remain - k) % 2) return false;
             else return true;
         }
@@ -79,10 +84,10 @@ int main() {
         for (int i = 1; i <= n; ++i) {
             std::cin >> p[i];
         }
-        for (int i = 1; i <= n + 2; ++i) {
+        for (int i = 1; i <= n; ++i) {
             vis[i] = 0;
         }
-        for (int i = 0; i <= n + 2; ++i) {
+        for (int i = 0; i <= n; ++i) {
             count[i] = 0;
         }
         for (int i = 1; i <= n; ++i) {
