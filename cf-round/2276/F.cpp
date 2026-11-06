@@ -54,11 +54,8 @@ bool solve() {
     }
     if (alice(k, 2)) {
         if (count[k + 1]) {
-            int remain = n - (k + 1);
-            if (remain == 0) return false;
-            else if (remain <= k) return true;
-            else if ((remain - k) % 2) return false;
-            else return true;
+            if (n % (k + 1)) return true;
+            else return false;
         }
         return true;
     }
